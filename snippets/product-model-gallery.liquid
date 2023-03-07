@@ -1,0 +1,14 @@
+<div class="ProductGallery--model" data-component="ProductModelGallery">
+  <div class="mainImage">
+    {% for media in product.media %}
+      {% if media.alt contains 'model:' %}
+        <figure
+          class="Gallery__item" 
+          data-model="{{media.alt | split: 'model:' | last | split: "|" | first }}">
+          {% include 'product-gallery-media' %}
+        </figure>
+      {% endif %}    
+    {% endfor %}
+  </div>
+  <div class="ModelsNav" data-component="ModelsNav"></div>
+</div>

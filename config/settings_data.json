@@ -1,0 +1,2133 @@
+{
+  "current": {
+    "developer_mode": false,
+    "favicon": "shopify:\/\/shop_images\/favicon-28_61293ab7-d6dd-4270-b374-10f68f81190b.png",
+    "announcement_color": "#cc6c7b",
+    "announcement_text_color": "#ffffff",
+    "pt_show_refine": false,
+    "pt_show_collection_group": false,
+    "pt_scroll_filter_group": false,
+    "pt_force_dropdown": true,
+    "pt_hide_headers": true,
+    "pt_float_filters": "true",
+    "pt_clear_text": "CLEAR",
+    "color_pt_header_border": "rgba(0,0,0,0)",
+    "pt_header_size": 17,
+    "color_pt_links_selected": "#cc99a1",
+    "color_pt_links_hover": "#cc99a1",
+    "pt_links_size": 12,
+    "pt_show_checkboxes": false,
+    "pt_checkbox_style": "7",
+    "pt_checkbox_swatch_style": "4",
+    "color_pt_clear_bg": "#cc99a1",
+    "color_pt_clear_text": "#fff",
+    "color_pt_clear_bg_hover": "#bc8d94",
+    "color_pt_clear_text_hover": "#fff",
+    "pt_mobile_enable": false,
+    "pt_accordion_enable": true,
+    "pt_accordion_mode": "none",
+    "pt_accordion_icon_style": "arrows",
+    "pt_mobile_vertical": 14,
+    "pt_mobile_text_vertical": 18,
+    "pt_apply_button_enable": true,
+    "pt_apply_button_color": "#f0c6c8",
+    "pt_apply_button_hover_color": "#bc8d94",
+    "pt_ajax_enable": false,
+    "pt_ajax_selector": "#Collection",
+    "pt_show_only_on_collections": true,
+    "social-facebook-check": true,
+    "social-facebook": "http:\/\/facebook.com\/ivycityco",
+    "social-youtube-check": true,
+    "social-youtube": "https:\/\/www.youtube.com\/channel\/UCNx7eUAjCi6ra9TVZgJDGJw",
+    "social-instagram-check": true,
+    "social-instagram": "http:\/\/instagram.com\/ivycityco",
+    "social-pinterest-check": true,
+    "social-pinterest": "http:\/\/pinterest.com\/ivycityco",
+    "social-tiktok-check": true,
+    "social-tiktok": "https:\/\/vm.tiktok.com\/TTPdhoPuAw\/",
+    "checkout_logo_image": "shopify:\/\/shop_images\/Final_Branding-01_6.png",
+    "checkout_logo_position": "center",
+    "checkout_logo_size": "large",
+    "checkout_accent_color": "#cc99a1",
+    "checkout_button_color": "#f0c6c8",
+    "sections": {
+      "announcements": {
+        "type": "announcements",
+        "blocks": {
+          "d02ce1d9-3e94-4908-a295-96e0d1c72498": {
+            "type": "message",
+            "settings": {
+              "message_text": "<p>SHOP OUR NEWEST ARRIVALS<\/p>",
+              "message_link": "shopify:\/\/collections\/new-arrivals"
+            }
+          }
+        },
+        "block_order": [
+          "d02ce1d9-3e94-4908-a295-96e0d1c72498"
+        ],
+        "settings": {
+          "show_announcements": true,
+          "autoplay": 5
+        }
+      },
+      "site-header": {
+        "type": "site-header",
+        "settings": {
+          "main_menu": "main-menu",
+          "mobile_menu_primary": "mobile-menu-primary-2021",
+          "mobile_menu_secondary": ""
+        }
+      },
+      "home-hero": {
+        "type": "home-hero",
+        "blocks": {
+          "2098bb75-17d7-437e-afd7-8bdca37a35bd": {
+            "type": "item",
+            "disabled": true,
+            "settings": {
+              "content_type": "video",
+              "image": "shopify:\/\/shop_images\/Screen_Shot_2022-03-10_at_7.28.51_AM.png",
+              "text": "",
+              "video_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0910\/2910\/files\/WEBMONTAGE.mov?v=1651302422",
+              "button_link": "shopify:\/\/collections\/new-arrivals",
+              "button_label": "",
+              "show_button": false,
+              "fully_clickable": true
+            }
+          },
+          "26864fc6-ece0-403a-bfd1-700fa93a2c64": {
+            "type": "item",
+            "disabled": true,
+            "settings": {
+              "content_type": "image",
+              "image": "shopify:\/\/shop_images\/Screen_Shot_2022-05-06_at_7.08.58_AM.png",
+              "text": "",
+              "video_link": "",
+              "button_link": "shopify:\/\/collections\/new-arrivals",
+              "button_label": "Shop Now",
+              "show_button": false,
+              "fully_clickable": true
+            }
+          },
+          "75f2a332-b208-457e-bd26-ce6d4c850690": {
+            "type": "item",
+            "disabled": true,
+            "settings": {
+              "content_type": "image",
+              "image": "shopify:\/\/shop_images\/Group_22.jpg",
+              "text": "new dresses to put some spring in your step",
+              "video_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0910\/2910\/files\/Banner_1.mp4?v=1639072721",
+              "button_link": "shopify:\/\/collections\/spring-summer-dresses",
+              "button_label": "Shop Now",
+              "show_button": false,
+              "fully_clickable": true
+            }
+          },
+          "92060e71-ded3-4529-9cae-126a48768761": {
+            "type": "item",
+            "disabled": true,
+            "settings": {
+              "content_type": "image",
+              "image": "shopify:\/\/shop_images\/Screen_Shot_2022-05-06_at_7.04.09_AM.png",
+              "text": "",
+              "video_link": "",
+              "button_link": "shopify:\/\/collections\/new-arrivals",
+              "button_label": "shop now",
+              "show_button": false,
+              "fully_clickable": true
+            }
+          }
+        },
+        "block_order": [
+          "2098bb75-17d7-437e-afd7-8bdca37a35bd",
+          "26864fc6-ece0-403a-bfd1-700fa93a2c64",
+          "75f2a332-b208-457e-bd26-ce6d4c850690",
+          "92060e71-ded3-4529-9cae-126a48768761"
+        ],
+        "settings": {
+          "section_enable": false,
+          "bg_size": 40,
+          "bg_color": "#ffffff"
+        }
+      },
+      "1616581815c0773e8b": {
+        "type": "text",
+        "settings": {
+          "text": "<p>Dresses for all ages and stages to celebrate the big and small moments of life. <br\/><\/p>",
+          "text_align": "center"
+        }
+      },
+      "16165832620ed7ca53": {
+        "type": "featured-products",
+        "blocks": {
+          "5fdecf13-5787-4404-bf75-533490a86a16": {
+            "type": "feat_product",
+            "settings": {
+              "feat_product": "madeline-dress"
+            }
+          },
+          "4be950a1-972f-479f-b2b5-d00faca5ba48": {
+            "type": "feat_product",
+            "settings": {
+              "feat_product": "anastasia-dress"
+            }
+          },
+          "6c4c1eba-934a-4828-9a06-414f4a499c42": {
+            "type": "feat_product",
+            "settings": {
+              "feat_product": "brynley-dress-in-pink"
+            }
+          },
+          "20e18524-4bd6-4dec-ad70-64bde1d7cc9c": {
+            "type": "feat_product",
+            "settings": {
+              "feat_product": "ophelia-dress"
+            }
+          },
+          "6de784b5-6f66-4cb7-9ab4-401d202c7b61": {
+            "type": "feat_product",
+            "settings": {
+              "feat_product": "short-whimsical-dress-in-slate-blue"
+            }
+          },
+          "44ec8bf2-a297-4785-b274-8ebce16df091": {
+            "type": "feat_product",
+            "settings": {
+              "feat_product": "madeline-in-pink"
+            }
+          },
+          "be929e5d-7447-434c-a733-ff3a78f73f16": {
+            "type": "feat_product",
+            "settings": {
+              "feat_product": "short-whimsical-dress-in-blush"
+            }
+          }
+        },
+        "block_order": [
+          "5fdecf13-5787-4404-bf75-533490a86a16",
+          "4be950a1-972f-479f-b2b5-d00faca5ba48",
+          "6c4c1eba-934a-4828-9a06-414f4a499c42",
+          "20e18524-4bd6-4dec-ad70-64bde1d7cc9c",
+          "6de784b5-6f66-4cb7-9ab4-401d202c7b61",
+          "44ec8bf2-a297-4785-b274-8ebce16df091",
+          "be929e5d-7447-434c-a733-ff3a78f73f16"
+        ],
+        "settings": {
+          "title": "dress obsessed? welcome to the family.",
+          "data_source": "products",
+          "feat_collection": "",
+          "layout": "slider",
+          "nr_products": 6
+        }
+      },
+      "16165861291cf5d11a": {
+        "type": "featured-collections",
+        "blocks": {
+          "1952cb8b-568c-41b6-a859-ff7c38efb924": {
+            "type": "feat_collection",
+            "settings": {
+              "feat_collection": "mom-and-me",
+              "alt_image": "shopify:\/\/shop_images\/TUNNELPARK-santorinidressesgroup-49_1_34d64867-bb2a-4291-8382-55db180d07b5.jpg"
+            }
+          },
+          "7179970a-919d-492e-81e5-719034e7a54c": {
+            "type": "feat_collection",
+            "settings": {
+              "feat_collection": "new-arrivals",
+              "alt_image": "shopify:\/\/shop_images\/amberfloral-green-16.jpg"
+            }
+          },
+          "6d5959c3-5f32-45a7-bd04-055bb99e329a": {
+            "type": "feat_collection",
+            "settings": {
+              "feat_collection": "occasion",
+              "alt_image": "shopify:\/\/shop_images\/pixie-blush-8.jpg"
+            }
+          },
+          "61487718-970a-42e4-ba93-13c3a5faea84": {
+            "type": "feat_collection",
+            "disabled": true,
+            "settings": {
+              "feat_collection": "wedding",
+              "alt_image": "shopify:\/\/shop_images\/Screen_Shot_2022-03-10_at_6.57.52_AM.png"
+            }
+          }
+        },
+        "block_order": [
+          "1952cb8b-568c-41b6-a859-ff7c38efb924",
+          "7179970a-919d-492e-81e5-719034e7a54c",
+          "6d5959c3-5f32-45a7-bd04-055bb99e329a",
+          "61487718-970a-42e4-ba93-13c3a5faea84"
+        ],
+        "settings": {
+          "bg_image": "shopify:\/\/shop_images\/Bitmap.png",
+          "bg_size": 20,
+          "bg_color": "#f9f0ef",
+          "title": "",
+          "layout": "grid"
+        }
+      },
+      "16165892731da49346": {
+        "type": "featured-articles",
+        "settings": {
+          "title": "From the Vine",
+          "feat_blog": "the-vine",
+          "layout": "slider",
+          "nr_articles": 3
+        }
+      },
+      "site-footer": {
+        "type": "site-footer",
+        "blocks": {
+          "2e5120c7-e22f-4399-ad27-b3ec7f4d9b12": {
+            "type": "highlight",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/dress.png",
+              "title": "Original designs you won’t find anywhere else"
+            }
+          },
+          "d3191d73-118b-4cb7-9e48-9be328d84a14": {
+            "type": "highlight",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/noun_Calendar_3320785.png",
+              "title": "Easy Returns"
+            }
+          },
+          "07c77bc5-0109-42e2-abbb-3ea51a112b1a": {
+            "type": "highlight",
+            "settings": {
+              "icon": "shopify:\/\/shop_images\/Artboard_1_3x_f787a501-987d-486d-b3e6-a9d590dc69d4.png",
+              "title": "Women owned business"
+            }
+          },
+          "72cc94a0-3b49-497e-a198-f4bb790519de": {
+            "type": "highlight",
+            "disabled": true,
+            "settings": {
+              "title": ""
+            }
+          }
+        },
+        "block_order": [
+          "2e5120c7-e22f-4399-ad27-b3ec7f4d9b12",
+          "d3191d73-118b-4cb7-9e48-9be328d84a14",
+          "07c77bc5-0109-42e2-abbb-3ea51a112b1a",
+          "72cc94a0-3b49-497e-a198-f4bb790519de"
+        ],
+        "settings": {
+          "form_heading": "Join the Celebration",
+          "form_intro": "Celebrate womanhood with us! We’ll keep you up-to-date on new styles, deals, and more.",
+          "klaviyo_form": "<div class=\"klaviyo-form-HJjNhk\"><\/div>",
+          "menu": "footer-menu-site2021",
+          "highlights_bg_img": "shopify:\/\/shop_images\/Bitmap.png",
+          "highlights_bg_size": 20,
+          "highlights_bg_color": "#f9f0ef",
+          "join_enable": true,
+          "join_color": "",
+          "join_title": "Get 10% OFF when you sign up for texts!",
+          "join_desc": "<p>By signing up via text, you agree to receive recurring automated promotional and personalized marketing text messages (e.g. cart reminders) from Ivy City Co ath the cell number used when signing up. Consent is not a condition of any purchase. Reply HELP for help and STOP to cancel. Msg frequency varies. Msg + Data rates may apply. View terms (<a href=\"https:\/\/attnl.tv\/t\/E2y\" target=\"_blank\" title=\"https:\/\/attnl.tv\/t\/E2y\">https:\/\/attnl.tv\/t\/E2y<\/a>) & privacy (<a href=\"https:\/\/attnl.tv\/p\/E2y\" target=\"_blank\" title=\"https:\/\/attnl.tv\/p\/E2y\">https:\/\/attnl.tv\/p\/E2y<\/a>).<\/p>",
+          "join_subtitle": "Text IVY to 42087"
+        }
+      },
+      "1617619137b61aa1e4": {
+        "type": "index-behind-the-brand",
+        "blocks": {
+          "2d355a8e-89bf-4ffa-a3b1-680e7cd99c89": {
+            "type": "slider-item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/prom.jpg",
+              "caption": "\"The most beautiful fairy tale dress. My daughter chose this one for Prom. We sized down as the reviews suggested and it fit perfect. It has an amazing fullness to it and the color is so beautiful.\"\" - April L"
+            }
+          },
+          "0cd25f72-5e5b-476c-ac35-e8ae9beb7527": {
+            "type": "slider-item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Eugenie_Applewhite.jpg",
+              "caption": "\"Beautiful, timeless dresses for all women and matching for our minis!\" - Eugenie A."
+            }
+          },
+          "74bd8f3c-b235-40a7-8657-0502f109d1f1": {
+            "type": "slider-item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Ashley_Robb.jpg",
+              "caption": "\"Finally a dress for every stage of life that I feel confident and gorgeous in every time for any event!\" - Ashley R."
+            }
+          },
+          "099f31ec-a1ce-4a50-af39-d42ab8f43ab7": {
+            "type": "slider-item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Amy_Kaur.jpg",
+              "caption": "\"I love how comfortable the dresses and the fact that dresses can dressed up ( formal) or dress down(casual).\" - Amy K.."
+            }
+          },
+          "66f63eb0-a84a-492b-bca1-b994fd887c80": {
+            "type": "slider-item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Ivanna.jpg",
+              "caption": "\"Come to Ivy City Co where the dresses are enchanting, your little babes will always look better than you and the friendships are endless.\" - Ivanna J."
+            }
+          },
+          "ed4be5c8-6e42-40f6-8eab-19ac0dcfff44": {
+            "type": "slider-item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/caroline_d.jpg",
+              "caption": "\"I love how Ivy dresses make me feel stunning while still being modest and classy!\" - Caroline D."
+            }
+          }
+        },
+        "block_order": [
+          "2d355a8e-89bf-4ffa-a3b1-680e7cd99c89",
+          "0cd25f72-5e5b-476c-ac35-e8ae9beb7527",
+          "74bd8f3c-b235-40a7-8657-0502f109d1f1",
+          "099f31ec-a1ce-4a50-af39-d42ab8f43ab7",
+          "66f63eb0-a84a-492b-bca1-b994fd887c80",
+          "ed4be5c8-6e42-40f6-8eab-19ac0dcfff44"
+        ],
+        "settings": {
+          "bg_image": "shopify:\/\/shop_images\/ivyonyou_79071f35-2b31-435e-80ea-bc8e27ddfe9c.jpg",
+          "bg_size": 20,
+          "bg_color": "#f0c6c8",
+          "heading": "Behind the Brand",
+          "main_image": "shopify:\/\/shop_images\/owners-lovers-2023-120.jpg",
+          "main_link": "shopify:\/\/pages\/behind-the-brand",
+          "aside": "women owned & operated",
+          "slider_heading": "#ivyonyou",
+          "slider_link": "shopify:\/\/pages\/shop-our-instagram",
+          "btn_label": "See More",
+          "btn_color": "#cecec0"
+        }
+      },
+      "1617963692d1524421": {
+        "type": "index-press-logos",
+        "blocks": {
+          "c15dbb3e-50ce-400e-965c-ba7fa7485e2c": {
+            "type": "logo",
+            "disabled": true,
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/Bitmap_dd4416cb-6bd4-40fb-aa37-ffa1c9a6ab3a.png",
+              "link": "https:\/\/ivycityco.com\/pages\/in-the-press",
+              "open_new_tab": false
+            }
+          },
+          "eb214680-bbae-426d-acba-608c6b419b46": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/38-387699_forbes-logo-png.png",
+              "link": "shopify:\/\/pages\/in-the-press",
+              "open_new_tab": false
+            }
+          },
+          "31e07c1c-65e2-455c-9f5f-b9cc5e1a01d6": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/Bitmap3.png",
+              "link": "https:\/\/ivycityco.com\/pages\/in-the-press",
+              "open_new_tab": false
+            }
+          },
+          "617d08d6-d30f-41c0-9948-f3932af3a167": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/Bitmap4.png",
+              "link": "",
+              "open_new_tab": false
+            }
+          },
+          "5e1e4d88-9d26-4201-866c-e1761a2429b6": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/Bitmap5.png",
+              "link": "https:\/\/ivycityco.com\/pages\/in-the-press",
+              "open_new_tab": false
+            }
+          },
+          "f65f769b-6b03-4ef7-87a6-4f8212ecf513": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/Bitmap8.png",
+              "link": "https:\/\/ivycityco.com\/pages\/in-the-press",
+              "open_new_tab": false
+            }
+          },
+          "4a7ac781-7d3e-42e8-a6dc-809b636b28e4": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/Bitmap11.png",
+              "link": "https:\/\/ivycityco.com\/pages\/in-the-press",
+              "open_new_tab": false
+            }
+          },
+          "b12d8088-09b2-46f3-91cd-55dfa3cb6996": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/Bitmap9.png",
+              "link": "https:\/\/ivycityco.com\/pages\/in-the-press",
+              "open_new_tab": false
+            }
+          },
+          "7d2946ed-73dc-49d4-97c2-5dfee5082d25": {
+            "type": "logo",
+            "disabled": true,
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/Bitmap12.png",
+              "link": "https:\/\/ivycityco.com\/pages\/in-the-press",
+              "open_new_tab": false
+            }
+          },
+          "4e8309bc-dac0-4bf0-bf84-05b08695fa41": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/Bitmap7.png",
+              "link": "https:\/\/ivycityco.com\/pages\/in-the-press",
+              "open_new_tab": false
+            }
+          },
+          "ca782c85-0bf8-4936-b618-31b5ce9f2cc5": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/ps.jpg",
+              "link": "",
+              "open_new_tab": false
+            }
+          },
+          "c3102345-249d-42ae-a55b-59961f540260": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/hb.png",
+              "link": "",
+              "open_new_tab": false
+            }
+          }
+        },
+        "block_order": [
+          "c15dbb3e-50ce-400e-965c-ba7fa7485e2c",
+          "eb214680-bbae-426d-acba-608c6b419b46",
+          "31e07c1c-65e2-455c-9f5f-b9cc5e1a01d6",
+          "617d08d6-d30f-41c0-9948-f3932af3a167",
+          "5e1e4d88-9d26-4201-866c-e1761a2429b6",
+          "f65f769b-6b03-4ef7-87a6-4f8212ecf513",
+          "4a7ac781-7d3e-42e8-a6dc-809b636b28e4",
+          "b12d8088-09b2-46f3-91cd-55dfa3cb6996",
+          "7d2946ed-73dc-49d4-97c2-5dfee5082d25",
+          "4e8309bc-dac0-4bf0-bf84-05b08695fa41",
+          "ca782c85-0bf8-4936-b618-31b5ce9f2cc5",
+          "c3102345-249d-42ae-a55b-59961f540260"
+        ],
+        "settings": {
+          "heading": "As Seen In",
+          "linking_options": "global",
+          "global_link": "shopify:\/\/pages\/in-the-press"
+        }
+      },
+      "collection-template": {
+        "type": "collection-template",
+        "settings": {
+          "hero_bg_image": "shopify:\/\/shop_images\/Bitmap.png",
+          "hero_bg_size": 40,
+          "hero_bg_color": "#f9f0ef",
+          "nr_products": 60
+        }
+      },
+      "cart-template": {
+        "type": "cart-template",
+        "settings": {
+          "show_notes": true,
+          "show_vendors": true,
+          "enable_gift_product": true,
+          "gift_product": "giftbox"
+        }
+      },
+      "filter-menu-settings": {
+        "type": "filter-menu-settings",
+        "settings": {}
+      },
+      "page-template-signup": {
+        "type": "page-template-signup",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/LOVERSCOLLECTIOM-452.jpg",
+          "title": "Join the Fun",
+          "text": "<p>Subscribe to the newsletter to always be in the loop on the newest styles, deals, and more!<\/p>",
+          "text_color": "#f7f1f1",
+          "button_label": "",
+          "color_overlay": "#000000",
+          "color_overlay_text": "#ffffff",
+          "color_overlay_alpha_range": 9,
+          "heading": "",
+          "heading_color": "#000000",
+          "subheading": "",
+          "subheading_color": "#000000",
+          "klaviyo_form": "<div class=\"klaviyo-form-QNaaCp\"><\/div>"
+        }
+      },
+      "lovers-collection-landing-template": {
+        "type": "lovers-collection-landing-template",
+        "blocks": {
+          "9c231aab-f4e7-40d3-b016-30fdaae56539": {
+            "type": "step",
+            "settings": {
+              "step": "<p>Follow Ivy City Co. on Pinterest<\/p>"
+            }
+          },
+          "044d83d2-7801-4ba1-8213-77198fcf951b": {
+            "type": "step",
+            "settings": {
+              "step": "<p>Create a Pinterest board titled &quot;Lover&#x27;s Collection&quot;<\/p>"
+            }
+          },
+          "313e01db-d655-4315-aef1-def75e214f3e": {
+            "type": "step",
+            "settings": {
+              "step": "<p>Curate a board that represents all things, love! Search our website, @ivycityco, and Pinterest to find some fresh and inspiring photos for your board.<\/p>"
+            }
+          },
+          "db6f870a-7c19-407f-aa93-e551fd86e896": {
+            "type": "step",
+            "settings": {
+              "step": "<p>Show us what you are loving! Repin at least 5 dress pins from our board you&#x27;ve fallen in love with.<\/p>"
+            }
+          },
+          "a17d7e17-2857-41cc-a0b9-2d31c394e613": {
+            "type": "step",
+            "settings": {
+              "step": "<p>Send us your board by 2\/8. Fill out the form below to submit your collection.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "9c231aab-f4e7-40d3-b016-30fdaae56539",
+          "044d83d2-7801-4ba1-8213-77198fcf951b",
+          "313e01db-d655-4315-aef1-def75e214f3e",
+          "db6f870a-7c19-407f-aa93-e551fd86e896",
+          "a17d7e17-2857-41cc-a0b9-2d31c394e613"
+        ],
+        "settings": {
+          "main_image": "shopify:\/\/shop_images\/lc_landing_main.jpg",
+          "sec_image": "shopify:\/\/shop_images\/lc_landing_sec.png",
+          "title": "<p>Lovers Collection <strong>Pinterest Giveaway<\/strong><\/p>",
+          "intro": "<p>Enter for three participants to win $250 each to Ivy City Co. Follow these 5 simple rules:<\/p>",
+          "disclaimer": "<p>NO PURCHASE NECESSARY. Void where prohibited and outside 50 US and DC. Open to legal residents of 50 US and DC, age 18+ (19+ in NE and AL; 21+ in MS) at entry. Begins 8:00 a.m. MST on 2\/01\/21; ends 11:59p.m ET on 2\/07\/21. On February 8, 2021, Sponsor will reach out via email to announcing the Giveaway winners (the “Giveaway Post”).<\/p><p><\/p><p>To enter the Giveaway, create your Pinterest Board titled “Lovers Collection,” visit @ivycityco Pinterest Page (https:\/\/www.pinterest.com\/ivycityco\/) or Ivy City Co.’s site (https:\/\/www.ivycityco.com) and re-pin at-least 5 pins, and submit the entry form. Three Grand Prize: A $250 Ivy City Co eGift Card. Odds of winning depend on number of entries received.<\/p>"
+        }
+      },
+      "page-template-brand": {
+        "type": "page-template-brand",
+        "blocks": {
+          "5ce07ff5-e331-468e-80dc-82330c473089": {
+            "type": "team_member",
+            "settings": {
+              "photo": "shopify:\/\/shop_images\/TashPicture-3.jpg",
+              "name": "Natasha Thomas, Owner",
+              "bio": "<p>Tash is married to a supportive and entrepreneurial husband. She is also a mother of four adorable kids!  She is a licensed cosmetologist who decided to follow her dream of creating Ivy City Co. with her long-time BFF, Whitney, back in 2015.  Designing beautiful and functional dresses is her passion, along with all things fashion and home décor. She is always up for fun with family and friends. Tash is a hopeless romantic and always has her nose in a good book.<\/p>"
+            }
+          },
+          "e87ac4db-2230-4c87-83ca-a7c5d27cb816": {
+            "type": "team_member",
+            "settings": {
+              "photo": "shopify:\/\/shop_images\/WhitneyPicture-1.jpg",
+              "name": "Whitney Smith, cpa, Owner",
+              "bio": "<p>Whit went to business school, holds a master&#x27;s degree in accounting, and is a Certified Public Accountant. Her love for business and her passion for fashion, along with her ambition and drive to create, led her to start Ivy City Co. in 2015 with Tash. She is married to a handsome guy and has one little boy and two little girls. She loves traveling with her family, and they are her biggest motivation!<\/p>"
+            }
+          },
+          "fc0f23f0-872f-489f-b57a-88bb6b0c8c63": {
+            "type": "team_member",
+            "settings": {
+              "photo": "shopify:\/\/shop_images\/MadelinePicture-1.jpg",
+              "name": "Madeline Becker Hamilton, Owner",
+              "bio": "<p>Madeline is a Texas-raised photographer, artist, marketing guru, and storyteller. After graduating college, she moved to Utah, fell in love with the mountains and decided to call it home. After five years in the marketing world, she followed the pull to put her heart into her own business and joined the Ivy City Co. family. She loves learning, being silly, human-connection, romantic stories, traveling, and writing music next to her husband and new baby girl!<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "5ce07ff5-e331-468e-80dc-82330c473089",
+          "e87ac4db-2230-4c87-83ca-a7c5d27cb816",
+          "fc0f23f0-872f-489f-b57a-88bb6b0c8c63"
+        ],
+        "settings": {
+          "title": "",
+          "subtitle": "meant to celebrate",
+          "bg_image": "shopify:\/\/shop_images\/AdobeStock_309927621.jpg",
+          "bg_size": 20,
+          "bg_color": "#f9f0ef",
+          "hero_image": "shopify:\/\/shop_images\/180A5477_1.jpg",
+          "video_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0910\/2910\/files\/BehindTheBrandSmall_d92b7627-ea6c-41de-a606-d45e01f23ad3.mov?v=1621275959",
+          "play_mode": "inline",
+          "heading": "Welcome to our little world of believing in dreams and celebrating the magic around us. We are so happy to have you here.",
+          "intro": "<p>Ivy City Co. was founded in 2015 by best friends Tash and Whitney. After years of offering wholesale products, they decided to take a risk and start designing their own original, high quality silhouettes that couldn&#x27;t be found anywhere else. The stars aligned and the girls met Madeline, a marketing guru who felt a pull to go all-in on her own business. Tash and Whit had the vision and Madeline, a fellow dress lover seeking to empower women, knew how to tell the world about it. She joined the team in 2018 and Ivy City Co. 2.0 was officially born. <\/p>",
+          "team_photo": "shopify:\/\/shop_images\/9C974E04-7AB9-42EC-8FD5-22EF46E66F0F.jpg",
+          "team_intro": "<p>As women, we are better together! This is why, as a team, we will do our best each day to cater to the needs, hopes and dreams of each and every one of you in the best way we know how -- through timeless one-of-a-kind silhouettes, designed and shipped by us right here in Salt Lake City, Utah. We are proud to be a woman-run business and feel so lucky to have made such special friendships while pursuing our dreams!<\/p>",
+          "team_gif": "shopify:\/\/shop_images\/OurDesigns1.jpg",
+          "team_gif_intro": "<p>We love designing pieces that are personal to us, and we will not sell a piece we do not absolutely love! We manufacture our designs using high-quality fabrics to make sure you feel your best in everything we create. Our goal for Ivy City Co. is to continue offering stand-out pieces that are timeless, feminine, and unique that instill confidence. The moment you put on your first Ivy City Co. dress you join a community, a place of instant friendship and encouragement!<\/p>"
+        }
+      },
+      "collections-mobile-nav": {
+        "type": "collections-mobile-nav",
+        "blocks": {
+          "0c094f5d-5a11-4cda-8c42-b78bf280b855": {
+            "type": "collection",
+            "disabled": true,
+            "settings": {
+              "collection": "lovers",
+              "image": "shopify:\/\/shop_images\/Screen_Shot_2022-01-25_at_6.50.42_AM.png",
+              "label": "Lovers"
+            }
+          },
+          "b00bce0b-4f7a-4bd7-a3d2-5855d279a398": {
+            "type": "collection",
+            "disabled": true,
+            "settings": {
+              "collection": "new-arrivals",
+              "image": "shopify:\/\/shop_images\/6F4C8B67-10F3-48F1-B379-014CADD1D0B8.jpg",
+              "label": "New"
+            }
+          },
+          "9ef307c3-62ca-4736-ab03-960c9c54aabf": {
+            "type": "collection",
+            "disabled": true,
+            "settings": {
+              "collection": "pre-order",
+              "image": "shopify:\/\/shop_images\/Screen_Shot_2021-11-18_at_12.59.52_PM.png",
+              "label": "PRE-ORDER"
+            }
+          },
+          "f74bc0a0-1d5f-4b4e-9143-89c94c09cecd": {
+            "type": "collection",
+            "disabled": true,
+            "settings": {
+              "collection": "best-sellers",
+              "image": "shopify:\/\/shop_images\/WINTERWHITES-BALLERINA-15_f2bbbfec-4ce5-448e-a3d3-cb7e411be667.jpg",
+              "label": "best sellers"
+            }
+          },
+          "ac701872-02f0-4873-b528-8bd4e42c0c92": {
+            "type": "collection",
+            "disabled": true,
+            "settings": {
+              "collection": "minis",
+              "image": "shopify:\/\/shop_images\/Photo_Sep_28_9_17_54_AM_1.jpg",
+              "label": "Minis"
+            }
+          },
+          "7445c652-45f0-4d86-9aca-c1e41909c91e": {
+            "type": "collection",
+            "disabled": true,
+            "settings": {
+              "collection": "final-few-1",
+              "image": "shopify:\/\/shop_images\/PROPS-6.jpg",
+              "label": "Sale"
+            }
+          },
+          "5c17cd43-ab60-4a74-be9f-71d85f509ce2": {
+            "type": "collection",
+            "disabled": true,
+            "settings": {
+              "collection": "coming-soon",
+              "image": "shopify:\/\/shop_images\/clary-sage-full-tash-41.jpg",
+              "label": "Coming<br>Soon"
+            }
+          }
+        },
+        "block_order": [
+          "0c094f5d-5a11-4cda-8c42-b78bf280b855",
+          "b00bce0b-4f7a-4bd7-a3d2-5855d279a398",
+          "9ef307c3-62ca-4736-ab03-960c9c54aabf",
+          "f74bc0a0-1d5f-4b4e-9143-89c94c09cecd",
+          "ac701872-02f0-4873-b528-8bd4e42c0c92",
+          "7445c652-45f0-4d86-9aca-c1e41909c91e",
+          "5c17cd43-ab60-4a74-be9f-71d85f509ce2"
+        ],
+        "settings": {}
+      },
+      "page-template-returns": {
+        "type": "page-template-returns",
+        "blocks": {
+          "c4b880cd-414a-4491-af56-83691576745b": {
+            "type": "item",
+            "settings": {
+              "title": "Return Policy",
+              "content": "<p><span style=\"text-decoration:underline\"><strong>How do I initiate a return? <\/strong><\/span><\/p><p>Returned items must be unused, unworn, with the original Oh Happy Day bag, and all tags still attached to be eligible for a return.<\/p><p><\/p><p>Free returns are available for exchange and store credit returns. We have recently updated our policy so you now have 45 days from when your order ships to request an exchange or return for credit! <\/p><p><\/p><p>We offer a quick exchange process that places your new order as soon as your returned items are on their way back to us. <\/p><p><\/p><p>Returns for refund have a refund fee of $12 for pre-paid label that will be deducted from your refund amount. You have 21 days from when your order ships to request a return for refund.  <\/p><p>*Shipping costs, shipping protection and redeemed rewards are non-refunable<\/p><p>Please do not combine returns that have separate Express Codes, to ensure correct and timely processing of your return. We cannot be held responsible for items damaged or lost in return shipment.<\/p><p><\/p><p>To start your return request, click <a href=\"https:\/\/ivy-city-co.happyreturns.com\/\" title=\"https:\/\/ivy-city-co.happyreturns.com\/\">here<\/a><\/p><p>*To request an in-store return, simply head to the store within your return window, or contact customer service to set that up.<\/p><p><\/p><p><span style=\"text-decoration:underline\"><strong>Credit only returns<\/strong><\/span><\/p><p>Only select sales will have credit only returns. Please see the terms and conditions of the sale for confirmation. <\/p><p><\/p><p><span style=\"text-decoration:underline\"><strong>Which items are final sale?<\/strong><\/span><\/p><p>Items ending in $0.99, or otherwise stated “final sale” are final sale. <\/p><p>Final sale items can not be returned for exchange, credit or refund. <\/p><p><\/p><p><span style=\"text-decoration:underline\"><strong>International returns <\/strong><\/span><\/p><p>At this time we are not able to offer pre-paid returns or Return Bars drop offs for our international orders. Please email us at <span style=\"text-decoration:underline\">hello@ivycityco.com<\/span> to start the return process manually.<\/p><p><\/p><p>Prepaid duties and taxes are non-refundable. These are forwarded to your local customs authority so we are unable to refund fund. However by contacting your local customs office directly, with copies of your return information, you can claim these fees back. <\/p><p><\/p><p><span style=\"text-decoration:underline\"><strong>What if my items are damaged or defective?<\/strong><\/span><\/p><p>Damaged or defective product must be reported within 10 days of receipt to be eligible for replacement. Please send an email to <a href=\"mailto:hello@ivycityco.com\"><span style=\"text-decoration:underline\">hello@ivycityco.com<\/span><\/a> with your order number and detailed photos of the defect and we are happy to help.<\/p>"
+            }
+          },
+          "1586f527-fa21-4693-af2b-4aa3dbae7d46": {
+            "type": "item",
+            "disabled": true,
+            "settings": {
+              "title": "Returns",
+              "content": "<p>1. <a href=\"https:\/\/ivycityco.com\/a\/returns\" target=\"_blank\">CLICK HERE<\/a> to begin your Return Process.  Follow the instructions in the <a href=\"https:\/\/ivycityco.com\/a\/returns\" target=\"_blank\">Returns Center<\/a> to return your item. <\/p><p>OR <\/p><p>-Ship with any courier of your choice.<\/p><p><\/p><p>2. You will receive your <em>RETURN AUTHORIZATION NUMBER (ALSO KNOWN AS AN RMA #)  <\/em>in an email, as well as return instructions for your return depending on the above return method you chose.<\/p><p>Let's make sure we get your return issued for you okay ;) If you cannot find your packing slip then please write your Authorization and Order Number on a piece of paper instead. If we do not receive your Authorization Number we cannot process your return.<\/p><p><em>*note: customers are responsible for return shipping unless the item was damaged or defective upon receipt and we were notified about it within 5 business days. Please note, if choosing to use our return label to ship your return, an $9 shipping label fee will be deducted from your refund amount, as stated on the \"ship with a returns label for your convenience\" that you chose. <\/em><\/p><p>3. Return your item(s) as directed in the email for the return method you chose.<\/p><p>4. You will be notified once we have received, opened, and inspected your return at our facility. Typically within 3 business days of its arrival to us. <\/p><p><strong>*​note: we reserve the right to refuse any return if it was returned to us damaged and we were not contacted about it within 5 business days of its delivery date.​​<\/strong><\/p><p>5. You will be notified once your return has been processed and refunded to the requested method of payment. Typically within 5 business days of arrival to us. <\/p><p><em>*note: if you are returning, just the product cost will be refunded, minus the original shipping cost and the return shipping cost if using our return label, and any restocking fee if it applies.<\/em><\/p><p><em>*note: if you would like in-store credit for your returned item you will not be responsible for paying the shipping return cost if using our return label.<\/em><\/p>"
+            }
+          },
+          "bd728277-6671-4cc9-9300-ed9358cec2a0": {
+            "type": "item",
+            "disabled": true,
+            "settings": {
+              "title": "Exchanges",
+              "content": "<p>We do offer free exchanges! But since our styles and sizes sell out super quick, if you desire to have your exchanged product ASAP, we recommend you place an order for the new size you would like to exchange for, then follow the return procedures above on the item you wish to return. Once we receive and approve your original item we will issue your return and shipping on the products that apply in the initial order placed. <\/p><p>1. <a href=\"https:\/\/ivycityco.com\/a\/returns\" target=\"_blank\">CLICK HERE<\/a> to begin your Exchange Process. Follow the instructions in the <a href=\"https:\/\/ivycityco.com\/a\/returns\" target=\"_blank\">Returns Center<\/a> to exchange your item(s) by one of the following methods:<\/p><p>-Ship with a returns label for your convenience.<\/p><p>2. You will receive your <em>RETURN AUTHORIZATION NUMBER (ALSO KNOWN AS AN RMA #)  <\/em>in an email, as well as exchange instructions for your exchange depending on the above exchange method you chose.<\/p><p>Let's make sure we get your exchange issued for you okay ;) If you cannot find your packing slip then please write your Authorization and Order Number on a piece of paper instead. If we do not receive your Authorization Number we cannot process your exchange.<\/p><p><em>*note: We will allow exchanges for an item of equal or lesser value than the original purchase being exchanged.  For items of lesser value you will be issued a store credit to purchase the new item you would like.<\/em><\/p><p>3. Return your item(s) as directed in the email for the exchange method you chose.<\/p><p>4. You will be notified once we have received, opened, and inspected your item(s) to be exchanged at our facility. Typically within 3 business days of its arrival to us. <\/p><p><strong>*​note: we reserve the right to refuse any exchange if it was returned to us damaged and we were not contacted about it within 5 business days of its delivery date.​​<\/strong><\/p><p>5. You will be notified once your exchange has been processed and a new order will be automatically placed for you in our system. You will receive a new order confirmation and shipment notification, typically within 5 business days of arrival to us. If your requested size for the exchange is not in stock, we will refund your order for you :) <\/p>"
+            }
+          },
+          "e58d4150-ccbb-4eb1-bd17-19a30193f608": {
+            "type": "item",
+            "disabled": true,
+            "settings": {
+              "title": "Sale Items",
+              "content": "<p>All sale items ending in $0.99 or have \"Final Sale\" noted in the title, are final sale and will NOT be accepted for an exchange or return. No exceptions. <\/p><p>Thanks for following along and supporting our small business. We are doing the best we can to make sure each interaction with our brand is simple and fair to all parties.<\/p><p>Any questions? Feel to reach out to our customer support for further guidance: <a href=\"mailto:hello@ivycityco.com\" target=\"_blank\">hello@ivycityco.com<\/a> <\/p>"
+            }
+          },
+          "a56ab69f-4a9e-41a2-b94d-a7f80013f808": {
+            "type": "item",
+            "disabled": true,
+            "settings": {
+              "title": "International Returns",
+              "content": "<p>At this time we are not able to offer pre-paid returns for our international orders. You are more than welcome to submit a return request and send your items back to us at your cost and would be happy to get you refunded for the returned items. If you have further questions about your return please reach out to hello@ivycityco.com. We would love to answer any questions you may have!<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "c4b880cd-414a-4491-af56-83691576745b",
+          "1586f527-fa21-4693-af2b-4aa3dbae7d46",
+          "bd728277-6671-4cc9-9300-ed9358cec2a0",
+          "e58d4150-ccbb-4eb1-bd17-19a30193f608",
+          "a56ab69f-4a9e-41a2-b94d-a7f80013f808"
+        ],
+        "settings": {}
+      },
+      "page-template-faq": {
+        "type": "page-template-faq",
+        "blocks": {
+          "9dd0f1c3-d547-4ec5-8333-791bc1bd96b3": {
+            "type": "item",
+            "settings": {
+              "title": "Can I shop in person and where is your warehouse located?",
+              "content": "<p>Yes! Our showroom is open from 10-7pm Monday-Saturday (excluding holidays) to try on, exchange, return, and shop!<\/p><p>We are located at: <\/p><p>Ivy City Co.<\/p><p>9180 S 500 W<\/p><p>Suite B<\/p><p>Sandy, UT 84070<\/p>"
+            }
+          },
+          "6440e9d4-24e6-4001-97e4-b610376e2f38": {
+            "type": "item",
+            "settings": {
+              "title": "When can I pick up my order?",
+              "content": "<p>Once you receive your “Ready for Pick-Up” email, you are welcome to come and pick up your order. Please click <a href=\"https:\/\/ivycityco.com\/pages\/showrooms\" title=\"https:\/\/ivycityco.com\/pages\/showrooms\">here<\/a> for showroom hours and location. <\/p>"
+            }
+          },
+          "767fba2e-1543-4624-bd30-640b6c4a4ac9": {
+            "type": "item",
+            "settings": {
+              "title": "Order Processing and Shipping Questions",
+              "content": "<p>Please see our Shipping Policy page <a href=\"https:\/\/ivycityco.com\/pages\/shipping-policy\"><span style=\"text-decoration:underline\">here<\/span><\/a> for more details. <\/p>"
+            }
+          },
+          "18cefcbc-6ae9-4a0b-947d-070346ea725b": {
+            "type": "item",
+            "settings": {
+              "title": "Can I cancel or make changes to my order?",
+              "content": "<p>We have a short window to make a change to an order, or cancellation. If you need to cancel or make a change, please email us at <a href=\"mailto:hello@ivycityco.com\"><span style=\"text-decoration:underline\">hello@ivycityco.com<\/span><\/a> or reach out via live chat on our site. Please note, we can not guarantee the change\/cancellation, however we will do our best to accommodate you! <\/p>"
+            }
+          },
+          "6938d419-2fe5-42f0-8011-aa95e88e907e": {
+            "type": "item",
+            "settings": {
+              "title": "What is your return policy?",
+              "content": "<p>Please click <a href=\"https:\/\/ivycityco.com\/pages\/returns-exchanges-hr\"><span style=\"text-decoration:underline\">here<\/span><\/a> for our full return policy details. <\/p>"
+            }
+          },
+          "e77d15c5-ba33-49d7-868a-66e6bcfd45c6": {
+            "type": "item",
+            "settings": {
+              "title": "Sizing",
+              "content": "<p>Check out our Size Guide <a href=\"https:\/\/ivycityco.com\/pages\/find-your-size\"><span style=\"text-decoration:underline\">here<\/span><\/a>! <\/p>"
+            }
+          },
+          "92597878-2ecd-4fab-b09d-4e7884e8f961": {
+            "type": "item",
+            "settings": {
+              "title": "What if my order is lost?",
+              "content": "<p>We recommend purchasing Shipping Protection at checkout, as this protects your order from when it leaves our warehouse. We can not replace or refund lost orders that do not have Shipping Protection. <\/p><p>Please note, Shipping Protection does not cover orders lost due to incorrect information entered at checkout. We always recommend double checking your shipping details before completing your purchase. <\/p>"
+            }
+          },
+          "0e5b7c19-6cd6-48d3-b4df-8684c995ca7a": {
+            "type": "item",
+            "settings": {
+              "title": "How do I use my gift card or store credit?",
+              "content": "<p>Gift cards and store credit can be used and entered at checkout. You will just want to enter the gift card number in the Discount Code box before submitting your order.<\/p>"
+            }
+          },
+          "5a761b60-cf96-429a-b596-171e9f1b9d30": {
+            "type": "item",
+            "settings": {
+              "title": "How do I collaborate with Ivy City Co?",
+              "content": "<p>If you are interested in working with us, you will just want to fill out a submission on our \"Collaborate with Us\" page at the bottom of our website. Once that's done it will be reviewed by our collaboration team. If we need any additional information or would like to move forward with setting up a collaboration we will reach out to you!<\/p>"
+            }
+          },
+          "abcef93f-31a6-48db-986e-67aba8461f66": {
+            "type": "item",
+            "settings": {
+              "title": "How do I use Afterpay and how does it work?",
+              "content": "<p>When checking out, the AfterPay option can be selected on the payment page. There is a box below the credit card information box where you can select the AfterPay option. AfterPay gives you the option to pay for your order in 4 equal, interest free payments, instead of all at once. <\/p>"
+            }
+          },
+          "9e728720-c110-4340-9fb2-da5b035a7edb": {
+            "type": "item",
+            "settings": {
+              "title": "What if something is wrong with my order?",
+              "content": "<p>Please contact us directly if something is wrong with your order!<\/p><p>You can either contact us directly through the CONTACT US tab or by email at <a href=\"mailto:hello@ivycityco.com\"><span style=\"text-decoration:underline\">hello@ivycityco.com<\/span><\/a>. Please include your name, order number, pictures of the issue (if relevant), and a brief description of the issue.<\/p>"
+            }
+          },
+          "fa2e1162-6125-43a9-806d-d2132eb2336a": {
+            "type": "item",
+            "settings": {
+              "title": "Rewards Questions",
+              "content": "<p>Please see our Rewards page <a href=\"https:\/\/ivycityco.com\/pages\/loyalty\"><span style=\"text-decoration:underline\">here<\/span><\/a> for more details. <\/p>"
+            }
+          },
+          "ad11e414-3699-48b7-97cd-275bb18da478": {
+            "type": "item",
+            "settings": {
+              "title": "Where are your dresses made?",
+              "content": "<p>We are proud to be partnered with some of the best manufacturers in the world that prioritize both the care of the garments and the people who help create them.  Our dresses are dreamt up at our HQ in Utah and brought to life across our facilites in Asia.  We are proud to support and create with a fellow female-founded facility in China and a GOTS certified factory in India. <\/p><p>Not all factories are made equal and you can trust we have done our research and hand-selected only the best to create your Ivy City pieces. <br\/>How clothing is made and how those are treated how make them matters. <\/p>"
+            }
+          },
+          "7a24239f-b1cc-40e6-8fd4-3f20716fe370": {
+            "type": "item",
+            "settings": {
+              "title": "How is your pricing determined?",
+              "content": "<p>Our prices are a direct result of how much it costs to make our original dresses and support our team to bring Ivy to life! Quality and care are two major focuses in both how we treat our apparel and our people. We aim to make pieces that will last so you can make memories in them for years to come. <\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "9dd0f1c3-d547-4ec5-8333-791bc1bd96b3",
+          "6440e9d4-24e6-4001-97e4-b610376e2f38",
+          "767fba2e-1543-4624-bd30-640b6c4a4ac9",
+          "18cefcbc-6ae9-4a0b-947d-070346ea725b",
+          "6938d419-2fe5-42f0-8011-aa95e88e907e",
+          "e77d15c5-ba33-49d7-868a-66e6bcfd45c6",
+          "92597878-2ecd-4fab-b09d-4e7884e8f961",
+          "0e5b7c19-6cd6-48d3-b4df-8684c995ca7a",
+          "5a761b60-cf96-429a-b596-171e9f1b9d30",
+          "abcef93f-31a6-48db-986e-67aba8461f66",
+          "9e728720-c110-4340-9fb2-da5b035a7edb",
+          "fa2e1162-6125-43a9-806d-d2132eb2336a",
+          "ad11e414-3699-48b7-97cd-275bb18da478",
+          "7a24239f-b1cc-40e6-8fd4-3f20716fe370"
+        ],
+        "settings": {}
+      },
+      "product-template": {
+        "type": "product-template",
+        "settings": {}
+      },
+      "size-guide-hero": {
+        "type": "size-guide-hero",
+        "blocks": {
+          "5af0eb80-ba02-4f9f-a868-ce20f9a96b27": {
+            "type": "content",
+            "settings": {
+              "title": "Bust",
+              "content": "<p>Place the tape measure just under your armpit, wrap it over the fullest part of your bustline and across your shoulder blades until you’ve reached your starting point to determine your approximate bust size.<\/p>"
+            }
+          },
+          "0344cb40-ddba-42fd-a412-fca29dd0c708": {
+            "type": "content",
+            "settings": {
+              "title": "Waist",
+              "content": "<p>Bend to one side to find the natural crease of your waist, set the tape measure at this crease and wrap it all the way around your waistline to find your true waist size.<\/p>"
+            }
+          },
+          "4edc9d8e-a951-46f0-95d3-a39beb629aef": {
+            "type": "content",
+            "settings": {
+              "title": "Hips",
+              "content": "<p>Place your feet together and stand nice and tall, wrap the measuring tape over the fullest part of your seat and around your front until the tape touches again below your belly button.<\/p>"
+            }
+          },
+          "53019467-4848-45cf-864d-0e6619935c08": {
+            "type": "content",
+            "settings": {
+              "title": "Length",
+              "content": "<p>To envision the dress length on you, check the chart for the measurement listed under “length,” find that number on your measuring tape and pinch it between your fingers—hold it to the top of your shoulder and let the rest of the tape dangle down your legs, noting where “0 inches” hits.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "5af0eb80-ba02-4f9f-a868-ce20f9a96b27",
+          "0344cb40-ddba-42fd-a412-fca29dd0c708",
+          "4edc9d8e-a951-46f0-95d3-a39beb629aef",
+          "53019467-4848-45cf-864d-0e6619935c08"
+        ],
+        "settings": {
+          "heading": "",
+          "hero_image": "shopify:\/\/shop_images\/size-guide-hero_2400x_c777570f-6d28-4ede-9a92-875ab0ae9b93.jpg"
+        }
+      },
+      "size-guide-our-models": {
+        "type": "size-guide-our-models",
+        "blocks": {
+          "eed273d7-b16b-4e64-a4dd-a2e36fd5b59c": {
+            "type": "model",
+            "settings": {
+              "name": "TASH",
+              "photo": "shopify:\/\/shop_images\/Natasha-1_800x_a5cd389a-83a8-43d6-8fb0-34993c9cf212.jpg",
+              "instagramId": "tashthomasxoxo",
+              "about": "<p>Tash is an Ivy City Co Co-Owner! She is the kindest soul and makes Ivy City feel like home! She loves reading fantasy love stories and spending time with her sweet family.<\/p>",
+              "looks_cta": "shopify:\/\/collections\/tashs-looks",
+              "height": "5'4\"",
+              "waist": "27\"",
+              "hips": "38\"",
+              "bust": "36\"",
+              "ivy_dress_size": "Small"
+            }
+          },
+          "21cc28f0-46e1-413e-a904-0419037a2b44": {
+            "type": "model",
+            "disabled": true,
+            "settings": {
+              "name": "ANISTON",
+              "photo": "shopify:\/\/shop_images\/Aniston-1_800x_4d0ebac5-a078-4d33-964c-9e5fe8445cd3.jpg",
+              "instagramId": "",
+              "about": "<p>Aniston is Tash's daughter, and the spunkiest member of the Ivy City Fam! We love her hilarious personality - she makes every photoshoot a blast!<\/p>",
+              "looks_cta": "",
+              "height": "3'7\"",
+              "waist": "18.5\"",
+              "hips": "21\"",
+              "bust": "21\"",
+              "ivy_dress_size": "2T or 3T"
+            }
+          },
+          "78c7b649-062e-4dc0-9dc9-ddf396faf9b4": {
+            "type": "model",
+            "disabled": true,
+            "settings": {
+              "name": "BAYLEE",
+              "photo": "shopify:\/\/shop_images\/Baylee-1_800x_09cc5b69-5d9e-42b7-878e-caa9c212dfd5.jpg",
+              "instagramId": "abaybay_12",
+              "about": "<p>Baylee is a 4th grade teacher with a heart of gold. She is from Mapleton, Utah and she finds joy going on fall drives through the canyon. She loves laughing and can do lots of fun impressions! We love having her on the Ivy City team!<\/p>",
+              "looks_cta": "shopify:\/\/collections\/baylees-looks",
+              "height": "5’10”",
+              "waist": "28”",
+              "hips": "30”",
+              "bust": "37.5”",
+              "ivy_dress_size": "Small"
+            }
+          },
+          "54a109a3-b248-4d17-844e-a17403ecba23": {
+            "type": "model",
+            "settings": {
+              "name": "KAYT",
+              "photo": "shopify:\/\/shop_images\/Kayt-3_800x_df9cf6d2-5496-446a-a5ca-e3ca36b51992.jpg",
+              "instagramId": "kaytmurrs",
+              "about": "<p>Kayt is a talented performer who brings life to any stage she's on. She loves good music, and although she identifies as a shy person we love the vibrant energy she brings to our team!<\/p>",
+              "looks_cta": "shopify:\/\/collections\/kayts-looks",
+              "height": "5'9\"",
+              "waist": "25\"",
+              "hips": "35\"",
+              "bust": "31\"",
+              "ivy_dress_size": "Extra Small"
+            }
+          },
+          "5a114f7f-f358-4276-bd56-a297ac4f2fe2": {
+            "type": "model",
+            "settings": {
+              "name": "ANASTASIA",
+              "photo": "shopify:\/\/shop_images\/Anastasia-1_800x_aa4f647f-6302-4591-ab87-a13d8d5599b7.jpg",
+              "instagramId": "anastasia.furrow",
+              "about": "<p>Anastasia is a beach lover from Houston, Texas. Her mantra is \"I am worthy and open to receiving anything I want\". We love the energy she brings to our team, and we're so happy to have her as part of the Ivy fam!<\/p>",
+              "looks_cta": "shopify:\/\/collections\/anastasias-looks",
+              "height": "5’4”",
+              "waist": "34”",
+              "hips": "46”",
+              "bust": "40”",
+              "ivy_dress_size": "Extra Large"
+            }
+          },
+          "fc29e12b-fc8b-4737-be2f-708dd28090f5": {
+            "type": "model",
+            "settings": {
+              "name": "Flo",
+              "photo": "shopify:\/\/shop_images\/Flo-1_800x_0f2a7968-ec1b-4887-8d3a-1ace8d0eb719.jpg",
+              "instagramId": "igowtheflo",
+              "about": "<p>Flo is originally from Uruguay, but has spent most of her life calling Utah home. She speaks 3 languages and loves learning about different cultures! Her favorite thing to do is spend time outdoors with her sweet little family. We love having Flo model for us, she exudes kindness!<\/p>",
+              "looks_cta": "shopify:\/\/collections\/flos-looks",
+              "height": "5'2\"",
+              "waist": "33\"",
+              "hips": "45\"",
+              "bust": "41\"",
+              "ivy_dress_size": "1X"
+            }
+          },
+          "e5d96ab1-8d77-405d-8a0d-119e618e46a9": {
+            "type": "model",
+            "settings": {
+              "name": "Amelia",
+              "photo": "shopify:\/\/shop_images\/Amelia-1_800x_3f53f908-0610-4606-ba44-b9b0fa9efe2b.jpg",
+              "instagramId": "helloameliahere",
+              "about": "<p>Amelia is a Utah local who lives by the words \"look for the sunshine, even in the midst of the storm\". She has two dogs, a black lab and a German shepherd, and her happy place is on the beach at sunset watching her pups play while she eats an açaí bowl. We love her!<\/p>",
+              "looks_cta": "shopify:\/\/collections\/amelias-looks",
+              "height": "5'9\"",
+              "waist": "39\"",
+              "hips": "48\"",
+              "bust": "44\"",
+              "ivy_dress_size": "1X"
+            }
+          },
+          "914c103d-b3e2-4c24-93d1-296f34559d36": {
+            "type": "model",
+            "disabled": true,
+            "settings": {
+              "name": "Julia",
+              "photo": "shopify:\/\/shop_images\/JuliaMain_800x_4134d0c7-25f4-411e-9bc7-521199a231c0.jpg",
+              "instagramId": "juliameirelesmodel",
+              "about": "<p>Julia is our favorite Brazilian Babe! She is from Rio de Janeiro and has lived in 4 different countries. In her free time, she loves to read and edit videos - we love her!<\/p>",
+              "looks_cta": "",
+              "height": "5'6\"",
+              "waist": "26\"",
+              "hips": "35\"",
+              "bust": "33\"",
+              "ivy_dress_size": "Extra Small"
+            }
+          },
+          "a05804d7-53ff-4d9d-8cd7-0e5ffe04d7d5": {
+            "type": "model",
+            "disabled": true,
+            "settings": {
+              "name": "Devery",
+              "photo": "shopify:\/\/shop_images\/DeveryWillow_800x_cfef28cd-3b41-4886-b1ce-a4d3dc2f2543.jpg",
+              "instagramId": "deveryirving",
+              "about": "<p>Devery is a city lover with small town roots! She is from Wyoming but is now a hairstylist in downtown Salt Lake City and she is super passionate about her work! In her spare time she loves hosting parties and celebrating life!<\/p>",
+              "looks_cta": "",
+              "height": "5'7\"",
+              "waist": "29.5\"",
+              "hips": "33.5\"",
+              "bust": "33\"",
+              "ivy_dress_size": "Extra Small"
+            }
+          },
+          "d99d9701-6e28-4bd6-b152-4e96f034da31": {
+            "type": "model",
+            "settings": {
+              "name": "Rach",
+              "photo": "shopify:\/\/shop_images\/RachGenevieve_800x_953cc52b-ed25-432b-b6e9-e4afe8e7b4a7.jpg",
+              "instagramId": "rachxoanne",
+              "about": "<p>Rach is a Salt Lake City local, but she actually spent some time in Saint Thomas, US Virgin Islands, on an internship! In her free time she enjoys doing anything creative, going on bike rides, and making memories with her loved ones. She is the nicest person ever!<\/p>",
+              "looks_cta": "shopify:\/\/collections\/rachs-looks",
+              "height": "5'8\"",
+              "waist": "26.5\"",
+              "hips": "39.5\"",
+              "bust": "34\"",
+              "ivy_dress_size": "Small"
+            }
+          },
+          "dfcc7073-dd37-44b7-a93e-4fd92c354168": {
+            "type": "model",
+            "disabled": true,
+            "settings": {
+              "name": "Blake",
+              "photo": "shopify:\/\/shop_images\/BlakeStella_800x_adf6d51f-47d0-418b-97bc-430c9bbd7171.jpg",
+              "instagramId": "",
+              "about": "<p>Blake is Devery's daughter, and the sweetest babe! You can always find her playing princess dress-up while playing with her dinosaurs.<\/p>",
+              "looks_cta": "",
+              "height": "3'1\"",
+              "waist": "19.5\"",
+              "hips": "20\"",
+              "bust": "20.5\"",
+              "ivy_dress_size": "3T"
+            }
+          },
+          "f4ff0cb3-c74f-407c-96f6-52424ed1091c": {
+            "type": "model",
+            "settings": {
+              "name": "Whit",
+              "photo": "shopify:\/\/shop_images\/Whit.jpg",
+              "instagramId": "",
+              "about": "<p>Whit is an Ivy City Co Co-Owner! She is so smart and kind, and always takes care of her people. She is a CPA, business owner, and mom of 3, and she handles life like a boss!<\/p>",
+              "looks_cta": "https:\/\/ivycityco.com\/collections\/whits-looks",
+              "height": "5'4\"",
+              "waist": "27\"",
+              "hips": "35\"",
+              "bust": "34\"",
+              "ivy_dress_size": "Small"
+            }
+          },
+          "dced37b6-0ce2-4bbb-a0cc-203d39208a68": {
+            "type": "model",
+            "settings": {
+              "name": "Tiffany",
+              "photo": "shopify:\/\/shop_images\/Tiffany.jpg",
+              "instagramId": "tiffanypliler",
+              "about": "<p>Tiff is a creative soul with the kindest heart. She is a graphic designer and incredible model. Everything she's a part of turns to gold and we absolutely love working with her!<\/p>",
+              "looks_cta": "https:\/\/ivycityco.com\/collections\/tiffanys-looks",
+              "height": "5'9\"",
+              "waist": "24\"",
+              "hips": "37\"",
+              "bust": "34\"",
+              "ivy_dress_size": "Extra small"
+            }
+          }
+        },
+        "block_order": [
+          "eed273d7-b16b-4e64-a4dd-a2e36fd5b59c",
+          "21cc28f0-46e1-413e-a904-0419037a2b44",
+          "78c7b649-062e-4dc0-9dc9-ddf396faf9b4",
+          "54a109a3-b248-4d17-844e-a17403ecba23",
+          "5a114f7f-f358-4276-bd56-a297ac4f2fe2",
+          "fc29e12b-fc8b-4737-be2f-708dd28090f5",
+          "e5d96ab1-8d77-405d-8a0d-119e618e46a9",
+          "914c103d-b3e2-4c24-93d1-296f34559d36",
+          "a05804d7-53ff-4d9d-8cd7-0e5ffe04d7d5",
+          "d99d9701-6e28-4bd6-b152-4e96f034da31",
+          "dfcc7073-dd37-44b7-a93e-4fd92c354168",
+          "f4ff0cb3-c74f-407c-96f6-52424ed1091c",
+          "dced37b6-0ce2-4bbb-a0cc-203d39208a68"
+        ],
+        "settings": {}
+      },
+      "page-shipping-policy": {
+        "type": "page-shipping-policy",
+        "blocks": {
+          "822bb26a-fb45-412d-8ae4-6828425a256e": {
+            "type": "item",
+            "settings": {
+              "title": "Order Processing Time",
+              "content": "<p>Please note, your order will need 3-5 business days before it is ready for shipment. Once your order has processed, it will ship according to your selected shipping method.<\/p><p><\/p><p>If you are needing your items quickly, we do recommend purchasing expedited shipping to help speed up the process. <\/p><p><\/p><p>Please note, we can not make changes to your shipping method after your order has been placed. So please ensure your address information and shipping speed is correct before completing your purchase. <\/p>"
+            }
+          },
+          "b9a8a87e-b40f-4c71-b635-47389b26da57": {
+            "type": "item",
+            "settings": {
+              "title": "How much is shipping?",
+              "content": "<p>Shipping is now a calculated cost based off of the weight of your order. We are excited to offer three UPS shipping speeds dependent on your needs. You will see those different price options at check out. We also offer a local pick up option that is free for our Utah locals. <\/p>"
+            }
+          },
+          "dfecbe6c-6422-4a51-97af-1c74ce83e734": {
+            "type": "item",
+            "settings": {
+              "title": "Shipping Times",
+              "content": "<p>Please keep in mind the different shipping methods when placing your order.<\/p><p>-All UPS air shipment options only move Monday - Friday. There is not deliveries or movement on the weekends. <\/p><p>-UPS ground shipments move Monday-Saturday. <\/p>"
+            }
+          },
+          "b060cfea-e7cb-447d-ac58-c622a898f31d": {
+            "type": "item",
+            "settings": {
+              "title": "Next Day Shipping",
+              "content": "<p>In order to guarantee next day order arrival we urge you to purchase our<strong>UPS NEXT DAY AIR<\/strong>at check out. <\/p><p>Any orders placed after 12pm MDT Mon-Th will not go out until the following business day and purchases made after 12pm MST on Friday, will not be processed until the following Monday.<\/p><p><\/p><p>All UPS air shipment options only move Monday - Friday. There is not deliveries or movement on the weekends.<\/p>"
+            }
+          },
+          "5e109e4f-8676-4d90-92e8-9f3b79380f20": {
+            "type": "item",
+            "settings": {
+              "title": "What does shipping protection cover?",
+              "content": "<p>At checkout you can select Shipping Protection for your order.  This shipping insurance protects your order for any lost, damaged, or stolen packages.  We recommend adding this valuable coverage to your order.  <\/p><p>The shipping protection is an affordable guarantee that if your package doesn’t make it to you or is damaged during transit, you will be compensated.  <strong>Ivy City Co. is not responsible for lost, damaged, or stolen packages.<\/strong>  With the shipping protection added to your order we are able to make sure you are compensated.  <\/p><p><strong>For Lost Packages:<\/strong><\/p><p><em>Tracking says delivered but is missing:<\/em><\/p><p>-Please check your front and back porch, side door, garage area, bushes and mailbox to make sure it’s not hiding. Ask your neighbors if they might have received it for you.<\/p><p>-Please wait at least 3 business days but no longer than 12 days from when your tracking says delivered before taking action.<\/p><p>for <strong>Damaged or Stolen <\/strong>packages please reach out to our customer service team at hello@ivycityco.com. We would love to help in locating and finding a solution for your package. <\/p>"
+            }
+          },
+          "7011f7c6-6a43-4c1a-8c6f-48bfadc470e5": {
+            "type": "item",
+            "settings": {
+              "title": "International Customs & Duties",
+              "content": "<p>International duties and taxes are now going to be collected at check out. You will no longer be charged once your package arrives to your doorstep. We sure hope this helps!<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "822bb26a-fb45-412d-8ae4-6828425a256e",
+          "b9a8a87e-b40f-4c71-b635-47389b26da57",
+          "dfecbe6c-6422-4a51-97af-1c74ce83e734",
+          "b060cfea-e7cb-447d-ac58-c622a898f31d",
+          "5e109e4f-8676-4d90-92e8-9f3b79380f20",
+          "7011f7c6-6a43-4c1a-8c6f-48bfadc470e5"
+        ],
+        "settings": {}
+      },
+      "page-template-careers": {
+        "type": "page-template-careers",
+        "blocks": {
+          "cb901b8f-1f6b-44b7-be2d-30a2e63f1ba8": {
+            "type": "team_member",
+            "settings": {
+              "photo": "shopify:\/\/shop_images\/natasha_-_careers.jpg",
+              "title": "Natasha Thomas",
+              "job_title": "Founder"
+            }
+          },
+          "8c6b7578-764e-4bbb-928a-2bebff58a03e": {
+            "type": "team_member",
+            "settings": {
+              "photo": "shopify:\/\/shop_images\/whitney-c.jpg",
+              "title": "Whitney Smith, CPA",
+              "job_title": "Founder"
+            }
+          },
+          "ae0f6322-4556-40d3-b6f4-cb79f1b1eaaf": {
+            "type": "team_member",
+            "settings": {
+              "photo": "shopify:\/\/shop_images\/madeline-careers.jpg",
+              "title": "Madeline Becker Hamilton",
+              "job_title": "Founder"
+            }
+          },
+          "c85103d3-1566-4d1c-912e-698abd890ef4": {
+            "type": "team_member",
+            "settings": {
+              "photo": "shopify:\/\/shop_images\/kendra_-_careers.jpg",
+              "title": "Kendra",
+              "job_title": "CFO"
+            }
+          },
+          "b2ba603b-d0f5-478e-a9e8-3ce7bb7f0bc8": {
+            "type": "team_member",
+            "settings": {
+              "photo": "shopify:\/\/shop_images\/Jaden-VP-Operations-1.jpg",
+              "title": "Jaden",
+              "job_title": "VP of Ecommerce"
+            }
+          },
+          "c96e9af4-9fa1-4726-be18-f39de2d97b8e": {
+            "type": "team_member",
+            "settings": {
+              "photo": "shopify:\/\/shop_images\/Lauryn-Customer-Service-2.jpg",
+              "title": "Lauren",
+              "job_title": "Director of Customer Experience"
+            }
+          },
+          "f5841bbc-020f-4cc6-9fdc-f3875a2b4189": {
+            "type": "team_member",
+            "disabled": true,
+            "settings": {
+              "photo": "shopify:\/\/shop_images\/Mike-Fulfillment-Manager-1.jpg",
+              "title": "Mike",
+              "job_title": "Warehouse Manager"
+            }
+          },
+          "019f2a56-f1f1-4836-bb64-6186e76b2b3f": {
+            "type": "team_member",
+            "settings": {
+              "photo": "shopify:\/\/shop_images\/Amber-Public-Relations-1.jpg",
+              "title": "Amber",
+              "job_title": "Director of Partnerships"
+            }
+          },
+          "3de6c941-02d2-4c54-94e1-da78efae91b4": {
+            "type": "team_member",
+            "settings": {
+              "photo": "shopify:\/\/shop_images\/Hannah-Creative-Manager1.jpg",
+              "title": "Hannah",
+              "job_title": "Creative Manager"
+            }
+          },
+          "a2d675ac-ca5b-40a2-b05c-26c924c393ad": {
+            "type": "team_member",
+            "settings": {
+              "photo": "shopify:\/\/shop_images\/Kianna-Showroom-Manager-2.jpg",
+              "title": "Kianna",
+              "job_title": "Showroom Manager"
+            }
+          },
+          "473e0a77-8d97-40ff-9d04-da3f829f0246": {
+            "type": "team_member",
+            "settings": {
+              "photo": "shopify:\/\/shop_images\/Cami-Company-Culture-4.jpg",
+              "title": "Cami",
+              "job_title": "Community Manager"
+            }
+          },
+          "26daf628-1b32-4e3a-ba97-797f7f29969a": {
+            "type": "team_member",
+            "settings": {
+              "photo": "shopify:\/\/shop_images\/Mia-Product-Design-1.jpg",
+              "title": "Mia",
+              "job_title": "Product Development Manager"
+            }
+          },
+          "33d4b4b8-31eb-4a43-91ef-3420a150268e": {
+            "type": "team_member",
+            "disabled": true,
+            "settings": {
+              "photo": "shopify:\/\/shop_images\/Sarah-Marketing-Manager-1.jpg",
+              "title": "Sarah",
+              "job_title": "Marketing Manager"
+            }
+          },
+          "34983938-c862-4e87-940d-62a91d853845": {
+            "type": "team_member",
+            "settings": {
+              "photo": "shopify:\/\/shop_images\/tara_-_careers.jpg",
+              "title": "Tara",
+              "job_title": "Social Media Manager"
+            }
+          },
+          "add96745-2165-4f95-bd1f-fbf5637c9c1c": {
+            "type": "team_member",
+            "settings": {
+              "photo": "shopify:\/\/shop_images\/Meg-Operations-5.jpg",
+              "title": "Meg",
+              "job_title": "Operations Coordinator"
+            }
+          },
+          "3aea4019-2d6e-490b-830a-c76a6d0b5d36": {
+            "type": "team_member",
+            "disabled": true,
+            "settings": {
+              "photo": "shopify:\/\/shop_images\/Screen_Shot_2021-08-13_at_2.14.04_PM.png",
+              "title": "conley",
+              "job_title": "Intern"
+            }
+          },
+          "b21a1ff4-f25e-4d76-9ce4-a1958db12fb3": {
+            "type": "team_member",
+            "disabled": true,
+            "settings": {
+              "photo": "shopify:\/\/shop_images\/1615427901873.jpg",
+              "title": "bridger",
+              "job_title": "intern"
+            }
+          }
+        },
+        "block_order": [
+          "cb901b8f-1f6b-44b7-be2d-30a2e63f1ba8",
+          "8c6b7578-764e-4bbb-928a-2bebff58a03e",
+          "ae0f6322-4556-40d3-b6f4-cb79f1b1eaaf",
+          "c85103d3-1566-4d1c-912e-698abd890ef4",
+          "b2ba603b-d0f5-478e-a9e8-3ce7bb7f0bc8",
+          "c96e9af4-9fa1-4726-be18-f39de2d97b8e",
+          "f5841bbc-020f-4cc6-9fdc-f3875a2b4189",
+          "019f2a56-f1f1-4836-bb64-6186e76b2b3f",
+          "3de6c941-02d2-4c54-94e1-da78efae91b4",
+          "a2d675ac-ca5b-40a2-b05c-26c924c393ad",
+          "473e0a77-8d97-40ff-9d04-da3f829f0246",
+          "26daf628-1b32-4e3a-ba97-797f7f29969a",
+          "33d4b4b8-31eb-4a43-91ef-3420a150268e",
+          "34983938-c862-4e87-940d-62a91d853845",
+          "add96745-2165-4f95-bd1f-fbf5637c9c1c",
+          "3aea4019-2d6e-490b-830a-c76a6d0b5d36",
+          "b21a1ff4-f25e-4d76-9ce4-a1958db12fb3"
+        ],
+        "settings": {
+          "title": "",
+          "subtitle": "come join our work family",
+          "bg_image": "shopify:\/\/shop_images\/Group_6_Copy_2.jpg",
+          "bg_size": 20,
+          "bg_color": "#f9f0ef",
+          "hero_image": "shopify:\/\/shop_images\/Untitled-112.png",
+          "hero_intro": "<p>At Ivy City Co, our team is the heart of our company. We believe in creating a community of women who feel confident and empowered—that includes our shoppers and our employees.<\/p>",
+          "jtt_heading": "Join the Team",
+          "jtt_intro": "<p>We are growing our team and couldn’t be more excited to invite a new dress obsessed friend into our Ivy Family!! Do you believe in fast-growing small businesses? Do you like to work with a small but close-knit team? Do you like to bring positive energy to the party? If these apply to you, check out our current job openings below. (Click titles for full job description and instructions on how to apply.)<\/p>",
+          "bottom_text": "<p>We want the Ivy City Co offices to be full of laughter, support, and friendship rooted in the common goal of providing women and girls with unique, high quality pieces for their wardrobes. Our team is hard-working and resilient, and everyone is committed to grow our little business into a brand that inspires self-love and an appreciation for the beautiful things in life. From our shipping and service specialists to our marketing team - the Ivy Fam shows up for each other and for our customers.<\/p>",
+          "text_align": "center"
+        }
+      },
+      "press-page-header": {
+        "type": "press-page-header",
+        "settings": {
+          "title": "",
+          "subtitle": "catch up on the latest"
+        }
+      },
+      "index-press-logos": {
+        "type": "index-press-logos",
+        "blocks": {
+          "eaf8d10e-d15d-47bb-b8c5-9c525d412497": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/Bitmap_dd4416cb-6bd4-40fb-aa37-ffa1c9a6ab3a.png",
+              "link": "",
+              "open_new_tab": false
+            }
+          },
+          "e165164a-1511-4ca8-9c74-8b6597d5b509": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/38-387699_forbes-logo-png.png",
+              "link": "",
+              "open_new_tab": false
+            }
+          },
+          "d03f8605-5caf-41e9-b8ca-276a77ba01a4": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/Bitmap3.png",
+              "link": "",
+              "open_new_tab": false
+            }
+          },
+          "b95bc5c3-e372-4e41-a8ac-58cb1923d6cb": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/Bitmap4.png",
+              "link": "",
+              "open_new_tab": false
+            }
+          },
+          "55b602bd-e70e-48b4-a44c-11c98e28e128": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/Bitmap5.png",
+              "link": "",
+              "open_new_tab": false
+            }
+          },
+          "a679844a-6e27-4009-a4ff-bb1aeda0fd9c": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/Bitmap7.png",
+              "link": "",
+              "open_new_tab": false
+            }
+          },
+          "12ea459e-47d5-4f3b-9160-8396166b22a2": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/Bitmap8.png",
+              "link": "",
+              "open_new_tab": false
+            }
+          },
+          "f11015a7-e0c8-4aa5-b60e-2ad9d815eb15": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/Bitmap9.png",
+              "link": "",
+              "open_new_tab": false
+            }
+          },
+          "190e1e3e-cbfd-4577-b327-9ecf33784e14": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/Bitmap11.png",
+              "link": "",
+              "open_new_tab": false
+            }
+          },
+          "574ba77f-2355-4d22-b7a0-915237014138": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/Bitmap12.png",
+              "link": "",
+              "open_new_tab": false
+            }
+          },
+          "114ded5f-4104-49a0-ac0d-d6235d4e0c85": {
+            "type": "logo",
+            "settings": {
+              "link": "",
+              "open_new_tab": false
+            }
+          }
+        },
+        "block_order": [
+          "eaf8d10e-d15d-47bb-b8c5-9c525d412497",
+          "e165164a-1511-4ca8-9c74-8b6597d5b509",
+          "d03f8605-5caf-41e9-b8ca-276a77ba01a4",
+          "b95bc5c3-e372-4e41-a8ac-58cb1923d6cb",
+          "55b602bd-e70e-48b4-a44c-11c98e28e128",
+          "a679844a-6e27-4009-a4ff-bb1aeda0fd9c",
+          "12ea459e-47d5-4f3b-9160-8396166b22a2",
+          "f11015a7-e0c8-4aa5-b60e-2ad9d815eb15",
+          "190e1e3e-cbfd-4577-b327-9ecf33784e14",
+          "574ba77f-2355-4d22-b7a0-915237014138",
+          "114ded5f-4104-49a0-ac0d-d6235d4e0c85"
+        ],
+        "settings": {
+          "heading": "",
+          "linking_options": "global",
+          "global_link": ""
+        }
+      },
+      "press-as-seen-in": {
+        "type": "press-as-seen-in",
+        "blocks": {
+          "9f9db874-54cd-4398-b3f1-956fc6c44e16": {
+            "type": "featured_article",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Ivy_City_Co._Motherly_3.8.21.png",
+              "article_link": ""
+            }
+          },
+          "5df2a751-da28-4f6d-893a-064f79a38e03": {
+            "type": "featured_article",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Photo_Feb_10_10_54_59_AM.png",
+              "article_link": ""
+            }
+          },
+          "d17ef61c-f368-4fdb-94ca-4f4fcc3ac20d": {
+            "type": "featured_article",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Photo_Apr_26_10_40_12_AM.png",
+              "article_link": ""
+            }
+          },
+          "208be8f6-c20e-4ff6-9dab-b1c20d1d71bd": {
+            "type": "featured_article",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Photo_Mar_09_4_12_11_PM.png",
+              "article_link": ""
+            }
+          },
+          "a2c28570-b71e-49a4-9350-118add324de4": {
+            "type": "featured_article",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Photo_Apr_19_2_45_52_PM.png",
+              "article_link": ""
+            }
+          },
+          "1298a792-1d0f-43e6-8964-4f3e89478182": {
+            "type": "slider_item",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/daily-mom.jpg",
+              "main_image": "shopify:\/\/shop_images\/IMG_2404-1536x1437.jpg",
+              "content": "“Springtime is the perfect time to experience whimsy and imagination, and Ivy City Co. has the perfect spring dresses for any occasion.”",
+              "article_link": "#"
+            }
+          },
+          "7dcc4c75-9923-4154-9e37-57875e4eddc7": {
+            "type": "slider_item",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/new-york-post.jpg",
+              "main_image": "shopify:\/\/shop_images\/2021-DEMIVERAMADELINE-29.jpg",
+              "content": "“For those spring days where it’s still too chilly for sleeveless but you want to dawn a dress, Ivy City Co. is here to help.”",
+              "article_link": "#"
+            }
+          },
+          "ece368fb-3b60-41fc-9124-0f3736998dce": {
+            "type": "slider_item",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/download.png",
+              "main_image": "shopify:\/\/shop_images\/LINDSAYARNOLD-LIFESTYLE-WALKINGGROUP-8.jpg",
+              "content": "\"An ultra-feminine line of Mommy & Me dresses that are so sweet, swirly and feminine, they'll make her want to, well, dance.\"",
+              "article_link": "https:\/\/people.com\/parents\/mommy-and-me-matching-clothing-2021\/"
+            }
+          },
+          "fac4d238-5368-4a57-b675-ace2e891fc19": {
+            "type": "slider_item",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/download_1.png",
+              "main_image": "shopify:\/\/shop_images\/IVY-SPRING-21-LEJARDIN-315.jpg",
+              "content": "\"Moms with babies or little girls may appreciate that there is a baby and a mini matching dress available, so mother and child can have matching apparel.\"",
+              "article_link": "https:\/\/www.forbes.com\/sites\/robinraven\/2021\/04\/24\/mothers-day-gift-guide-the-best-dresses-for-travel\/?sh=6cbb35554196"
+            }
+          },
+          "3f55f0d2-3969-43eb-97b1-64284c283804": {
+            "type": "slider_item",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/favpng_nbc-news-logo-of-nbc-new-york-city.png",
+              "main_image": "shopify:\/\/shop_images\/GENEVIEVE-EASTER-LIFESTYLE-3.jpg",
+              "content": "\"These fashion brands can help keep you looking and feeling stylish, even during the pandemic.\"",
+              "article_link": "https:\/\/www.nbcnews.com\/shopping\/lifestyle\/women-owned-brands-n1260044"
+            }
+          }
+        },
+        "block_order": [
+          "9f9db874-54cd-4398-b3f1-956fc6c44e16",
+          "5df2a751-da28-4f6d-893a-064f79a38e03",
+          "d17ef61c-f368-4fdb-94ca-4f4fcc3ac20d",
+          "208be8f6-c20e-4ff6-9dab-b1c20d1d71bd",
+          "a2c28570-b71e-49a4-9350-118add324de4",
+          "1298a792-1d0f-43e6-8964-4f3e89478182",
+          "7dcc4c75-9923-4154-9e37-57875e4eddc7",
+          "ece368fb-3b60-41fc-9124-0f3736998dce",
+          "fac4d238-5368-4a57-b675-ace2e891fc19",
+          "3f55f0d2-3969-43eb-97b1-64284c283804"
+        ],
+        "settings": {
+          "heading": "As Seen In",
+          "bg_image": "shopify:\/\/shop_images\/bg_1_c9cd0adf-ca0f-42bd-addd-395aaef1d735.jpg",
+          "bg_size": 20,
+          "bg_color": ""
+        }
+      },
+      "press-as-seen-on": {
+        "type": "press-as-seen-on",
+        "blocks": {
+          "62a11bcc-fa7b-4f39-b0c2-5fb3dc620910": {
+            "type": "entry",
+            "settings": {
+              "main_image": "shopify:\/\/shop_images\/IMG_4958.jpg",
+              "title": "Joanna Gaines",
+              "content": "Author, Businesswoman"
+            }
+          },
+          "854eb3cc-2ed7-41f1-8962-eacfa8c5ed10": {
+            "type": "entry",
+            "settings": {
+              "main_image": "shopify:\/\/shop_images\/IMG_2404-1536x1437_2b9c7384-da2c-46fe-a791-e7808879c9ce.jpg",
+              "title": "Hilary Duff",
+              "content": "Actress, Singer, Businesswoman"
+            }
+          },
+          "635ce74e-cb17-4143-8076-0d909348a59a": {
+            "type": "entry",
+            "settings": {
+              "main_image": "shopify:\/\/shop_images\/IMG_2404-1536x14372.jpg",
+              "title": "Alex Morgan",
+              "content": "Professional Soccer Player, Olympian"
+            }
+          },
+          "83d54817-2bad-4213-9d3b-f8bcbc6cc2b9": {
+            "type": "entry",
+            "settings": {
+              "main_image": "shopify:\/\/shop_images\/Photo_Nov_19_1_44_56_PM.jpg",
+              "title": "Lindsay Arnold",
+              "content": "Professional Dancer, Dancing With The Stars"
+            }
+          },
+          "8e4809fc-e25c-41f9-bacd-5642a1189174": {
+            "type": "entry",
+            "settings": {
+              "main_image": "shopify:\/\/shop_images\/IMG_1698.jpg",
+              "title": "Jessica Alba",
+              "content": "Actress, Co-Owner of The Honest Company, Author"
+            }
+          },
+          "1314e4fb-6c1e-42c3-b21f-c860b78dd15d": {
+            "type": "entry",
+            "settings": {
+              "main_image": "shopify:\/\/shop_images\/Photo_Mar_24_5_02_25_AM.png",
+              "title": "Ali Larter",
+              "content": "Actress, Model"
+            }
+          },
+          "0dc9a2ce-0970-4537-98de-8ba392f07214": {
+            "type": "entry",
+            "settings": {
+              "main_image": "shopify:\/\/shop_images\/IMG_1697.jpg",
+              "title": "Chrissy Teigen",
+              "content": "Model, Businesswoman, TV Personality"
+            }
+          }
+        },
+        "block_order": [
+          "62a11bcc-fa7b-4f39-b0c2-5fb3dc620910",
+          "854eb3cc-2ed7-41f1-8962-eacfa8c5ed10",
+          "635ce74e-cb17-4143-8076-0d909348a59a",
+          "83d54817-2bad-4213-9d3b-f8bcbc6cc2b9",
+          "8e4809fc-e25c-41f9-bacd-5642a1189174",
+          "1314e4fb-6c1e-42c3-b21f-c860b78dd15d",
+          "0dc9a2ce-0970-4537-98de-8ba392f07214"
+        ],
+        "settings": {
+          "heading": "As Seen On",
+          "bg_image": "shopify:\/\/shop_images\/bg_2.jpg",
+          "bg_size": 20,
+          "bg_color": ""
+        }
+      },
+      "163788851482eb8bee": {
+        "type": "featured-collections",
+        "disabled": true,
+        "blocks": {
+          "ea5c18fd-b2e0-43e2-b598-e148d6a14932": {
+            "type": "feat_collection",
+            "settings": {
+              "feat_collection": "special-occasion-dresses",
+              "alt_image": "shopify:\/\/shop_images\/odessa-29.jpg"
+            }
+          },
+          "894aae79-cc94-40f6-bae0-1b379da6ffa1": {
+            "type": "feat_collection",
+            "settings": {
+              "feat_collection": "new-arrivals",
+              "alt_image": "shopify:\/\/shop_images\/madeline-plaid-plus-2.jpg"
+            }
+          },
+          "cca02557-c5b7-4c0d-aaa1-66d9de20c944": {
+            "type": "feat_collection",
+            "settings": {
+              "feat_collection": ""
+            }
+          }
+        },
+        "block_order": [
+          "ea5c18fd-b2e0-43e2-b598-e148d6a14932",
+          "894aae79-cc94-40f6-bae0-1b379da6ffa1",
+          "cca02557-c5b7-4c0d-aaa1-66d9de20c944"
+        ],
+        "settings": {
+          "bg_size": 100,
+          "bg_color": "#f9f0ef",
+          "title": "",
+          "layout": "grid"
+        }
+      },
+      "1641833148525c623a": {
+        "type": "index-foursixty-instagram",
+        "settings": {
+          "heading": "@ivycityco | follow the fun",
+          "foursixty_snippet": "<script src=\"\/\/foursixty.com\/media\/scripts\/fs.embed.v2.5.js\" data-feed-id=\"ivy-city-co\" data-theme=\"showcase_v2_5\" data-open-links-in-same-page=\"true\" data-connector-filter=\"41267,41268\" data-page-size=\"8\"><\/script>\n<style>.fs-has-links::after { padding:5px 7.5px;background-color:rgba(255,255,255,1);color:rgba(0,0,0,0.21);content:\"SHOP IT\"; } .fs-showcase_v2_5.fs-desktop .fs-entry-container { width:25% !important;padding-top:25% !important; } .fs-showcase_v2_5.fs-mobile .fs-entry-container { width:50% !important;padding-top:50% !important; } .fs-wrapper div.fs-text-container .fs-entry-title, div.fs-detail-title { font-family:A R Q U I T E C T A;font-style:normal;font-weight:normal;font-size:14px; } div.fs-text-container .fs-entry-date, div.fs-detail-container .fs-post-info, div.fs-wrapper div.fs-has-links::after, .fs-text-product, .fs-overlink-text { font-family:A R Q U I T E C T A;font-style:normal;font-weight:normal;font-size:14px; } .fs-wrapper div.fs-text-container * { color:rgba(255,255,255,1); } .fs-wrapper div.fs-text-container { background-color:rgba(0,0,0,0.21);margin:0px; } div.fs-entry-date { display:none; } div.fs-entry-title { display:none; } .fs-showcase_v2_5.fs-wrapper div.fs-timeline-entry { margin:2px; } <\/style>"
+        }
+      },
+      "1644617870853ac8d1": {
+        "type": "loox-carousel-reviews",
+        "settings": {
+          "max_width": 880,
+          "text_color": "#888888",
+          "background_color": "",
+          "arrows_color": "#cc99a1",
+          "dots_color": "#cc99a1",
+          "button_color": "#cccccc",
+          "show_more": true,
+          "only_photos": true,
+          "use_widget_font": false,
+          "product_handle": ""
+        }
+      },
+      "showroom-landing-template": {
+        "type": "showroom-landing-template",
+        "blocks": {
+          "78881395-8fbb-4165-a2a1-a05a2fe5a6c0": {
+            "type": "block",
+            "settings": {
+              "block_content": "<p><a href=\"https:\/\/www.instagram.com\/albionfitcitycreek\/\">FOLLOW US<\/a><\/p><p>Check out our Instagram for sneak peeks, early access, discounted samples and more.<\/p>",
+              "block_align": "right_align",
+              "btn_text": "FOLLOW @IVYCITYCOSHOWROOM",
+              "btn_url": "https:\/\/www.instagram.com\/ivycitycoshowroom",
+              "btn_type": "type1",
+              "block_image": "shopify:\/\/shop_images\/IVYCITY-SHOWROOM-3175.jpg",
+              "block_image2": "shopify:\/\/shop_images\/IVYCITY-SHOWROOM-3187.jpg",
+              "block_image3": "shopify:\/\/shop_images\/IVYCITY-SHOWROOM-3172.jpg",
+              "block_image4": "shopify:\/\/shop_images\/Photo_Apr_11_1_19_32_PM_1.jpg",
+              "block_image5": "shopify:\/\/shop_images\/Photo_Apr_11_1_19_32_PM_2.jpg",
+              "block_image6": "shopify:\/\/shop_images\/Photo_Apr_11_12_55_52_PM_1.jpg"
+            }
+          },
+          "27f8218d-54f2-4768-9556-ea0b228c61cb": {
+            "type": "block",
+            "settings": {
+              "block_content": "<p><strong>Hours:<\/strong><br\/>Monday-Saturday: 10am - 7pm<br\/>Sunday: Closed<\/p><p><br\/><strong>Address<\/strong><br\/>Sandy Showroom:<br\/>9180 S 500 W<br\/>Suite B<br\/>Sandy, Utah<br\/>84070<\/p>",
+              "block_align": "left_align",
+              "btn_text": "",
+              "btn_url": "",
+              "btn_type": "type1",
+              "block_image": "shopify:\/\/shop_images\/IVYCITY-SHOWROOM-3161.jpg",
+              "block_image2": "shopify:\/\/shop_images\/IVYCITY-SHOWROOM-3170.jpg"
+            }
+          },
+          "a4d26ccc-82d6-4ee0-9e52-f5c4a86052ef": {
+            "type": "map",
+            "settings": {
+              "block_map": "<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d3030.0707966298514!2d-111.9076956845989!3d40.58419267934602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8752898393e61539%3A0x4ba5a6cd4ce0692c!2sIvy%20City%20Co!5e0!3m2!1sen!2sus!4v1649697406820!5m2!1sen!2sus\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"><\/iframe>"
+            }
+          }
+        },
+        "block_order": [
+          "78881395-8fbb-4165-a2a1-a05a2fe5a6c0",
+          "27f8218d-54f2-4768-9556-ea0b228c61cb",
+          "a4d26ccc-82d6-4ee0-9e52-f5c4a86052ef"
+        ],
+        "settings": {
+          "page_title": "Ivy City Co Showroom",
+          "title": "<p><a href=\"https:\/\/ivycityco.com\/\" title=\"https:\/\/ivycityco.com\/\">Come shop with us! <\/a><\/p>",
+          "intro": "<p>We are so excited to announce the opening of our beautiful showroom for an in-person shopping experience! We are open <em>Monday - Saturday<\/em> <em>10am-7pm MT<\/em> and would love to have you stop by!<\/p>",
+          "bg_color": "",
+          "padding_top": 40,
+          "padding_bottom": 80
+        }
+      },
+      "165212365247bf6e85": {
+        "type": "section-video",
+        "settings": {
+          "height": "use_screen_two_thirds",
+          "video_link_bg": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/4a6caafec0ca4dd99d607fc7b5f4042a.mp4",
+          "video_link_bg_mob": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/4a6caafec0ca4dd99d607fc7b5f4042a.mp4",
+          "object_position": "center-center",
+          "bg_position": "center-center",
+          "video_link": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+          "popup_text": "",
+          "kicker": "",
+          "title": "",
+          "richtext": "",
+          "text_align": "align--middle-center",
+          "text_color": "text--white",
+          "overlay_opacity": 15,
+          "overlay_color": "#000000",
+          "floral": "floral_3.jpg",
+          "link_text": "",
+          "link": "shopify:\/\/collections\/ivy-city",
+          "button_color": "btn--white",
+          "button_style": "btn"
+        }
+      },
+      "page-template-loyalty": {
+        "type": "page-template-loyalty",
+        "blocks": {
+          "14a5f9e2-b048-414c-8777-9c8421c97e5f": {
+            "type": "item",
+            "settings": {
+              "title": "How do I sign up?",
+              "content": "<p>Click on the IC rewards icon in the lower left of your screen, then click sign up!<br\/><\/p>"
+            }
+          },
+          "1f6bfc62-3961-47d0-bc30-2c70cd850ec3": {
+            "type": "item",
+            "settings": {
+              "title": "How do I access my rewards?",
+              "content": "<p>Simply click on the rewards icon in the lower left, sign in and then you’ll see all your rewards info.<br\/><\/p>"
+            }
+          },
+          "c55dbf6d-8671-411a-8d59-2c2a335a1de3": {
+            "type": "item",
+            "settings": {
+              "title": "How do I earn rewards?",
+              "content": "<p>Shop, leave reviews, like us on Facebook, and more! Just be sure you’re signed into your rewards account. You can see all ways to earn through the rewards portal. *Reviews on shipping protection and gift cards are not eligible for earning rewards.<\/p>"
+            }
+          },
+          "c44f0585-bc9a-4f0e-a5b7-5566fb8adce0": {
+            "type": "item",
+            "settings": {
+              "title": "How do I redeem rewards?",
+              "content": "<p>Click on the IC rewards icon, click ways to redeem, and all available rewards will be shown.<\/p>"
+            }
+          },
+          "03e7321a-a266-4ef4-bbf7-aa0625fa9010": {
+            "type": "item",
+            "settings": {
+              "title": "Are rewards points refundable?",
+              "content": "<p>Rewards points are not refundable.<\/p>"
+            }
+          },
+          "b8bee688-f121-4080-a44d-f0b049e259bb": {
+            "type": "item",
+            "settings": {
+              "title": "Why didn’t I get my birthday points?",
+              "content": "<p>In order to redeem birthday points, you’ll want to make sure you have entered your birth date 30 days prior to your birthday. If you’ve done that, it may take a day or two to show.<\/p>"
+            }
+          },
+          "42a49593-c93d-4d70-a943-c1761c88fadf": {
+            "type": "item",
+            "settings": {
+              "title": "Questions",
+              "content": "<p>If you have any additional questions, our team is happy to help! Chat with us live on the site during our chat business hours, or email us at <a href=\"mailto:hello@ivycityco.com\" target=\"_self\" title=\"null\">hello@ivycityco.com<\/a><\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "14a5f9e2-b048-414c-8777-9c8421c97e5f",
+          "1f6bfc62-3961-47d0-bc30-2c70cd850ec3",
+          "c55dbf6d-8671-411a-8d59-2c2a335a1de3",
+          "c44f0585-bc9a-4f0e-a5b7-5566fb8adce0",
+          "03e7321a-a266-4ef4-bbf7-aa0625fa9010",
+          "b8bee688-f121-4080-a44d-f0b049e259bb",
+          "42a49593-c93d-4d70-a943-c1761c88fadf"
+        ],
+        "settings": {}
+      },
+      "1659982512c609b664": {
+        "type": "section-insta-photos",
+        "blocks": {
+          "6ae4ab0f-bb01-429c-93fc-804485caec2a": {
+            "type": "photo",
+            "settings": {
+              "photo": "shopify:\/\/shop_images\/CUSTOMER-08.jpg"
+            }
+          },
+          "2309817d-736b-44c0-9bb2-e9c137918739": {
+            "type": "photo",
+            "settings": {
+              "photo": "shopify:\/\/shop_images\/CUSTOMER-03.jpg"
+            }
+          },
+          "3c8e91e8-8b8d-419f-adb1-365f0ffd8c5e": {
+            "type": "photo",
+            "settings": {
+              "photo": "shopify:\/\/shop_images\/CUSTOMER-12.jpg"
+            }
+          },
+          "566402a3-5c00-48fc-be1c-853e4715e2e0": {
+            "type": "photo",
+            "settings": {
+              "photo": "shopify:\/\/shop_images\/CUSTOMER-10.jpg"
+            }
+          },
+          "182b81ff-82a3-43ff-b9c9-718f61993cfd": {
+            "type": "photo",
+            "settings": {
+              "photo": "shopify:\/\/shop_images\/CUSTOMER-04.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "6ae4ab0f-bb01-429c-93fc-804485caec2a",
+          "2309817d-736b-44c0-9bb2-e9c137918739",
+          "3c8e91e8-8b8d-419f-adb1-365f0ffd8c5e",
+          "566402a3-5c00-48fc-be1c-853e4715e2e0",
+          "182b81ff-82a3-43ff-b9c9-718f61993cfd"
+        ],
+        "settings": {
+          "heading": "Ivy City Co Showroom"
+        }
+      },
+      "showrooms-top": {
+        "type": "showrooms-top",
+        "blocks": {
+          "e04d74fc-9718-4fc8-a9b3-fe05814bb6f3": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/CUSTOMER-26.jpg"
+            }
+          },
+          "724ffb09-705a-49af-b468-6d70d21314aa": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/CUSTOMER-27.jpg"
+            }
+          },
+          "d956cdd6-4b68-4fab-b9a6-33b82bcd9226": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/CUSTOMER-19.jpg"
+            }
+          },
+          "9c9e6dc3-8a91-4dd3-9070-fd788e83bde9": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/CUSTOMER-22.jpg"
+            }
+          },
+          "46c15e6c-1ec4-4bf8-9b34-5dcb1bf13f2f": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/CUSTOMER-20.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "e04d74fc-9718-4fc8-a9b3-fe05814bb6f3",
+          "724ffb09-705a-49af-b468-6d70d21314aa",
+          "d956cdd6-4b68-4fab-b9a6-33b82bcd9226",
+          "9c9e6dc3-8a91-4dd3-9070-fd788e83bde9",
+          "46c15e6c-1ec4-4bf8-9b34-5dcb1bf13f2f"
+        ],
+        "settings": {
+          "visit_us": "Come visit us IRL. We want to meet you!",
+          "title": "The Ivy City Co Showroom",
+          "open_hours": "is open:<br>Monday - Saturday<br>10am-7pm MT",
+          "content": "We are so excited to announce the opening of our beautiful showroom<br>for an in-person shopping experience!<br>We are open Monday - Saturday 10am - 7pm and would love to have you stop by!"
+        }
+      },
+      "showrooms-social": {
+        "type": "showrooms-social",
+        "blocks": {
+          "d7ab968b-f053-458c-b3f1-1fa19e3e45e2": {
+            "type": "photo",
+            "settings": {
+              "photo": "shopify:\/\/shop_images\/ezgif.com-gif-maker.jpg"
+            }
+          },
+          "72e687a9-7697-4995-baaf-fa191759b237": {
+            "type": "photo",
+            "settings": {
+              "photo": "shopify:\/\/shop_images\/ezgif.com-gif-maker_1.jpg"
+            }
+          },
+          "5b823356-0a56-45a5-b6be-c1a1375cc9bc": {
+            "type": "photo",
+            "settings": {
+              "photo": "shopify:\/\/shop_images\/ezgif.com-gif-maker_2.jpg"
+            }
+          },
+          "aabd0321-593e-45b7-8b91-6aa43ff7d6c4": {
+            "type": "photo",
+            "settings": {
+              "photo": "shopify:\/\/shop_images\/ezgif.com-gif-maker_3.jpg"
+            }
+          },
+          "61798775-d923-4c1e-b169-13773664d056": {
+            "type": "photo",
+            "settings": {
+              "photo": "shopify:\/\/shop_images\/ezgif.com-gif-maker_4.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "d7ab968b-f053-458c-b3f1-1fa19e3e45e2",
+          "72e687a9-7697-4995-baaf-fa191759b237",
+          "5b823356-0a56-45a5-b6be-c1a1375cc9bc",
+          "aabd0321-593e-45b7-8b91-6aa43ff7d6c4",
+          "61798775-d923-4c1e-b169-13773664d056"
+        ],
+        "settings": {
+          "title": "Follow us on Instagram for excusive, local content!",
+          "insta_handle": "@ivycitycoshowroom"
+        }
+      },
+      "showrooms-bottom": {
+        "type": "showrooms-bottom",
+        "settings": {
+          "title": "<p><strong>Sandy Showroom:<\/strong><br\/>9180 S 500 W Suite B<br\/>Sandy, Utah 84070<\/p>"
+        }
+      },
+      "6ef248a6-018d-4ec9-8fb2-1af31adbf887": {
+        "type": "featured-product",
+        "custom_css": [],
+        "settings": {
+          "image": "shopify:\/\/shop_images\/Alaina-LeenaCollab23-10_17d7c1e5-377f-4d67-aa37-a6ac397c7204_1.jpg",
+          "second_image": "shopify:\/\/shop_images\/mini-Briar-Yellow-01.jpg",
+          "title": "Dress to impress with <br> our stunning new arrivals!",
+          "subtitle": "our 2023 easter collection is here!",
+          "btn_text": "Shop Now",
+          "btn_link": "shopify:\/\/collections\/new-arrivals"
+        }
+      },
+      "showroom-landing-template-new": {
+        "type": "showroom-landing-template-new",
+        "blocks": {
+          "78881395-8fbb-4165-a2a1-a05a2fe5a6c1": {
+            "type": "block",
+            "settings": {
+              "block_content": "<p><a href=\"https:\/\/www.instagram.com\/albionfitcitycreek\/\">FOLLOW US<\/a><\/p><p>Check out our Instagram for sneak peeks, early access, discounted samples and more.<\/p>",
+              "block_align": "right_align",
+              "btn_text": "FOLLOW @IVYCITYCOSHOWROOM",
+              "btn_url": "https:\/\/www.instagram.com\/ivycitycoshowroom",
+              "btn_type": "type1",
+              "block_image": "shopify:\/\/shop_images\/IVYCITY-SHOWROOM-3175.jpg",
+              "block_image2": "shopify:\/\/shop_images\/IVYCITY-SHOWROOM-3187.jpg",
+              "block_image3": "shopify:\/\/shop_images\/IVYCITY-SHOWROOM-3172.jpg",
+              "block_image4": "shopify:\/\/shop_images\/Photo_Apr_11_1_19_32_PM_1.jpg",
+              "block_image5": "shopify:\/\/shop_images\/Photo_Apr_11_1_19_32_PM_2.jpg",
+              "block_image6": "shopify:\/\/shop_images\/Photo_Apr_11_12_55_52_PM_1.jpg"
+            }
+          },
+          "27f8218d-54f2-4768-9556-ea0b228c61cc": {
+            "type": "block",
+            "settings": {
+              "block_content": "<p><strong>Hours:<\/strong><br\/>Monday-Friday: 10am - 7pm<br\/>Saturdays: 10am-2pm<br\/>Sunday: Closed<\/p><p><br\/><strong>Address<\/strong><br\/>Sandy Showroom:<br\/>9180 S 500 W<br\/>Suite B<br\/>Sandy, Utah<br\/>84070<\/p>",
+              "block_align": "left_align",
+              "btn_text": "",
+              "btn_url": "",
+              "btn_type": "type1",
+              "block_image": "shopify:\/\/shop_images\/IVYCITY-SHOWROOM-3161.jpg",
+              "block_image2": "shopify:\/\/shop_images\/IVYCITY-SHOWROOM-3170.jpg"
+            }
+          },
+          "a4d26ccc-82d6-4ee0-9e52-f5c4a86052ee": {
+            "type": "map",
+            "settings": {
+              "block_map": "<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d3030.0707966298514!2d-111.9076956845989!3d40.58419267934602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8752898393e61539%3A0x4ba5a6cd4ce0692c!2sIvy%20City%20Co!5e0!3m2!1sen!2sus!4v1649697406820!5m2!1sen!2sus\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"><\/iframe>"
+            }
+          }
+        },
+        "block_order": [
+          "78881395-8fbb-4165-a2a1-a05a2fe5a6c1",
+          "27f8218d-54f2-4768-9556-ea0b228c61cc",
+          "a4d26ccc-82d6-4ee0-9e52-f5c4a86052ee"
+        ],
+        "settings": {
+          "title": "<p>Let's Be Friends! <\/p>",
+          "intro": "<p>Sign up for our Email\/SMS list to be updated on all the launches, sales, and fun events! <\/p>",
+          "main_image": "shopify:\/\/shop_images\/NEW_YEARS-094.jpg",
+          "mob_main_image": "shopify:\/\/shop_images\/anne-3.jpg",
+          "bg_color": "",
+          "padding_top": 40,
+          "padding_bottom": 80
+        }
+      }
+    },
+    "content_for_index": [
+      "165212365247bf6e85",
+      "6ef248a6-018d-4ec9-8fb2-1af31adbf887",
+      "16165832620ed7ca53",
+      "1616581815c0773e8b",
+      "16165861291cf5d11a",
+      "1641833148525c623a",
+      "163788851482eb8bee",
+      "1617619137b61aa1e4",
+      "16165892731da49346",
+      "1644617870853ac8d1",
+      "1617963692d1524421",
+      "1659982512c609b664"
+    ]
+  }
+}

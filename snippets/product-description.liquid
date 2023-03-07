@@ -1,0 +1,10 @@
+<div class="Product__description {{classModifiers}}">
+  <div class="description">
+    {{product.description}}
+  </div>
+
+  {%- assign share_permalink = product.url -%}
+  {%- assign share_title = product.title -%}
+  {%- assign share_image = product.featured_image -%}
+  {% include 'social-sharing' %}
+</div>

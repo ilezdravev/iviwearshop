@@ -1,0 +1,8 @@
+{% layout 'landing' %}
+
+{% section 'lovers-collection-landing-template' %}
+
+<footer>
+  {% include 'social-nav' %}
+  <p class="copyright">&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: '/' }} | Design by <a href="http://maradesignco.com" target="_blank">Mara</a></p>
+</footer>

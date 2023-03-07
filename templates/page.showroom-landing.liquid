@@ -1,0 +1,28 @@
+{% layout 'landing' %}
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script
+  type="text/javascript"
+  src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+></script>
+<script src="{{ 'landing.min.js' | asset_url }}"></script>
+
+{% section 'site-header' %}
+
+<div class="Container Container--narrow">
+  <h2 class="showrooom-landing-title">{{ page.title }}</h2>
+  <div class="Main__content Page_content">
+    {% comment %}
+    {{ page.content }}
+    {% endcomment %}
+  </div>
+</div>
+
+{% section 'showroom-landing-template' %}
+
+{% section 'site-footer' %}

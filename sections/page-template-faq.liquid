@@ -1,0 +1,27 @@
+{% include 'accordion' object: section.blocks%}
+
+{% schema %}
+{
+  "name": "Accordion",
+  "settings": [
+  ],
+  "blocks": [ 
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

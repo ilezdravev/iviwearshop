@@ -1,0 +1,65 @@
+{% comment %} Set variable with options in available variants {% endcomment %}
+{% assign availableOptions = "" %}
+{% for v in product.variants %}
+  {% if v.available %}
+    {% for option in v.options %}
+      {% assign availableOptions = availableOptions | append: option | append: '|'%}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+{% assign availableOptions = availableOptions | split: '|' %}
+
+{% for option in product.options_with_values %}
+  {%- capture params -%}
+      {
+        {% if current_variant %}
+        "selected": {{ option.selected_value | json | escape }},
+        {% endif %} 
+        "index": {{forloop.index0 }},
+        "label": "Select {{ option.name }}"
+      }
+    {%- endcapture -%}
+    <div
+      data-component="ProductSelector"
+      class="selector-wrapper js Product__form__unit Product__form__option option-{{ forloop.index }}"
+      data-product-variant-selector-ui>
+
+      <label class="u-hidden" for="SingleOptionSelector-{{ forloop.index0 }}">
+        {{ option.name }}
+      </label>
+      
+      {% comment %} Wrapper For Custom Dropdown {% endcomment %}
+      {% assign opt = "" %}
+      {%- for val in option.values -%} 
+          {%- if availableOptions contains val -%}
+            {% capture the_option %}{'value':'{{val}}','disabled': 'false'}{% endcapture %}
+            {% assign opt = opt | append: the_option | append: '|'%}
+          {%- else -%}
+            {% capture the_option %}{'value':'{{val}}','disabled': 'true'}{% endcapture %}
+            {% assign opt = opt | append: the_option | append: '|' %}
+          {%- endif -%}
+        {%- endfor -%}
+
+      <div
+        class="component-wrapper"
+        data-params='{{ params }}'
+        data-options='{{opt | split: '|' | json | escape }}'></div>
+
+      {% comment %} Original Select Hidden {% endcomment %}
+      <select
+        id="option{{ option.position }}"
+        name="options[{{ option.name | escape }}]">  
+        <option value="" disabled {% unless current_variant %}selected{% endunless %}>Select {{option.name}}</option>
+        {% for value in option.values %}
+          <option
+            {% if current_variant and option.selected_value == value %}selected="selected"{% endif %}
+            {% unless availableOptions contains value %}
+              disabled
+            {% endunless %}
+            value="{{ value | escape }}">
+              {{ value }}
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+{% endfor %}

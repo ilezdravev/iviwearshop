@@ -1,0 +1,308 @@
+{
+  "sections": {
+    "richtext1": {
+      "type": "landing-richtext",
+      "settings": {
+        "title": "Spring Into Summer With Our Newest Collection",
+        "subtitle": "",
+        "text_align": "center"
+      }
+    },
+    "16631669742a635b88": {
+      "type": "landing-image-slider",
+      "blocks": {
+        "078562bb-09a2-4c6d-9c81-ed2bf75e25f3": {
+          "type": "photo",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/TUNNELPARK-santorinidressesgroup-49_1.jpg"
+          }
+        },
+        "e6464d57-18f5-4b46-a6d3-54475bbd676b": {
+          "type": "photo",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/whimsical-blush-short-small-3763.jpg"
+          }
+        },
+        "aec934a2-3c06-4d27-afc2-08c17337f8ef": {
+          "type": "photo",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/MADELINEDRESS-FULL-23_1.jpg"
+          }
+        },
+        "b70935de-0dc8-4e0b-a94e-0c9912ec7835": {
+          "type": "photo",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/santorini2-14_1.jpg"
+          }
+        },
+        "b757ead6-066d-4fe9-bf3a-51f5e4c00e7a": {
+          "type": "photo",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/whimsical-blush-short-small-3802_1.jpg"
+          }
+        },
+        "5fe45287-07c1-45ca-9597-3667f49e421e": {
+          "type": "photo",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/madeline-studioshoot-9708.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "078562bb-09a2-4c6d-9c81-ed2bf75e25f3",
+        "e6464d57-18f5-4b46-a6d3-54475bbd676b",
+        "aec934a2-3c06-4d27-afc2-08c17337f8ef",
+        "b70935de-0dc8-4e0b-a94e-0c9912ec7835",
+        "b757ead6-066d-4fe9-bf3a-51f5e4c00e7a",
+        "5fe45287-07c1-45ca-9597-3667f49e421e"
+      ],
+      "settings": {
+        "image_size": "small"
+      }
+    },
+    "3d3b8d28-4638-4210-bf26-3792da1b3a0d": {
+      "type": "index-press-logos",
+      "blocks": {
+        "3a601199-df51-4cfe-937e-a90aab6db3fd": {
+          "type": "logo",
+          "settings": {
+            "link": "shopify:\/\/pages\/in-the-press",
+            "open_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "3a601199-df51-4cfe-937e-a90aab6db3fd"
+      ],
+      "settings": {
+        "heading": "As Seen In",
+        "linking_options": "global",
+        "global_link": "shopify:\/\/pages\/in-the-press"
+      }
+    },
+    "image-with-items": {
+      "type": "landing-image-with-items",
+      "blocks": {
+        "ce135248-6d65-4111-be94-266c26c06694": {
+          "type": "text_item",
+          "settings": {
+            "text": "Text Item 1"
+          }
+        },
+        "c49d51c3-32e2-4ec9-ba04-2aa36862894e": {
+          "type": "text_item",
+          "settings": {
+            "text": "Text Item 2"
+          }
+        },
+        "9b8b37d6-20e5-4319-b9ee-974bc2ee127e": {
+          "type": "text_item",
+          "settings": {
+            "text": "Text Item 3"
+          }
+        },
+        "a0f0a8de-6772-4772-b7fe-1cc4b7fa431c": {
+          "type": "text_item",
+          "settings": {
+            "text": "Text Item 4"
+          }
+        }
+      },
+      "block_order": [
+        "ce135248-6d65-4111-be94-266c26c06694",
+        "c49d51c3-32e2-4ec9-ba04-2aa36862894e",
+        "9b8b37d6-20e5-4319-b9ee-974bc2ee127e",
+        "a0f0a8de-6772-4772-b7fe-1cc4b7fa431c"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/MADELINEDRESS-FULL-23_1.jpg",
+        "range": 30
+      }
+    },
+    "video": {
+      "type": "section-video",
+      "disabled": true,
+      "settings": {
+        "height": "use_screen_two_thirds",
+        "video_link_bg": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/699636e3ea454d48945e630f333ffea7.mp4",
+        "video_link_bg_mob": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/f28909c998ac4a20866e22e0e73c3361.mp4",
+        "object_position": "center-center",
+        "bg_position": "center-center",
+        "video_link": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "popup_text": "",
+        "kicker": "Introducing",
+        "title": "Featured video",
+        "richtext": "<p>This area is used to describe your video’s details.<\/p>",
+        "text_align": "align--middle-center",
+        "text_color": "text--white",
+        "overlay_opacity": 15,
+        "overlay_color": "#000000",
+        "floral": "floral_1.jpg",
+        "link_text": "",
+        "link": "",
+        "button_color": "btn--white",
+        "button_style": "btn"
+      }
+    },
+    "richtext2": {
+      "type": "landing-richtext",
+      "disabled": true,
+      "settings": {
+        "title": "Another Rich Text Title",
+        "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut condimentum nibh, in aliquam ante. Donec eget sagittis sapien. Phasellus tristique viverra pellentesque. Pellentesque nec dolor semper, viverra libero at, facilisis leo. Donec rhoncus diam ligula, et varius est aliquet eu. Donec facilisis porttitor leo, ut vestibulum mi lobortis semper. Nunc volutpat gravida leo in lacinia. Sed id semper enim.",
+        "text_align": "center"
+      }
+    },
+    "richtext3": {
+      "type": "landing-richtext",
+      "disabled": true,
+      "settings": {
+        "title": "Rich Text Title Goes Here",
+        "subtitle": "",
+        "text_align": "center"
+      }
+    },
+    "1663166984e5c0c486": {
+      "type": "landing-testimonial-slider",
+      "disabled": true,
+      "blocks": {
+        "915eb998-97a8-432f-a0ca-3338af8a4c98": {
+          "type": "testimonial",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/Kylie_Nelson.jpg",
+            "testimonial": "Review Goes Here",
+            "author": ""
+          }
+        },
+        "58adebda-2578-4b38-84ba-b225d355b7ef": {
+          "type": "testimonial",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/Kylie_Nelson.jpg",
+            "testimonial": "Review Goes here",
+            "author": ""
+          }
+        },
+        "11859ef3-a50e-4142-b92a-02f291bf53b3": {
+          "type": "testimonial",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/Kylie_Nelson.jpg",
+            "testimonial": "Review Goes here",
+            "author": ""
+          }
+        },
+        "4d955b2a-5895-41a8-9876-53822d20c398": {
+          "type": "testimonial",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/Kylie_Nelson.jpg",
+            "testimonial": "Review Goes here",
+            "author": ""
+          }
+        },
+        "9a49aa35-9a55-4777-8bcf-e3dae181c99d": {
+          "type": "testimonial",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/Kylie_Nelson.jpg",
+            "testimonial": "Review Goes here",
+            "author": ""
+          }
+        }
+      },
+      "block_order": [
+        "915eb998-97a8-432f-a0ca-3338af8a4c98",
+        "58adebda-2578-4b38-84ba-b225d355b7ef",
+        "11859ef3-a50e-4142-b92a-02f291bf53b3",
+        "4d955b2a-5895-41a8-9876-53822d20c398",
+        "9a49aa35-9a55-4777-8bcf-e3dae181c99d"
+      ],
+      "settings": {
+        "image_size": "variable"
+      }
+    },
+    "16636811832f841f67": {
+      "type": "featured-products",
+      "disabled": true,
+      "settings": {
+        "title": "Featured Products",
+        "data_source": "collection",
+        "feat_collection": "all-women-dresses",
+        "layout": "grid",
+        "nr_products": 12
+      }
+    },
+    "16631671364e6739c2": {
+      "type": "landing-two-image",
+      "disabled": true,
+      "settings": {
+        "image1": "shopify:\/\/shop_images\/CUSTOMER-19.jpg",
+        "image2": "shopify:\/\/shop_images\/CUSTOMER-19.jpg"
+      }
+    },
+    "2487ad94-f6e2-480b-b1e1-dc473f7b1e71": {
+      "type": "index-press-logos",
+      "settings": {
+        "heading": "As Seen In",
+        "linking_options": "global",
+        "global_link": "shopify:\/\/pages\/in-the-press"
+      }
+    },
+    "35953709-05ed-4127-ab18-bc03ddb04c67": {
+      "type": "loox-gallery-testimonial-section",
+      "settings": {
+        "maxWidth": 1100,
+        "maxNumberOfCharacters": 100,
+        "quoteMarkIcon": "style-1",
+        "reviewerNameColor": "#000000",
+        "textColor": "#000000",
+        "starsColor": "",
+        "quotesIconColor": "#eaeaea",
+        "arrows_iconColor": "#000000",
+        "arrows_hideOnMobile": true,
+        "pagination_active": true,
+        "pagination_selectedDotColor": "#000000",
+        "pagination_dotColor": "#000000",
+        "autoplay_active": false,
+        "autoplay_duration": 2,
+        "productIds": ""
+      }
+    },
+    "60e91eae-e7b3-4e3b-af6f-b17612529bd9": {
+      "type": "section-video",
+      "settings": {
+        "height": "use_screen_two_thirds",
+        "video_link_bg": "",
+        "video_link_bg_mob": "",
+        "object_position": "center-center",
+        "bg_position": "center-center",
+        "video_link": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "popup_text": "",
+        "kicker": "Introducing",
+        "title": "Featured video",
+        "richtext": "<p>This area is used to describe your video’s details.<\/p>",
+        "text_align": "align--middle-center",
+        "text_color": "text--white",
+        "overlay_opacity": 15,
+        "overlay_color": "#000",
+        "floral": "floral_1.jpg",
+        "link_text": "",
+        "link": "",
+        "button_color": "btn--white",
+        "button_style": "btn"
+      }
+    }
+  },
+  "order": [
+    "richtext1",
+    "16631669742a635b88",
+    "3d3b8d28-4638-4210-bf26-3792da1b3a0d",
+    "image-with-items",
+    "video",
+    "richtext2",
+    "richtext3",
+    "1663166984e5c0c486",
+    "16636811832f841f67",
+    "16631671364e6739c2",
+    "2487ad94-f6e2-480b-b1e1-dc473f7b1e71",
+    "35953709-05ed-4127-ab18-bc03ddb04c67",
+    "60e91eae-e7b3-4e3b-af6f-b17612529bd9"
+  ]
+}

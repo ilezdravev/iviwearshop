@@ -1,0 +1,174 @@
+<!doctype html>
+<html
+  lang="{{ locale }}"
+  dir="{{ direction }}"
+  class="{{ checkout_html_classes }}">
+  <head>
+    {% include 'limespot' %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+    <meta name="referrer" content="origin">
+
+    <title>{{ page_title }}</title>
+
+    {{ content_for_header }}
+
+    {{ checkout_stylesheets }}
+    {{ checkout_scripts }}
+  </head>
+  <body>
+    {{ skip_to_content_link }}
+
+    <header
+      class="banner"
+      data-header
+      role="banner">
+      <div class="wrap">
+        {{ content_for_logo }}
+      </div>
+    </header>
+
+    {{ order_summary_toggle }}
+    <div class="content" data-content>
+      <div class="wrap">
+        <div class="main">
+          <header class="main__header" role="banner">
+            {{ content_for_logo }}
+            {{ breadcrumb }}
+            {{ alternative_payment_methods }}
+          </header>
+          <main class="main__content" role="main">
+            {{ content_for_layout }}
+          </main>
+          <footer class="main__footer" role="contentinfo">
+            {{ content_for_footer }}
+          </footer>
+        </div>
+        <aside class="sidebar" role="complementary">
+          <div class="sidebar__header">
+            {{ content_for_logo }}
+          </div>
+          <div class="sidebar__content">
+            <limespot></limespot>
+            {{ content_for_order_summary }}
+          </div>
+        </aside>
+      </div>
+    </div>
+    {% include 'navidium-widget-v6' %}
+    {{ tracking_code }}
+    {% include 'zonos_shopifyplus_features' %}
+  </body>
+  <script>
+    if (Shopify.Checkout.step == 'shipping_method') {
+      var interval = null
+      var data = {
+        module: 'upstit',
+        action: 'time',
+        address: {{ checkout.shipping_address | json }}
+      }
+
+      $('.section--shipping-method').append('<p style="margin: 30px 0;">The above shipping time frames do not include the time needed to process your order. Please take into account the following processing times when selecting a shipping method: 3-5 business days for standard shipping and 1-2 business days for expedited. After processing, it will then ship according to your selected shipping method.<br>We can not make changes to your order after it has been placed, please confirm all information is correct before proceeding. We do not ship to PO Boxes</p>')
+
+      xhr = new XMLHttpRequest
+      xhr.open('post', '/apps/mm-master')
+      xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8")
+      xhr.onload = function() {
+        json = JSON.parse(this.responseText)
+        console.log(json)
+        methods = {}
+
+        json.forEach(function(x) {
+
+// methods[x.Service.Description] = x.EstimatedArrival.Arrival.Date
+          methods[x.Service.Description] = parseInt(x.EstimatedArrival.BusinessDaysInTransit)
+        })
+
+        interval = setInterval(function() {
+          rows = document.querySelectorAll('[data-shipping-methods] .content-box__row')
+          if (rows && rows.length) {
+            clearInterval(interval)
+            rows.forEach(function(row) {
+              var label = row.querySelector('.radio__label__primary')
+              console.log(label.innerHTML)
+              if (label.innerHTML.includes('*not including processing time')) {
+                console.log('includes')
+                label.innerHTML = label.innerHTML.replace('*not including processing time', '<br/>')
+              }
+              title = label.dataset.shippingMethodLabelTitle.replace('®', '')
+              if (title == 'UPS International Shipping') { // title = 'UPS Worldwide Expedited'
+              }if (methods[title]) {
+
+/*var year = methods[title].substr(0,4)
+                      var month = methods[title].substr(4,2)
+                      var day = methods[title].substr(6,2)
+                      var base = new Date(year + '-' + month + '-' + day)
+
+                      var now = new Date(new Date().toLocaleString("en-US", {timeZone: "America/Denver"}));
+
+                      if (now.getDay() == 5 && now.getHours() >= 12) {
+                        base.setDate(base.getDate()+3);
+                      }
+                      if (now.getDay() == 6) {
+                        base.setDate(base.getDate()+2);
+                      }
+                      if (now.getDay() == 0) {
+                        base.setDate(base.getDate()+1);
+                      }
+
+                      var date = base.toLocaleString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})
+                      label.innerHTML = (title == 'UPS Worldwide Expedited' ? 'UPS International Shipping' : title + '<sup>®</sup>') + '<br/><span class="small-text">Estimated Arrival Date: ' + date + '</span>'*/
+                const shippingPeriod = (
+                  (methods[title] == 2 || methods[title] == 1)
+                    ? '+1~2'
+                    : methods[title]
+                ) + ' business day' + (
+                  methods[title] == 1
+                    ? ''
+                    : 's'
+                );
+                label.innerHTML = (
+                  title == 'UPS Worldwide Expedited'
+                    ? 'UPS International Shipping'
+                    : title + '<sup>®</sup>' + '(' + shippingPeriod + ')'
+                ) + '<br/><span class="small-text">' + shippingPeriod + '</span>'
+
+              }
+            })
+          }
+        }, 100)
+      }
+      xhr.send(JSON.stringify(data))
+    }
+
+    $('[data-delivery-radio-button]').on('click', function() {
+      console.log('radio btn clicked');
+      setTimeout(function() {
+        let pickup = $('#checkout_pick_up_in_store_selected').attr('value');
+        if (pickup == 'false') {
+          console.log(' pick up false')
+          if ($('#switch').is(':checked') == false) {
+            $('#switch').click();
+            $('#switch').remove();
+            Shopify.navidiumInit();
+          } else {
+            $('.swtich_holder ').show()
+          }
+
+        }
+        if (pickup == 'true') {
+          console.log('pickup true');
+          if ($('#switch').is(':checked')) {
+            $('#switch').click();
+            $('.swtich_holder ').hide()
+          } else {
+            $('.swtich_holder ').hide()
+          }
+
+        }
+
+      }, 1500)
+    })
+  </script>
+</html>

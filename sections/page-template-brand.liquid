@@ -1,0 +1,281 @@
+<div class="Main__header">
+  <h1>{{ section.settings.title | default: page.title }}</h1>
+  <h6 class="subtitle">{{section.settings.subtitle}}</h6>
+  <div class="Hero Hero--brand">
+    <div class="bg lazyload" 
+      style="background-color: {{section.settings.bg_color}};background-size: {{section.settings.bg_size}}%"
+      data-bgset="{% include 'responsive-bg-image', image: section.settings.bg_image %}"></div>
+    
+    <div class="Container Container--narrow Media">
+      {% if section.settings.play_mode == 'modal' %}
+          <figure class="Media__content">
+          {% assign image = section.settings.hero_image %}
+          <img 
+            data-src="{{image | img_url: '400x'}}" 
+            data-srcset="
+            {{image | img_url: '400x'}} 400w,
+            {{image | img_url: '800x'}} 800w,
+            {{image | img_url: '1200x'}} 1200w,
+            {{image | img_url: '1600x'}} 1600w"
+            class="lazyload"
+            width={{image.width}}
+            height= {{image.height}}
+            alt="{{image.alt}}"
+          />
+          <figcaption>
+            <button class="Button Button--play" data-layout="noLayout" aria-label="play" data-action="{ type: 'Modal', target: 'behind-the-brand', action: 'toggle' }"> 
+              <svg viewBox='0 0 20 20' class='icon plus' width='1em' height='1em'>
+                <use href='#icon-play'></use>
+              </svg>
+            </button>
+          </figcaption>
+        </figure>  
+      {% else %}
+        <div 
+          class="MediaPlayer Media__content" 
+          data-component="MediaPlayer" 
+          data-video-link="{{section.settings.video_link}}"
+          data-options='{"muted":true, "playing":true, "loop":true, "controls": true}'></div>  
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<div class="Main__content">
+  <div class="Container Container--narrowest text-{{ section.settings.text_align }}">
+    <h3>{{section.settings.heading}}</h3>
+    <div class="intro">{{section.settings.intro}}</div>
+  </div>
+  {% if section.blocks.size > 0 %}
+    <div class="Container Container--narrow text-{{ section.settings.text_align }}">
+      <h1>Our Team</h1>
+      <div class="Loop">
+        {% for block in section.blocks %}
+            {% render 'team-member-card', team_member: block.settings %}
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+
+  {% assign team_photo = section.settings.team_photo %}
+  {% if team_photo != blank%}
+    <div class="Section Section--the-team Container Container--narrow text-{{ section.settings.text_align }}">
+      <div class="Section__content Media">
+        <figure class="Media__content">
+        
+          <img
+            data-sizes="auto"
+            data-src="{{ team_photo | img_url: '400x' }}"
+            data-srcset="
+                {{ team_photo | img_url: '400x' }} 400w,
+                {{ team_photo | img_url: '800x' }} 800w,
+                {{ team_photo | img_url: '1200x' }} 1200w,
+                {{ team_photo | img_url: '1600x' }} 1600w"
+            class="lazyload fadeup"
+            alt="{{team_photo.alt}}" />
+        </figure>
+        <div class="intro">
+          {{section.settings.team_intro}}
+        </div>
+      </div>    
+    </div>
+  {% endif %}
+
+  {% assign team_gif = section.settings.team_gif %}
+  {% if team_gif != blank%}
+    <div class="Section Section--grid Container Container--narrow text-{{ section.settings.text_align }}">
+      <div class="Section__content Media">
+        <figure class="Media__content">
+          <img
+            data-sizes="auto"
+            data-src="{{ team_gif | img_url: '400x' }}"
+            data-srcset="
+                {{ team_gif | img_url: '400x' }} 400w,
+                {{ team_gif | img_url: '800x' }} 800w,
+                {{ team_gif | img_url: '1200x' }} 1200w"
+            class="lazyload fadeup"
+            alt="{{team_gif.alt}}" />
+        </figure>
+        <div class="intro">
+          {{section.settings.team_gif_intro}}
+        </div>
+      </div>    
+    </div>
+  {% endif %}
+</div>
+
+{% if section.settings.video_link != blank and section.settings.play_mode == 'modal' %}
+  <div class="Modal Modal--big js-videoController" data-component="Modal" data-identifier="behind-the-brand">
+    <div class="Modal__box">
+    
+      <button class="Button Button--icon js-closeModal close-modal" data-action="{ type: 'Modal', target: 'behind-the-brand', action: 'toggle' }" aria-label="close">
+        <svg viewBox='0 0 20 20' class='icon' width='1em' height='1em'>
+          <use href='#icon-close'></use>
+        </svg>
+      </button>
+    
+      <div class="Modal__content Media">
+        <div 
+          class="MediaPlayer Media__content" 
+          data-component="MediaPlayer" 
+          data-video-link="{{section.settings.video_link}}"
+          data-options='{"muted":false, "playing":false, "loop":false, "controls": true}'></div>  
+      </div>
+    </div>
+    <span class="backdrop"></span>
+  </div>
+{% endif %}
+
+
+{% schema %}
+{
+  "name": "Behind the Brand",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "meant to celebrate"
+    },
+    {
+      "type": "header",
+      "content": "Hero"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background Image",
+      "info": "Use a patternable image for best results"
+    },
+    {
+      "type": "range",
+      "id": "bg_size",
+      "min": 20,
+      "max": 100,
+      "step": 10,
+      "unit": "%%%",
+      "label": "Background Size",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#F9F0EF"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Image"
+    },
+    {
+      "type": "url",
+      "id": "video_link",
+      "label": "Video Link"
+    },
+    {
+      "type": "radio",
+      "id": "play_mode",
+      "label": "Play Mode",
+      "options": [
+        { "value": "inline", "label": "Inline" },
+        { "value": "modal", "label": "Popup" }
+      ],
+      "default": "inline"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Inspired Dresses, for Celebrating Life’s Best Moments"
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Intro",
+      "default": "<p>As women, we are better together! This is why the three of us, Tash, Whitney and Madeline, as a team, will do our best each day to cater to the needs, hopes and dreams of each and every one of you in the best way we know how -- through timeless one-of-a-kind silhouettes, designed and shipped by us right here in Salt Lake City, Utah. The moment you put on your first Ivy City Co dress you join a community, a place of instant friendship and encouragement. Founded in 2015 by best friends Tash and Whitney. We adopted Madeline in 2018.</p>"
+    },
+    {
+      "type": "header",
+      "content": "The Team",
+      "info": "Add individual team members on the blocks above"
+    },
+    {
+      "type": "image_picker",
+      "id": "team_photo",
+      "label": "Team Photo"
+    },
+    {
+      "type": "richtext",
+      "id": "team_intro",
+      "label": "Intro"
+    },
+    {
+      "type": "image_picker",
+      "id": "team_gif",
+      "label": "GIF"
+    },
+    {
+      "type": "richtext",
+      "id": "team_gif_intro",
+      "label": "GIF Intro"
+    },
+    {
+      "type": "select",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "id": "text_align",
+      "label": "Text align",
+      "default": "center"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Team Member",
+      "type": "team_member",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "photo",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name"
+        },
+        {
+          "type": "richtext",
+          "id": "bio",
+          "label": "Bio"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,30 @@
+{% if object.size > 0 %}
+  <div class="Section Section--accordion">
+    <div class="Accordion" data-component="Accordion">
+      {% for item in object %}
+        <div class="Accordion__item">
+          <div class="Accordion__toggle" tabindex="0">
+            <h5>{{item.settings.title}}</h5>
+            <svg viewBox='0 0 20 20' class='icon plus' width='1em' height='1em'>
+              <use href='#icon-plus'></use>
+            </svg>
+            <svg viewBox='0 0 20 20' class='icon minus' width='1em' height='1em'>
+              <use href='#icon-minus'></use>
+            </svg>
+          </div>
+          <div class="Accordion__content">
+            <div class="contentWrapper">
+              {{ item.settings.content }}
+              {% if item.settings.desktop_image %}
+                <img class="u-show--fromDesktop" src="{{item.settings.desktop_image | img_url: 'master'}}"/>
+              {% endif %}
+              {% if item.settings.mobile_image %}
+                <img class="u-show--untilDesktop" src="{{item.settings.mobile_image | img_url: 'master'}}"/>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}

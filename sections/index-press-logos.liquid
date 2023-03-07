@@ -1,0 +1,96 @@
+{% assign object = section.settings %}
+{% assign heading = object.heading %}
+{% assign linking_options = object.linking_options %}
+{% assign global_link = object.global_link %}
+
+{% if section.blocks.size > 0 %}
+  <div class="Section Section--press">
+    <div class="Container">
+    {% if heading != blank %}
+      <div class="Section__header">
+        <h2 class="heading">{{ heading }}</h2>
+      </div>
+    {% endif %}
+      <div class="Section__content">
+       {% if global_link != blank and linking_options == "global" %}
+          <a href="{{ global_link }}">
+        {% endif %}
+         <div class="Loop" data-layout="dense"> 
+            {% for block in section.blocks %}
+            {% assign image = block.settings.logo %}
+            {% assign link = block.settings.link %}
+            {% assign open_new_tab = block.settings.open_new_tab %}
+              <figure class="item">
+                {% if link != blank and linking_options == 'unique' %}<a href="{{link}}" {% if open_new_tab %}target="_blank"{% endif %}>{% endif %} 
+                  <img data-src="{{image.src | img_url: '300x'}}" class="lazyload" alt="{{image.alt}}">
+                {% if link != blank and linking_options == 'unique'%}</a>{% endif %} 
+              </figure>
+            {% endfor %}
+          </div>
+        {% if global_link != blank and linking_options == "global" %}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Press Logos",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "As Seen In"
+    },
+    {
+      "type": "radio",
+      "id": "linking_options",
+      "label": "Linking Options",
+      "options": [
+        { "value": "global", "label": "Global" },
+        { "value": "unique", "label": "Unique" }
+      ],
+      "default": "global",
+      "info": "'Global' will use link below on all items, while 'Unique' will use the individual links for each logo."
+    },
+    {
+      "type": "url",
+      "id": "global_link",
+      "label": "Global Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings":[
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "checkbox",
+          "id": "open_new_tab",
+          "label": "Open in New Tab",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Press",
+      "category": "Info"
+    }
+  ]
+}
+{% endschema %}

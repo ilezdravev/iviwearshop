@@ -1,0 +1,211 @@
+{
+  "sections": {
+    "richtext1": {
+      "type": "landing-richtext",
+      "settings": {
+        "title": "motherhood: styles for every stage",
+        "subtitle": ""
+      }
+    },
+    "video": {
+      "type": "section-video",
+      "settings": {
+        "height": "use_screen_two_thirds",
+        "video_link_bg": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/699636e3ea454d48945e630f333ffea7.mp4",
+        "video_link_bg_mob": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/f28909c998ac4a20866e22e0e73c3361.mp4",
+        "object_position": "center-center",
+        "bg_position": "center-center",
+        "video_link": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "popup_text": "",
+        "kicker": "Introducing",
+        "title": "Featured video",
+        "richtext": "<p>This area is used to describe your video’s details.<\/p>",
+        "text_align": "align--middle-center",
+        "text_color": "text--white",
+        "overlay_opacity": 15,
+        "overlay_color": "#000000",
+        "floral": "floral_1.jpg",
+        "link_text": "",
+        "link": "",
+        "button_color": "btn--white",
+        "button_style": "btn"
+      }
+    },
+    "image-with-items": {
+      "type": "landing-image-with-items",
+      "blocks": {
+        "ce135248-6d65-4111-be94-266c26c06694": {
+          "type": "text_item",
+          "settings": {
+            "text": "Text Item 1"
+          }
+        },
+        "c49d51c3-32e2-4ec9-ba04-2aa36862894e": {
+          "type": "text_item",
+          "settings": {
+            "text": "Text Item 2"
+          }
+        },
+        "9b8b37d6-20e5-4319-b9ee-974bc2ee127e": {
+          "type": "text_item",
+          "settings": {
+            "text": "Text Item 3"
+          }
+        },
+        "a0f0a8de-6772-4772-b7fe-1cc4b7fa431c": {
+          "type": "text_item",
+          "settings": {
+            "text": "Text Item 4"
+          }
+        }
+      },
+      "block_order": [
+        "ce135248-6d65-4111-be94-266c26c06694",
+        "c49d51c3-32e2-4ec9-ba04-2aa36862894e",
+        "9b8b37d6-20e5-4319-b9ee-974bc2ee127e",
+        "a0f0a8de-6772-4772-b7fe-1cc4b7fa431c"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/CUSTOMER-22.jpg"
+      }
+    },
+    "richtext2": {
+      "type": "landing-richtext",
+      "settings": {
+        "title": "Another Rich Text Title",
+        "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut condimentum nibh, in aliquam ante. Donec eget sagittis sapien. Phasellus tristique viverra pellentesque. Pellentesque nec dolor semper, viverra libero at, facilisis leo. Donec rhoncus diam ligula, et varius est aliquet eu. Donec facilisis porttitor leo, ut vestibulum mi lobortis semper. Nunc volutpat gravida leo in lacinia. Sed id semper enim."
+      }
+    },
+    "16631669742a635b88": {
+      "type": "landing-image-slider",
+      "blocks": {
+        "078562bb-09a2-4c6d-9c81-ed2bf75e25f3": {
+          "type": "photo",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/Screenshot_3.png"
+          }
+        },
+        "e6464d57-18f5-4b46-a6d3-54475bbd676b": {
+          "type": "photo",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/Screenshot_4.png"
+          }
+        },
+        "aec934a2-3c06-4d27-afc2-08c17337f8ef": {
+          "type": "photo",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/Screenshot_5.png"
+          }
+        },
+        "b70935de-0dc8-4e0b-a94e-0c9912ec7835": {
+          "type": "photo",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/Screenshot_4.png"
+          }
+        },
+        "b757ead6-066d-4fe9-bf3a-51f5e4c00e7a": {
+          "type": "photo",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/Screenshot_2.png"
+          }
+        }
+      },
+      "block_order": [
+        "078562bb-09a2-4c6d-9c81-ed2bf75e25f3",
+        "e6464d57-18f5-4b46-a6d3-54475bbd676b",
+        "aec934a2-3c06-4d27-afc2-08c17337f8ef",
+        "b70935de-0dc8-4e0b-a94e-0c9912ec7835",
+        "b757ead6-066d-4fe9-bf3a-51f5e4c00e7a"
+      ],
+      "settings": {}
+    },
+    "richtext3": {
+      "type": "landing-richtext",
+      "settings": {
+        "title": "Rich Text Title Goes Here",
+        "subtitle": ""
+      }
+    },
+    "1663166984e5c0c486": {
+      "type": "landing-testimonial-slider",
+      "blocks": {
+        "915eb998-97a8-432f-a0ca-3338af8a4c98": {
+          "type": "testimonial",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/Kylie_Nelson.jpg",
+            "testimonial": "Review Goes Here",
+            "author": ""
+          }
+        },
+        "58adebda-2578-4b38-84ba-b225d355b7ef": {
+          "type": "testimonial",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/Kylie_Nelson.jpg",
+            "testimonial": "Review Goes here",
+            "author": ""
+          }
+        },
+        "11859ef3-a50e-4142-b92a-02f291bf53b3": {
+          "type": "testimonial",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/Kylie_Nelson.jpg",
+            "testimonial": "Review Goes here",
+            "author": ""
+          }
+        },
+        "4d955b2a-5895-41a8-9876-53822d20c398": {
+          "type": "testimonial",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/Kylie_Nelson.jpg",
+            "testimonial": "Review Goes here",
+            "author": ""
+          }
+        },
+        "9a49aa35-9a55-4777-8bcf-e3dae181c99d": {
+          "type": "testimonial",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/Kylie_Nelson.jpg",
+            "testimonial": "Review Goes here",
+            "author": ""
+          }
+        }
+      },
+      "block_order": [
+        "915eb998-97a8-432f-a0ca-3338af8a4c98",
+        "58adebda-2578-4b38-84ba-b225d355b7ef",
+        "11859ef3-a50e-4142-b92a-02f291bf53b3",
+        "4d955b2a-5895-41a8-9876-53822d20c398",
+        "9a49aa35-9a55-4777-8bcf-e3dae181c99d"
+      ],
+      "settings": {}
+    },
+    "16636811832f841f67": {
+      "type": "featured-products",
+      "settings": {
+        "title": "Featured Products",
+        "data_source": "collection",
+        "feat_collection": "all-women-dresses",
+        "layout": "grid",
+        "nr_products": 12
+      }
+    },
+    "16631671364e6739c2": {
+      "type": "landing-two-image",
+      "settings": {
+        "image1": "shopify:\/\/shop_images\/CUSTOMER-19.jpg",
+        "image2": "shopify:\/\/shop_images\/CUSTOMER-19.jpg"
+      }
+    }
+  },
+  "order": [
+    "richtext1",
+    "video",
+    "image-with-items",
+    "richtext2",
+    "16631669742a635b88",
+    "richtext3",
+    "1663166984e5c0c486",
+    "16636811832f841f67",
+    "16631671364e6739c2"
+  ]
+}

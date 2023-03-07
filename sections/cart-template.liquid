@@ -1,0 +1,273 @@
+{% if section.settings.enable_gift_product and section.settings.gift_product != blank%}
+  {% assign giftWrapId = all_products[section.settings.gift_product].variants[0].id %}
+{% endif %}
+
+
+<div class="Main__content">
+  {% if cart.item_count > 0 %}
+    <form action="/cart" method="post" novalidate>
+      <div class="Column">
+        <div class="Column__header">
+          <h6>Cart</h6>
+          <span class="cart-items-count">
+            {{ cart.item_count }} {% if cart.item_count == 1 %}item{% else %}items{% endif %}
+          </span>
+        </div>
+        <div class="Column__content">
+          {% comment %} <div class="cart-totals cart-totals--mobile u-show--untilDesktop">
+            <p class="subtotal" data-afterpay-wrapper>
+              <span class="label">{{ 'cart.general.subtotal' | t }}</span>
+              <span data-afterpay-price>{{ cart.total_price | money }}</span>
+            </p>
+            <input type="submit" name="checkout" class="Button" data-style="solid secondary" value="{{ 'cart.general.checkout' | t }}">
+          </div> {% endcomment %}
+          <table class="table-cart-items">
+            {% comment %} <thead class="small--hide">
+              <tr>
+                <th colspan="2">{{ 'cart.label.product' | t }}</th>
+                <th>{{ 'cart.label.price' | t }}</th>
+                <th>{{ 'cart.label.quantity' | t }}</th>
+                <th>{{ 'cart.label.total' | t }}</th>
+              </tr>
+            </thead> {% endcomment %}
+            <tbody>
+
+              {% for item in cart.items %}
+
+                <tr class="responsive-table-row cart-line-item">
+
+                  <td data-label="{{ 'customer.order.product' | t }}">
+                    {% if item.image != blank %}
+                      <a
+                       {% if item.id == giftWrapId%}
+                            href="#"
+                            onclick="event.preventDefault();"
+                          {% else %}
+                            href="{{ item.url | within: collections.all }}"
+                          {% endif %}
+                        class="thumbnail"
+                        style="padding-top:{{ 1 | divided_by: item.image.aspect_ratio | times: 100}}%">
+                        <img
+                          data-sizes="auto"
+                          data-src="{{ item.image | img_url: '400x' }}"
+                          data-srcset="
+                              {{ item.image | img_url: '400x' }} 400w,
+                              {{ item.image | img_url: '800x' }} 800w,
+                              {{ item.image | img_url: '1200x' }} 1600w"
+                          class="lazyload fadeup mainImg"
+                          alt="{{ item.product.title }}" />
+                      </a>
+                    {% endif %}
+
+                  </td>
+                  <td class="product-details">
+                    <a
+                     {% if item.id == giftWrapId%}
+                          href="#"
+                          onclick="event.preventDefault();"
+                        {% else %}
+                          href="{{ item.url | within: collections.all }}
+                        {% endif %}"
+                      class="product-title">{{ item.product.title }}</a>
+                    {% if section.settings.show_vendors %}
+                      <span class="vendor">{{ item.vendor }}</span>
+                    {% endif %}
+
+                    {% unless item.product.has_only_default_variant %}
+                      <p class="variant_title">
+                        {% for i in (1..item.product.options.size) %}
+                          {% case i %}
+                          {% when 1 %}
+                            {{ item.product.options.first }}: {{ item.variant.option1 }}
+                          {% when 2 %}
+                            {% if item.product.options.size == 2 %}
+                              {{ item.product.options.last}}: {{ item.variant.option2 }}
+                            {% else %}
+                              {{ item.product.options | remove : item.product.options.first | remove: item.product.options.last  }}: {{ item.variant.option2 }}
+                            {% endif %}
+                          {% else %}
+                            {{ item.product.options.last }}: {{ item.variant.option3 }}
+                          {% endcase %}
+                        {% endfor %}
+                      </p>
+                    {% endunless %}
+
+
+
+                    {%- assign property_size = item.properties | size -%}
+
+                    {% if property_size > 0 %}
+                      <div class="product-properties">
+                        {% for p in item.properties %}
+                          {%- if p.first.first == '_' -%}{%- continue -%}{%- endif -%}
+                          {% unless p.last == blank or p.first == 'subscription_id' or p.first == 'shipping_interval_frequency' or p.first == 'shipping_interval_unit_type'%}
+                            {% unless p.first contains '_is_preorder' %}{{ p.first }}:{% endunless %}
+
+                            {% if p.last contains '/uploads/' %}
+                              <a href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
+                            {% else %}
+                              {{ p.last }}
+                            {% endif %}
+
+                          {% endunless %}
+                        {% endfor %}
+                      </div>
+                    {% endif %}
+
+                  </td>
+                  <td data-label="{{ 'cart.label.price' | t }}" class="u-show--fromTablet">
+                    <span class="label u-show--fromTablet">Price</span>
+                    {% if item.original_line_price != item.line_price %}
+                      <span class="visually-hidden">{{ 'cart.label.discounted_price' | t }}</span>
+                      {{ item.price | money }}
+                      <span class="visually-hidden">{{ 'cart.label.original_price' | t }}</span>
+                      <s>{{ item.original_price | money }}</s>
+                    {% else %}
+                      <span>{{ item.price | money }}</span>
+                    {% endif %}
+                  </td>
+                  <td data-label="{{ 'cart.label.quantity' | t }}">
+                    <span class="label u-show--fromTablet">Quantity</span>
+                    <div class="quantity-select" data-component="QuantitySelector">
+                      <button class="Button Button--minus" data-layout="noLayout">-</button>
+                      <input type="text" class="quantity" min="1" pattern="[0-9]*" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" >
+                      <button class="Button Button--plus" data-layout="noLayout" {% if item.id == giftWrapId%}disabled{% endif %}>+</button>
+                    </div>
+                  </td>
+                  <td data-label="{{ 'cart.label.total' | t }}">
+                    <span class="label u-show--fromTablet">Total</span>
+                    {% if item.original_line_price != item.line_price %}
+
+                      {{ item.price | money }}
+
+                      <s>{{ item.original_price | money }}</s>
+                    {% else %}
+                      <span>{{ item.price | money }}</span>
+                    {% endif %}
+                    <a
+                      href="/cart/change?line={{ forloop.index }}&amp;quantity=0"
+                      class="Button Button--remove"
+                      data-layout="noLayout">
+                      <small class="u-show--fromTablet">{{ 'cart.general.remove' | t }}</small>
+                      <svg viewBox='0 0 20 20' class='icon u-show--untilTablet' width='1em' height='1em'>
+                        <use xlink:href='#icon-close'></use>
+                      </svg>
+                    </a>
+                  </td>
+                </tr>
+
+              {% endfor %}
+            </tbody>
+          </table>
+          <div class="special_instructions u-show--fromDesktop">
+            <div class="cart-notes">
+              {% if section.settings.show_notes %}
+                <textarea name="note" id="CartSpecialInstructions" placeholder="Special instructions">{{ cart.note }}</textarea>
+              {% endif %}
+            </div>
+            {%- comment -%} {% if section.settings.enable_gift_product and section.settings.gift_product != blank%}
+              <div class="GiftWrap" data-component="GiftWrap" gift-product-id={{giftWrapId}}></div>
+            {% endif %} {%- endcomment -%}
+          </div>
+        </div>
+      </div>
+      <div class="Column">
+        <div class="Column__header">
+          <h6>Order Summary</h6>
+        </div>
+        <div class="Column__content">
+          <div class="cart-totals">
+            <div class="subtotal__wrapper">
+              <p class="subtotal" data-afterpay-wrapper>
+                <span class="label">{{ 'cart.general.subtotal' | t }}</span>
+                <span data-afterpay-price>{{ cart.total_price | money }}</span>
+              </p>
+            </div>
+            <p class="subtotal shipping_message">
+              <span class="label">Shipping & taxes</span>
+              <span>At checkout</span>
+            </p>
+
+
+
+            {% if settings.show_multiple_currencies %}
+              <p class="currency-at-checkout"><em>{{ 'cart.general.currency_at_checkout_html' | t: shop_name: shop.name, shop_currency: shop.currency }}</em></p>
+              <p class="final_sale"><b>All items ending in $0.99 are final sale.</b></p>
+            {% endif %}
+          </div>
+
+          <div class="Nav cart-navigation">
+            <div class="Nav__item">
+              <button type="submit" name="update" class="Button" data-style="secondary solid">{{ 'cart.general.update' | t }}</button>
+            </div>
+            <div class="Nav__item">
+              <a class="Button" href="/checkout" data-style="secondary solid" href="/checkout">{{ 'cart.general.checkout' | t }}</a>
+            </div>
+            {% if additional_checkout_buttons %}
+              <p class="quick_checkout">or checkout quickly with</p>
+              <div class="additional-checkout-buttons" id="second_additional_buttons">{{ content_for_additional_checkout_buttons }}</div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div>
+        <!-- Route Code Edited 10/26/2020 -->
+          <div class="route-div u-show--untilDesktop"></div>
+          <div class="route-disclaimer u-show--untilDesktop">
+            <p>*Route will protect you against lost, damaged, and stolen items*</p>
+            <p>Ivy City isn’t responsible for any lost, stolen, or damaged goods without Route Insurance</p>
+          </div>
+        <!-- Route Code End -->
+        <div class="special_instructions u-show--untilDesktop">
+          <div class="cart-notes">
+            {% if section.settings.show_notes %}
+              <textarea name="note" id="CartSpecialInstructions" placeholder="Special instructions">{{ cart.note }}</textarea>
+            {% endif %}
+          </div>
+          {% if section.settings.enable_gift_product and section.settings.gift_product != blank%}
+            <div class="GiftWrap" data-component="GiftWrap" gift-product-id={{giftWrapId}}></div>
+          {% endif %}
+        </div>
+      </div>
+    </form>
+  {% else %}
+    <div class="empty-cart">
+      <p>{{ 'cart.general.empty' | t }}<br>{{ 'cart.general.continue_browsing_html' | t }}</p>
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Cart page",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_notes",
+      "label": "Enable order notes",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendors",
+      "label": "Show product vendors",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Gift Box"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_gift_product",
+      "label": "Enable Gift Product",
+      "default": false
+    },
+    {
+      "type": "product",
+      "id": "gift_product",
+      "label": "Gift Product"
+    }
+  ]
+}
+{% endschema %}

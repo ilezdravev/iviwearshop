@@ -1,0 +1,12 @@
+<div class="CollectionSort">
+  <div 
+    data-component="CollectionSort" 
+    data-options='{{collection.sort_options | json}}' 
+    data-params='{"label": "Sort By"{% if collection.sort_by != blank %},"selected":"{{collection.sort_by}}"{% endif %}}'></div>
+  <select name="sort_by" placholder="Sort by" >
+    <option value="Sort by" selected disabled>Sort by</option>
+      {% for option in collection.sort_options %}
+          <option value="{{ option.value }}" {% if option.value == collection.sort_by %}selected{% endif %}>{{ option.name }}</option>
+      {% endfor %}
+  </select>
+</div>

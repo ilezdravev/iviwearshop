@@ -1,0 +1,16 @@
+{% assign object = section.settings %}
+{% assign heading = object.form_heading %}
+{% assign intro = object.form_intro %}
+{% assign klaviyo_form = object.klaviyo_form %}
+
+<div class="FooterForm">
+{% comment %} {% if heading != blank %}
+  <h3 class="heading">{{heading}}</h3>
+{% endif %}  
+{% if intro != blank %}
+  <p>{{intro}}</p>
+{% endif %} {% endcomment %}
+{% if klaviyo_form != blank %}
+  {{klaviyo_form}}
+{% endif %}    
+</div>

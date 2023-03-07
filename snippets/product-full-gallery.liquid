@@ -1,0 +1,62 @@
+<div class="ProductGallery--full" data-component="ProductGallery" data-thumbs-mode="vertical">
+  {% if product.images.size > 1 %}
+    <div class="Gallery__thumbnails u-show--fromDesktop">
+      <div class="wrapper">
+        {% for media in product.media %}
+          {% assign alt_text = media.alt %}
+          {% assign alt_split = alt_text | split: 'size_' %}
+          {% assign size = alt_split[1] %}
+          {% if size == blank %}
+            {% assign size = 'all' %}
+          {% endif %}
+          {% assign size = size | downcase %}
+          <div class="item" data-size="{{ size }}" data-media-index="{{ media.position }}">
+            <figure>
+              <img
+                data-sizes="auto"
+                data-src="{{ media | img_url: '100x' }}"
+                data-srcset="
+                  {{ media | img_url: '100x' }} 200w,
+                  {{ media | img_url: '200x' }} 400w,
+                  {{ media | img_url: '300x' }} 600w
+                "
+                width="{{media.width}}"
+                height="{{media.height}}"
+                class="lazyload fadeup"
+                alt="{{ product.title }}"
+              >
+            </figure>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+  <div class="mainImage_wrapper">
+    <div class="mainImages">
+      {% for media in product.media %}
+        {% assign alt_text = media.alt %}
+        {% assign alt_split = alt_text | split: 'size_' %}
+        {% assign size = alt_split[1] %}
+        {% if size == blank %}
+          {% assign size = 'all' %}
+        {% endif %}
+        {% assign size = size | downcase %}
+        <figure class="Gallery__item" data-size="{{ size }}">
+          {% include 'product-gallery-media' %}
+        </figure>
+      {% endfor %}
+    </div>
+    <div class="Gallery__nav">
+      <button class="Button previous" data-layout="noLayout">
+        <svg viewBox="0 0 20 20" class="icon" width="1em" height="1em">
+          <use href='#left'></use>
+        </svg>
+      </button>
+      <button class="Button next" data-layout="noLayout">
+        <svg viewBox="0 0 20 20" class="icon" width="1em" height="1em">
+          <use href='#right'></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>

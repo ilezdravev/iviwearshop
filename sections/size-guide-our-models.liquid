@@ -1,0 +1,174 @@
+{% for model in section.blocks %}
+  {% assign modelCount = forloop.index %}
+{% endfor %}
+
+<section class="Section Section--OurModels">
+  <header class="Section__header ">
+    <div class="bg lazyload" data-bgset="{% include 'responsive-bg-image', image: section.settings.bg_image %}"></div>
+    <div class="Cover-gallery">
+    {% for model in section.blocks %}
+      {% assign cover = model.settings.photo %}
+        {% if cover != blank %}
+          <figure class="Cover-gallery__item js-clickBlock">
+            
+              <img
+                data-sizes="auto"
+                data-src="{{ cover | img_url: '400x' }}"
+                data-srcset="
+                    {{ cover | img_url: '400x' }} 400w,
+                    {{ cover | img_url: '800x' }} 800w,
+                    {{ cover | img_url: '1200x' }} 1200w,
+                    {{ cover | img_url: '1600x' }} 1600w,
+                    {{ cover | img_url: '2400x' }} 2400w"
+                class="lazyload cover"/>
+            <figcaption>
+              <h2>{{model.settings.name}}</h2>
+              <h6>Size: {{model.settings.ivy_dress_size}}</h6>
+              <a href="#model-{{model.settings.name}}" class="Button" data-style="underline white">See More</a>
+            </figcaption>
+          </figure>
+        {% endif %}
+    {% endfor %}
+    </div>
+  </header>
+  <div class="Section__content">
+    {% for model in section.blocks %}
+      
+      {% assign photo = model.settings.photo %}
+      <section id="model-{{model.settings.name}}" class="Model">
+        <figure class="Model__photo">
+          <img
+          data-sizes="auto"
+          data-src="{{ photo | img_url: '400x' }}"
+          data-srcset="
+              {{ photo | img_url: '400x' }} 400w,
+              {{ photo | img_url: '800x' }} 800w,
+              {{ photo | img_url: '1200x' }} 1200w,
+              {{ photo | img_url: '1600x' }} 1600w,
+              {{ photo | img_url: '2400x' }} 2400w"
+          class="lazyload cover"/>
+        </figure>
+        <div class="wrapper">
+          <div class="bio">
+            <h2>
+              <span>{{model.settings.name}}</span>
+              {% if model.settings.instagramId != blank %}
+                <span class="instagram_link"><a href="https://www.instagram.com/{{model.settings.instagramId}}" target="_blank">@{{model.settings.instagramId}}</a></span>  
+              {% endif %}
+            </h2>
+            
+            <div class="about text-{{model.settings.text_align}}">{{model.settings.about}}</div>
+
+            {% if model.settings.looks_cta != blank %}
+              <a href="{{model.settings.looks_cta}}" class="Button" data-style="solid primary">See {{model.settings.name}}'s looks</a>  
+            {% endif %}
+
+            <div class="Measurements">
+              <div class="Measurements__item">Height<span>{{model.settings.height}}</span></div>
+              <div class="Measurements__item">Waist<span>{{model.settings.waist}}</span></div>
+              <div class="Measurements__item">Hips<span>{{model.settings.hips}}</span></div>
+              <div class="Measurements__item">Bust<span>{{model.settings.bust}}</span></div>
+              <div class="Measurements__item">Usual Size<span>{{model.settings.ivy_dress_size}}</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    {% endfor %}
+  </div>
+
+</section>
+
+{% schema %}
+{
+  "name": "Our Models",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background Image"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Model",
+      "type": "model",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Model"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name"
+        },
+        {
+          "type": "image_picker",
+          "id": "photo",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "instagramId",
+          "label": "Instagram ID"
+        },
+        {
+          "type": "richtext",
+          "id": "about",
+          "label": "About"
+        },
+        {
+          "type": "select",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "id": "text_align",
+          "label": "Text align",
+          "default": "center"
+        },
+        {
+          "type": "url",
+          "id": "looks_cta",
+          "label": "Looks CTA"
+        },
+        {
+          "type": "text",
+          "id": "height",
+          "label": "Height"
+        },
+        {
+          "type": "text",
+          "id": "waist",
+          "label": "Waist"
+        },
+        {
+          "type": "text",
+          "id": "hips",
+          "label": "Hips"
+        },
+        {
+          "type": "text",
+          "id": "bust",
+          "label": "Bust"
+        },
+        {
+          "type": "text",
+          "id": "ivy_dress_size",
+          "label": "Ivy Dress Size"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

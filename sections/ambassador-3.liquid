@@ -1,0 +1,25 @@
+<div class="title">
+  {{ section.settings.title }}
+</div>
+<div class="content">
+  {{ section.settings.subtitle }}
+</div>
+
+{% schema %}
+{
+  "name": "Ambassador 3",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "What's the point?"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle"
+    }
+  ]
+}
+{% endschema %}

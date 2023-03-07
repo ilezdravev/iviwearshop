@@ -1,0 +1,167 @@
+<footer class="Footer">
+  {% if section.settings.join_enable %}
+    <div class="join-container" style="background: {{ section.settings.join_color }};">
+      <div class="Container">
+        <h5>{{ section.settings.join_title }}</h5>
+        <h5>{{ section.settings.join_subtitle }}</h5>
+        <p>{{ section.settings.join_desc }}</p>
+      </div>
+    </div>
+  {% endif %}
+  {% if section.blocks.size > 0 %}
+    <div class="Highlights lazyload"
+      style="background-size: {{section.settings.highlights_bg_size}}%"
+      data-bgset="{% include 'responsive-bg-image', image: section.settings.highlights_bg_img %}">
+      <div class="Highlights__container" style="background-color: {{section.settings.highlights_bg_color | default: '#F9F0EF'}}">
+        <div class="Container">
+          {% for block in section.blocks %}
+            <div class="Entry Media">
+              <figure class="Media__content">
+                <img
+                  data-src="{{block.settings.icon | img_url: '100x'}}"
+                  class="lazyload"
+                  alt="{{block.settings.title}}"
+                />
+              </figure>
+              <h6>{{block.settings.title}}</h6>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+    {% render 'email-signup' %}
+
+  <div class="Container">
+    <div class="wrapper">
+      {% comment %}
+      {% include 'footer-form' %}
+      {% endcomment %}
+      {% include 'footer-navigation' %}
+
+    </div>
+    <div class="social-icons">
+      {% render 'social-nav' %}
+    </div>
+    <p class="legal">©2021 Ivy City Co.</p>
+  </div>
+  {% if template.suffix contains 'size-guide' %}
+    <a href="#" class="js-backToTop" data-component="BackToTop" aria-label="Back to top">
+      <span class="icon-up">
+        <svg viewBox='0 0 20 20' class='icon' width='1em' height='1em'>
+          <use xlink:href='#icon-up'></use>
+        </svg>
+      </span>
+    </a>
+  {% endif %}
+</footer>
+
+{% schema %}
+{
+  "name": "Site Footer",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Form"
+    },
+    {
+      "type": "text",
+      "id": "form_heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "form_intro",
+      "label": "Intro"
+    },
+    {
+      "type": "html",
+      "id": "klaviyo_form",
+      "label": "Klaviyo Snippet"
+    },
+    {
+      "type": "header",
+      "content": "Menu"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Footer Menu"
+    },
+    {
+      "type": "header",
+      "content": "Highlights"
+    },
+    {
+      "type": "image_picker",
+      "id": "highlights_bg_img",
+      "label": "Background Image"
+    },
+    {
+      "type": "range",
+      "id": "highlights_bg_size",
+      "min": 20,
+      "max": 100,
+      "step": 10,
+      "unit": "%%%",
+      "label": "Background Size",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "highlights_bg_color",
+      "label": "Background Color",
+      "default": "#F9F0EF"
+    },
+    {
+      "type": "header",
+      "content": "Join Text"
+    },
+    {
+     "type": "checkbox",
+     "id": "join_enable",
+     "label": "Show Join Text",
+     "default": true
+    },
+    {
+     "type": "color",
+     "id": "join_color",
+     "label": "Background"
+    },
+    {
+     "type": "text",
+     "id": "join_title",
+     "label": "Title"
+    },
+    {
+     "type": "richtext",
+     "id": "join_desc",
+     "label": "Text"
+    },
+    {
+     "type": "text",
+     "id": "join_subtitle",
+     "label": "Sub Title"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "highlight",
+      "name": "HighLight",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,245 @@
+{% assign object = section.settings %}
+{% assign title = object.title %}
+{% assign subtitle = object.subtitle %}
+{% assign hero_intro = object.hero_intro %}
+
+{% assign jtt_heading = object.jtt_heading %}
+{% assign jtt_intro = object.jtt_intro %}
+
+{% assign bottom_text = object.bottom_text %}
+
+<div class="Main__header Container">
+  <h1>{{ title | default: page.title }}</h1>
+  {% if subtitle != blank %}
+    <h6 class="subtitle">{{subtitle}}</h6>
+  {% endif %}
+</div>
+
+<div class="Main__content">
+  <div class="Hero Hero--careers Media Container">
+  <div class="bg lazyload"
+    style="background-color: {{section.settings.bg_color}};background-size: {{section.settings.bg_size}}%"
+    data-bgset="{% include 'responsive-bg-image', image: section.settings.bg_image %}">
+  </div>
+    <figure class="Hero__media Media__content">
+      {% assign image = section.settings.hero_image %}
+      <img
+        data-src="{{image | img_url: '400x'}}"
+        data-srcset="
+        {{image | img_url: '400x'}} 400w,
+        {{image | img_url: '800x'}} 800w,
+        {{image | img_url: '1200x'}} 1200w,
+        {{image | img_url: '1600x'}} 1600w"
+        class="lazyload"
+        width={{image.width}}
+        height= {{image.height}}
+        alt="{{image.alt}}"
+      />
+    </figure>
+    <div class="Hero__content Container Container--narrowest">
+      <div class="inner text-{{ section.settings.text_align }}">
+        {{hero_intro}}
+      </div>
+    </div>
+
+  </div>
+
+  {% if jtt_heading != blank or jtt_intro != blank %}
+    <div class="Section Section--join-the-team Container Container--narrowest">
+      <div class="Section__header">
+        <h2>{{jtt_heading}}</h2>
+      </div>
+      <div class="Section__content text-{{ section.settings.text_align }}">
+        {{jtt_intro}}
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="Section Section--oportunities Container">
+    <div class="wrapper">
+      <div class="Section__header">
+        <h3 class="heading">Current Opportunities</h3>
+      </div>
+      <div class="Section__content Container Container--narrowest">
+
+          <div class="Loop">
+            {% for post in blogs['careers'].articles %}
+              <div class="Card Card--careers">
+                <div class="Card__details">
+                  <h6 class="Card__title">{{post.title}}</h6>
+                  {% if post.excerpt.size > 0 %}
+                    {{ post.excerpt | strip_html | strip | truncatewords: 30 }}
+                  {% else %}
+                    <p>{{ post.content | strip_html | strip | truncatewords: 30 }}</p>
+                  {% endif %}
+                  <a href="{{post.url}}" class="Button" data-style="underline">Read More</a>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="Section Section--ivy-family Container">
+    <div class="Section__header">
+      <h2>The Ivy Family</h2>
+    </div>
+    <div class="Section__content">
+
+        <div class="Loop Loop--flex">
+          {% for block in section.blocks %}
+            {% if forloop.index < 4 %}
+              {% assign classModifiers = 'highlighted' %}
+            {%else %}
+              {% assign classModifiers = '' %}
+            {% endif %}
+            {% render 'team-member-card', team_member: block.settings,classModifiers: classModifiers  %}
+          {% endfor %}
+        </div>
+
+    </div>
+  </div>
+
+  {% if bottom_text != blank %}
+    <div class="bottom_text Container Container--narrowest text-{{ section.settings.text_align }}">
+      {{bottom_text}}
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Careers",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "come join our work family"
+    },
+    {
+      "type": "header",
+      "content": "Hero"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background Image",
+      "info": "Use a patternable image for best results"
+    },
+    {
+      "type": "range",
+      "id": "bg_size",
+      "min": 20,
+      "max": 100,
+      "step": 10,
+      "unit": "%%%",
+      "label": "Background Size",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#F9F0EF"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Image"
+    },
+    {
+      "type": "richtext",
+      "id": "hero_intro",
+      "label": "Intro",
+      "default": "<p>At Ivy City Co, our team is the heart of our company. We believe in creating a community of women who feel confident and empowered—that includes our shoppers and our employees.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Join the Team"
+    },
+    {
+      "type": "text",
+      "id": "jtt_heading",
+      "label": "Heading",
+      "default": "Join the Team"
+    },
+    {
+      "type": "richtext",
+      "id": "jtt_intro",
+      "label": "Intro",
+      "default": "<p>We are growing our team and couldn’t be more excited to invite a new dress obsessed friend into our Ivy Family!! Do you believe in fast-growing small businesses? Do you like to work with a small but close-knit team? Do you like to bring positive energy to the party? If these apply to you, check out our current job openings below. (Click titles for full job description and instructions on how to apply.)</p>"
+    },
+    {
+      "type": "header",
+      "content": "The Ivy Family",
+      "info": "Add individual team members on the blocks above"
+    },
+    {
+      "type": "header",
+      "content": "Bottom Text"
+    },
+    {
+      "type": "richtext",
+      "id": "bottom_text",
+      "label": "Text",
+      "default": "<p>We want the Ivy City Co offices to be full of laughter, support, and friendship rooted in the common goal of providing women and girls with unique, high quality pieces for their wardrobes. Our team is hard-working and resilient, and everyone is committed to grow our little business into a brand that inspires self-love and an appreciation for the beautiful things in life. From our shipping and service specialists to our marketing team - the Ivy Fam shows up for each other and for our customers.</p>"
+    },
+    {
+      "type": "select",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "id": "text_align",
+      "label": "Text align",
+      "default": "center"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Team Member",
+      "type": "team_member",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "photo",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Name"
+        },
+        {
+          "type": "text",
+          "id": "job_title",
+          "label": "Job Title"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

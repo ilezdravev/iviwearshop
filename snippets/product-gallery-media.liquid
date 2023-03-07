@@ -1,0 +1,60 @@
+
+{% case media.media_type %}
+  {% when 'image' %}
+    {%- assign image = media -%}
+    <a
+      href="{{ image.src | img_url: '1600x' }}"
+      class="product-single__media"
+      style="padding-top: 150%;"
+      data-media-id="{{ media.id }}">
+      {% if forloop.first %}
+        <img
+          src="{{ image.src | img_url: '400x' }}"
+          srcset="
+              {{ image.src | img_url: '400x' }} 400w,
+              {{ image.src | img_url: '600x' }} 600w,
+              {{ image.src | img_url: '900x' }} 900w,
+              {{ image.src | img_url: '1600x' }} 1600w"
+          width="{{ image.width }}"
+          height="{{ image.height }}"
+          alt="{{ product.title }}" />
+      {% else %}
+        <img
+          data-sizes="auto"
+          data-src="{{ image.src | img_url: '400x' }}"
+          data-srcset="
+              {{ image.src | img_url: '400x' }} 400w,
+              {{ image.src | img_url: '600x' }} 600w,
+              {{ image.src | img_url: '900x' }} 900w,
+              {{ image.src | img_url: '1600x' }} 1600w"
+          class="lazyload fadeup"
+          width="{{ image.width }}"
+          height="{{ image.height }}"
+          alt="{{ product.title }}" />
+      {% endif %}
+      {% comment %} {{ media | media_tag }} {% endcomment %}
+    </a>
+  {% when 'external_video' %}
+    {% comment %} <div class="product-single__media" style="padding-top: {{ 1 | divided_by: media.aspect_ratio | times: 100}}%;" data-media-id="{{ media.id }}"> {% endcomment %}
+    <div class="product-single__media Media" data-media-id="{{ media.id }}">
+       <div 
+        class="MediaPlayer Media__content" 
+        data-component="MediaPlayer" 
+        data-video-link="{{ media | external_video_url }}" 
+        data-options='{"muted":true, "playing":true, "loop":true, "controls": true}'></div>  
+    </div>
+  {% when 'video' %}
+    <div class="product-single__media Media" data-media-id="{{ media.id }}">
+      <div class="Media__content">
+        {{ media | video_tag: controls: true, autoplay: true, loop: true }}
+      </div>
+    </div>
+  {% when 'model' %}
+    <div class="product-single__media" style="padding-top: 150%" data-media-id="{{ media.id }}">
+      {{ media | model_viewer_tag }}
+    </div>
+  {% else %}
+    <div class="product-single__media" style="padding-top: 150%;" data-media-id="{{ media.id }}">
+      {{ media | media_tag }}
+    </div>
+{% endcase %}

@@ -1,0 +1,21 @@
+<div data-price-wrapper data-afterpay-wrapper class="{{classMod}}">
+  {% if product.price_varies %}
+    <span data-price-range>{{ product.price_min | money }} - {{ product.price_max | money }}</span>
+  {% endif%}
+  
+  <span data-compare-price class="{% unless current_variant.compare_at_price > current_variant.price %}u-hidden{% endunless %}">
+    {{ current_variant.compare_at_price | money }}
+  </span>
+
+  <span 
+    data-product-price 
+    data-afterpay-price
+    class="{% if hasPromo %} new-price {% endif %}{% if product.price_varies %}u-hidden{% endif %}">
+    {% if current_variant != blank %}
+      {{ current_variant.price | money }}
+    {% else %}
+      {{ product.price | money }}
+    {% endif %}
+  </span>  
+  
+</div>

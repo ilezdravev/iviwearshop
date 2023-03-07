@@ -1,0 +1,45 @@
+<div class="Container Container--narrower">
+  <div class="Main__header">
+    <h1>{{ page.title }}</h1>
+  </div>
+
+  <div class="Main__content">
+    <center><p>If you just cannot contain how much you love your new purchase, tell us so we can keep it going!</p></center>
+    {% form 'contact' %}
+
+      {% comment %}
+        Successful message
+      {% endcomment %}
+      {% if form.posted_successfully? %}
+        <p class="note form-success">
+          {{ 'contact.form.post_success' | t }}
+        </p>
+      {% endif %}
+
+      <div class="selection-wrapper">
+        {{ form.errors | default_errors }}
+      </div>
+
+      <div class="selection-wrapper">
+        <div class="input-row">
+          {% assign name_attr = 'contact.form.name' | t | handle %}
+          <label for="ContactFormName" class="hidden-label">{{ 'contact.form.name' | t }}</label>
+          <input type="text" id="ContactFormName" class="input-full" name="contact[{{ name_attr }}]" autocapitalize="words" value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.name }}{% endif %}">
+        </div>
+        <div class="input-row">
+          <label for="ContactFormEmail" class="hidden-label">{{ 'contact.form.email' | t }}</label>
+          <input type="email" id="ContactFormEmail" class="input-full" name="contact[email]" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}">
+        </div>
+      
+        <div class="input-row">
+          <label for="ContactFormMessage" class="hidden-label">Customer Review</label>
+          <textarea rows="5" id="ContactFormMessage" class="input-full" name="contact[body]">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+        </div>
+        <p class="submit">
+          <input type="submit" class="Button" data-style="solid secondary" value="{{ 'contact.form.send' | t }}">
+        </p>
+      </div>
+
+    {% endform %}
+  </div>
+</div>

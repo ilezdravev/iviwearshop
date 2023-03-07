@@ -1,0 +1,73 @@
+{% if section.settings.show_announcements %}
+  {% if section.blocks.size > 1 %}
+    {% assign is_slider = true %}
+  {% endif%}
+  <div class="Announcement">
+    <div class="Container{% if is_slider%} is-slider{%endif%}" {% if is_slider %}data-component="Slider" data-options="{cellSelector: '.Announcement__item',prevNextButtons: false, pageDots: false,draggable: false, autoPlay: {{section.settings.autoplay | times: 1000 }}}" {% endif %}>
+      {% for block in section.blocks %}
+        <div class="Announcement__item">
+          {% if block.settings.message_link %}
+            <a href="{{ block.settings.message_link }}">
+          {% endif %}
+
+          {{ block.settings.message_text }}
+
+          {% if block.settings.message_link %}
+            </a>
+          {% endif %}  
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% else %}
+    <div id="fsb_placeholder"></div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Announcement",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_announcements",
+      "label": "Show announcement",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Slider",
+      "info": "If more that one message is present, they will slide automatically"
+    },
+    {
+      "type": "range",
+      "id": "autoplay",
+      "min": 3,
+      "max": 8,
+      "step": 1,
+      "unit": "sec",
+      "label": "Autoplay",
+      "default": 3
+    }
+  ],
+  "blocks": [ 
+    {
+      "type": "message",
+      "name": "Message",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "message_text",
+          "label": "Announcement text"
+        },
+        {
+          "type": "url",
+          "id": "message_link",
+          "label": "Announcement link",
+          "info": "Optional"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

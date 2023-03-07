@@ -1,0 +1,57 @@
+
+
+{% comment %}
+  Links are passed to this include
+{% endcomment %}
+{% for link in links %}
+
+  {% if link.links != blank %}
+    {% assign submenu_active = false %}
+    {%- assign level1_slug = link.title | handle -%}
+    {% for childlink in link.links %}
+      {% if childlink.active %}
+        {% assign submenu_active = true %}
+      {% endif %}
+    {% endfor %}
+    <div class="Nav__item Nav__item--main Nav__item--level1 menu-item {% if link.levels < 2 %}simple-submenu{%endif%} {% if link.handle == 'services' %}services-submenu{%endif%} has-submenu {% if link.active or submenu_active %} Nav__item--active{% endif %}" aria-haspopup="true">
+      <a href="{{ link.url }}" class="Nav__link level-1 {% if link.url == '#' %}anchor-link{% endif %}">
+        <span>{{ link.title }}</span>
+      </a>
+      <div class="Nav__submenu level-2 {{ link.title | handle }}" data-identifier="{{ link.title | handle }}">
+        <div class="Nav Container">
+          {% for link in link.links %}
+            {%- assign level2_slug = link.title | handle -%}
+            {% assign img_ref = collections[level2_slug].metafields.gwm.nav_image | first %}
+            <div class="Nav__item level-2 {% if link.active %}is-active{% endif %} {% if img_ref %}Media{% else %}simple-item{% endif%}">
+              <a href="{{ link.url }}" class="Nav__link level-2">
+                {% if img_ref and menu == 'main' %}
+                  <figure class="Media__content">
+                    <img src="{{ img_ref.cloudinary_src | append: 'w_400' }}" alt="{{ link.title }}" loading="lazy">
+                    <figcaption>{{ link.title | escape }}</figcaption>
+                  </figure>  
+                {% else %}
+                  <span>{{ link.title | escape }}</span>
+                {% endif %}
+              </a>
+              {% if link.links != blank %}
+                <div class="Nav__submenu level-3" data-identifier="{{ link.title | handle }}">
+                  {% for link in link.links %}
+                    <div class="Nav__item level-3">
+                      <a href="{{ link.url }}" class="Nav__link level-3">
+                        <span>{{ link.title }}</span>
+                      </a>
+                    </div>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>      
+    </div>
+  {% else %}
+    <div class="Nav__item Nav__item--main {% if link.active %}selected{% endif %}">
+      <a href="{{ link.url }}" class="Nav__link--main Nav__link level-1">{{ link.title }}</a>
+    </div>
+  {% endif %}
+{% endfor %}

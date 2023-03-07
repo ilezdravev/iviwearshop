@@ -1,0 +1,60 @@
+{% if product.handle contains 'baby' or product.handle contains 'mini' %}
+  {% assign adult_variant_ref = product.handle | remove_first: "baby-" | remove_first: "mini-" | replace: 'romper', 'dress' %}   
+  {% assign adult_variant = all_products[adult_variant_ref] %}
+  
+  {% if product.handle contains "baby" %}
+    {% assign mini_variant_ref = product.handle | replace: "baby", "mini" | replace: "romper", "dress"%}
+  {% else %}
+    {% assign baby_variant_ref = product.handle | replace: "mini", "baby" | replace: 'dress', 'romper' %} 
+  {% endif %}
+
+{% else %}
+  {% assign baby_variant_ref = 'baby-' | append: product.handle | replace: 'dress', 'romper' %} 
+  {% assign mini_variant_ref = 'mini-' | append: product.handle %}
+    
+{% endif %}
+
+
+{% assign baby_variant = all_products[baby_variant_ref] %}
+{% assign mini_variant = all_products[mini_variant_ref] %}
+
+{% if baby_variant != blank or mini_variant != blank or adult_variant != blank %}
+  <div class="product-baby-mini-variant">
+    {% if baby_variant != blank %}
+      <div class="product-baby-variant Media">
+        <figure class="Media__content">
+          <img data-src="{{baby_variant.featured_image | img_url: '200x'}}" class="lazyload" alt="{{baby_variant.title}}" />
+        </figure>
+        <div class="info">
+          <span>Also available in Baby!</span>
+          <a class="Button" data-style="underline secondary" href="{{baby_variant.url}}">View Product</a>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if mini_variant != blank %}
+      <div class="product-mini-variant Media">
+        <figure class="Media__content">
+          <img data-src="{{mini_variant.featured_image | img_url: '200x'}}" class="lazyload" alt="{{mini_variant.title}}" />
+        </figure>
+        <div class="info">
+          <span>Also available in Minis!</span>
+          <a class="Button" data-style="underline secondary" href="{{mini_variant.url}}">View Product</a>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if adult_variant != blank %}
+      <div class="product-baby-variant Media">
+        <figure class="Media__content">
+          <img data-src="{{adult_variant.featured_image | img_url: '200x'}}" class="lazyload" alt="{{adult_variant.title}}" />
+        </figure>
+        <div class="info">
+          <span>Also available in Adult!</span>
+          <a class="Button" data-style="underline secondary" href="{{adult_variant.url}}">View Product</a>
+        </div>
+      </div>
+    {% endif %}
+
+  </div>  
+{% endif %}

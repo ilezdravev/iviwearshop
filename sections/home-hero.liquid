@@ -1,0 +1,214 @@
+
+{% if section.settings.section_enable %}
+  <div class="Hero Hero--home">
+    <div class="bg lazyload"
+      style="background-color: {{section.settings.bg_color}};background-size: {{section.settings.bg_size}}%"
+      data-bgset="{% include 'responsive-bg-image', image: section.settings.bg_image %}"></div>
+    <div class="Container Container--narrow Media">
+    {% for block in section.blocks %}
+      {% assign content_type = block.settings.content_type %}
+      {% assign image = block.settings.image %}
+      {% assign text_image = block.settings.text_image %}
+      {% assign text = block.settings.text %}
+      {% assign video_link = block.settings.video_link %}
+      {% assign button_link = block.settings.button_link%}
+      {% assign button_label = block.settings.button_label%}
+      {% assign show_button = block.settings.show_button %}
+      {% assign fully_clickable = block.settings.fully_clickable %}
+
+      {% capture image_content %}
+        <div class="Hero__tile">
+          <figure class="Media__content {% if fully_clickable %}js-clickBlock{% endif %}">
+            <img
+              {% if forloop.first %}
+                src="{{image | img_url: '400x'}}"
+              {% else %}
+                data-src="{{image | img_url: '400x'}}"
+              {% endif %}
+              data-srcset="
+              {{image | img_url: '400x'}} 400w,
+              {{image | img_url: '800x'}} 800w,
+              {{image | img_url: '1200x'}} 1200w,
+              {{image | img_url: '1600x'}} 1600w"
+              class="lazyload"
+              width={{image.width}}
+              height= {{image.height}}
+              alt="{{image.alt}}"
+            />
+            <figcaption>
+            {% if text_image != blank %}
+              <img
+                data-src="{{text_image | img_url: '400x'}}"
+                data-srcset="
+                {{text_image | img_url: '400x'}} 400w,
+                {{text_image | img_url: '800x'}} 800w,
+                {{text_image | img_url: '1200x'}} 1200w,
+                {{text_image | img_url: '1600x'}} 1600w"
+                class="lazyload text_image"
+                width={{text_image.width}}
+                height= {{text_image.height}}
+                alt="{{text_image.alt}}"
+              />
+            {% endif %}
+              {% if text != blank %}
+                <div class="text">{{text}}</div>
+              {% endif %}
+              {% if button_link != blank %}
+                <a
+                  href="{{button_link}}"
+                  class="Button {% unless show_button %}u-hidden{%endunless%}"
+                  data-style="solid green"
+                  {% if forloop.first %}data-layout="big"{% endif %}>
+                    {{button_label | default: "Shop Now" }}
+                </a>
+              {% endif %}
+            </figcaption>
+          </figure>
+        </div>
+      {% endcapture %}
+
+      {% capture video_content %}
+        <div class="Hero__tile {% if fully_clickable and button_link != blank %}js-clickBlock{% endif %}">
+          <div
+            class="MediaPlayer Media__content"
+            data-component="MediaPlayer"
+            data-video-link="{{video_link}}"
+            data-options='{"muted":true, "playsinline": "true", "playing":{% if forloop.first %}true{% else %}false{% endif %}, "loop":true, "controls": false}'></div>
+          {% if button_link != blank %}
+              <a
+                href="{{button_link}}"
+                class="Button u-hidden"
+                data-style="solid green"
+                {% if forloop.first %}data-layout="big"{% endif %}>
+                  {{button_label | default: "Shop Now" }}
+              </a>
+          {% endif %}
+        </div>
+      {% endcapture %}
+
+      {% if content_type == 'video' %}
+        {% if video_link != blank %}
+          {{video_content}}
+        {% endif %}
+      {% else %}
+        {{image_content}}
+      {% endif %}
+    {% endfor %}
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "section_enable",
+      "label": "Show",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background Image",
+      "info": "Use a patternable image for best results"
+    },
+    {
+      "type": "range",
+      "id": "bg_size",
+      "min": 20,
+      "max": 100,
+      "step": 10,
+      "unit": "%%%",
+      "label": "Background Size",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#F9F0EF"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Content"
+        },
+        {
+          "type": "radio",
+          "id": "content_type",
+          "label": "Content Type",
+          "options": [
+            { "value": "video", "label": "Video" },
+            { "value": "image", "label": "Image" }
+          ],
+          "default": "image"
+        },
+        {
+          "type": "header",
+          "content": "Image Content"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Main Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "text_image",
+          "label": "Text Image"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "info": "Use short sentence, max 50 characters if not main tile"
+        },
+        {
+          "type": "header",
+          "content": "Video Content"
+        },
+        {
+          "type": "url",
+          "id": "video_link",
+          "label": "Video Link",
+          "info": "Use local videos only"
+        },
+        {
+          "type": "header",
+          "content": "Global"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button Label"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_button",
+          "label": "Show Button",
+          "info": "Will not show over video",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "fully_clickable",
+          "label": "Fully clickable",
+          "default": false
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

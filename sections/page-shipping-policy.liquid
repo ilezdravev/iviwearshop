@@ -1,0 +1,37 @@
+{% include 'accordion' object: section.blocks%}
+
+{% schema %}
+{
+  "name": "Accordion",
+  "settings": [
+  ],
+  "blocks": [ 
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        },
+        {
+          "type": "image_picker",
+          "id": "desktop_image",
+          "label": "Desktop Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "Mobile Image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

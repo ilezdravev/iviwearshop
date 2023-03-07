@@ -1,0 +1,119 @@
+<div class="Main__header">
+   <h1>Ivy League Insiders</h1>
+   <h6 class="subtitle">for the dress obsessed</h6>
+   <p>Welcome to our loyalty program! Let’s keep this simple, shall we? <br>The more you shop and interact, the more you earn!</p>
+    <a 
+      class="Button"
+      data-style="solid secondary"
+      {% if customer %}
+        data-component="RewardsNav"
+        href="#">
+        Access Your Rewards
+      {% else %}
+        href="/account/register">
+        Sign up & earn
+      {% endif %}
+    </a>
+    {% unless customer %}  
+      <span>Already an insider? <a href="/account/login">Sign In</a></span>  
+    {% endunless %}
+
+</div>
+<div class="Main__content Container Container--narrow">
+  <div class="Section Section--good-stuff">
+    <div class="wrapper">
+      <div class="Section__header">
+        <h2 class="heading">The Good Stuff</h2>
+      </div>
+      <div class="Section__content">
+        <ul class="Points">
+          <li><span>200 Points</span><span class="line"></span><em>$ 5</em></li> 
+          <li><span>400 Points</span><span class="line"></span><em>$ 15</em></li> 
+          <li><span>600 Points</span><span class="line"></span><em>$ 30</em></li> 
+          <li><span>800 Points</span><span class="line"></span><em>$ 50</em></li> 
+          <li><span>1300 Points</span><span class="line"></span><em>$ 100</em></li> 
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="Section Section--how-to">
+    <div class="Section__header">
+      <h2 class="heading">How to Earn</h2>
+    </div>
+    <div class="Section__content">
+      <div class="Loop">
+        <div class="Tile">
+          <span class="tile__title">Sign up</span>
+          <span class="points">150 points</span>
+        </div>
+        <div class="Tile">
+          <span class="tile__title">Make a purchase</span>
+          <span class="points">1pt for every dollar spent</span>
+        </div>
+        <div class="Tile">
+          <span class="tile__title">Celebrate a birthday</span>
+          <span class="points">50 points</span>
+        </div>
+        <div class="Tile">
+          <span class="tile__title">Write a review</span>
+          <span class="points">50 points</span>
+        </div>
+        <div class="Tile">
+          <span class="tile__title">Like our Facebook</span>
+          <span class="points">25 points</span>
+        </div>
+        <div class="Tile">
+          <span class="tile__title">Follow us on Insta</span>
+          <span class="points">25 points</span>
+        </div>
+    </div>
+  </div>
+
+  <div class="Section Section--rules">
+    <div class="wrapper">
+      <div class="Section__content">
+        <ul>
+          <li>You must enter your birth date on your account at least 30 days prior to your birth date.</li> 
+          <li>Photo reviews limited to 2 in a 30 day period.</li>
+          <li>Points expire after 1 year.</li> 
+          <li>Points are non-refundable.</li> 
+          <li>Orders placed using rewards coupons are exchange only for equal or lesser value or can be refunded for any amount paid excluding rewards coupon.</li> 
+        </ul>
+        <p>We have the right to disqualify people from the program or remove points for creating multiple accounts or using other methods to earn points in an unintended manner.</p>  
+      </div>
+    </div>
+  </div>
+
+  <div class="Section Section--refer-a-friend">
+    <div class="Section__header">
+      <h2 class="heading">Refer a Friend & Save</h2>
+      <p>Insider members receive a $10 coupon for each friend they refer.<br>Friends get 10% off their first purchase. That's a win-win!</p>
+    </div>
+    <div class="Section__content Loop">
+      <div class="Coupon">
+        <div class="inner">
+          <span>Your Referral Reward</span>
+          <span>$10 Off Coupon</span>
+        </div>
+      </div>
+      <div class="Coupon">
+        <div class="inner">
+          <span>Referred Friend Reward</span>
+          <span>10% Off Coupon</span>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+  <div class="Section Section--cta">
+    <div class="Section__header">
+      {% if customer %}
+        <h2>Thank you for your loyalty!</h2>
+      {% else %}
+        <h2>Join Today & Start Earning</h2>
+        <a href="/account/register" class="Button" data-style="solid secondary">Sign up & Earn</a>
+      {% endif %}
+    </div>
+  </div>
+</div>

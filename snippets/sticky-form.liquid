@@ -1,0 +1,60 @@
+{% assign is_coming_soon = false %}
+{% if template.suffix == 'coming-soon' %}
+  {% assign is_coming_soon = true %}
+{% endif %}
+
+<div class="StickyProduct__form--wrapper u-show--untilDesktop" data-component="StickyBar">
+  <div class="StickyProduct__form Container Container--narrowest" data-component="MobileProductForm">
+  
+    {% comment %} {% include 'product-price' %} {% endcomment %}
+    
+    <div class="inner 
+      {%- unless product.variants.size < 2 or product.available %} unavailable{%- endunless -%} 
+      {%- if product.has_only_default_variant %} single-variant{%- endif -%}
+      {%- if is_coming_soon %} coming-soon{%- endif -%}"> 
+
+      {% unless product.has_only_default_variant or product.available == false or is_coming_soon %}
+        {% include 'product-variant-selector-dropdown'%}
+      {% endunless %}
+
+      {% if is_coming_soon %}
+        {% assign btn_text_unavailable = 'products.product.coming_soon' | t %}
+      {% else %}
+        {% assign btn_text_unavailable = 'products.product.sold_out' | t %}
+      {% endif %}
+
+      <div class="Buttons">
+        <button
+          type="submit"
+          class="Button Button--mobile"
+          data-style="solid secondary"
+          data-layout="big block"
+          data-add-to-cart
+          {% if product.has_only_default_variant or current_variant.available %} {% if is_coming_soon %}disabled{% endif %}{% else %}
+          disabled {% endif %}>
+          <span data-add-to-cart-text>
+             {% if is_coming_soon %}
+              {{ btn_text_unavailable }}
+            {% else %}
+              {% if current_variant %}
+                {% if current_variant.available %}
+                  <span>Buy</span>
+                  <span data-product-price> - {{ product.price | money }}</span>
+                {% else %}
+                  <span>{{ btn_text_unavailable }}</span>
+                {% endif %}
+              {% else %}
+                {% if product.available %}
+                  Choose Options 
+                {% else %}
+                  {{ btn_text_unavailable }}
+                {% endif %}
+              {% endif %}
+            {% endif %}
+          </span>
+        </button>
+      </div>
+    </div>
+    {% include 'product-stock-alert', classModifiers: null %}
+  </div>
+</div>

@@ -1,0 +1,154 @@
+{% assign has_model_gallery = false %}
+  {% assign models = "" %}
+
+{% for media in product.media %}
+
+  {% if media.alt contains 'model:' %}
+    {% assign has_model_gallery = true %}
+    {% assign modelName = media.alt | split: ":" | last | split: "|" | first %}
+    {% assign models = models | append: modelName | append: ','%}
+  {% endif %}
+
+{% endfor %}
+
+{% if has_model_gallery %}
+  {% assign models = models | split: ','  %}
+
+  <script>
+    window.gwm = {
+      models: [
+        {%- for model_name in shop.metafields.globals.model_name -%}
+          {%- if models contains model_name -%}
+            {
+              index: {{forloop.index0}},
+              name: "{{shop.metafields.globals.model_name[forloop.index0]}}",
+              {%- for image in product.images -%}
+                {%- capture model_name_ref -%}model:{{model_name}}{%- endcapture -%}
+                {%- if image.alt contains model_name_ref -%}
+              image: "{{image | img_url: '200x'}}",
+                {%- break -%}
+                {%- endif -%}
+              {%- endfor -%}
+              {%- for image in product.images -%}
+                {%- capture dress_size_ref -%}model:{{model_name}}{%- endcapture -%}
+                {%- if image.alt contains dress_size_ref -%}
+              dress_size: "{{image.alt | split: "|" | last}}",
+                  {%- break -%}
+                {%- endif -%}
+              {%- endfor -%}
+              height: "{{shop.metafields.globals.model_height[forloop.index0]}}",
+              bust: "{{shop.metafields.globals.model_bust[forloop.index0]}}",
+              waist: "{{shop.metafields.globals.model_waist[forloop.index0]}}",
+              hips: "{{shop.metafields.globals.model_hips[forloop.index0]}}"
+            }{%- unless forloop.last -%},{%- endunless -%}
+          {%- endif -%}
+        {%- endfor -%}
+      ]
+    }
+  </script>
+{% endif %}
+
+
+
+<div
+  class="Product"
+  data-enable-history-state="true"
+  data-handle="{{ product.handle }}"
+  >
+
+
+  <div class="Main__content Container">
+
+    {% if  product.has_only_default_variant %}
+      {% assign current_variant = product.selected_or_first_available_variant %}
+    {% else %}
+      {% assign current_variant = product.selected_variant %}
+    {% endif %}
+
+    {% comment %} Select a variant to use in BIS {% endcomment %}
+    {% if template.suffix == 'coming-soon' or template.suffix == 'sold-out' %}
+      {% assign current_variant = product.selected_or_first_available_variant | default: product.variants.first %}
+    {% endif %}
+
+    {% comment %} Swym button on product pages {% endcomment %}
+      <div class="swym-wishlist-button-bar"></div>
+    {% comment %} Swym button on product pages {% endcomment %}
+
+
+    <div class="Product__main">
+      <div class="Product__gallery">
+        {% include 'product-full-gallery' %}
+      </div>
+      <div class="Product__details">
+
+        {% include 'product-form' %}
+
+        {% include 'product-highlights' %}
+
+        {% include 'product-description' %}
+
+        {% include 'product-accordion' %}
+
+        {% include 'product-baby-mini-variant' %}
+      </div>
+    </div>
+
+    <div class="Product__details--mobile u-show--untilDesktop">
+      <div class="wrapper">
+        <h1 class="Product__title">{{ product.title }}</h1>
+
+        <div class="loox-star-rating ">
+          <a href="#looxReviews">
+            <div class="loox-rating" data-id="{{ product.id }}" data-rating="{{ product.metafields.loox.avg_rating }}" data-raters="{{ product.metafields.loox.num_reviews }}"></div>
+          </a>
+        </div>
+
+      </div>
+      {% comment %} {% include 'mobile-product-form' %} {% endcomment %}
+    </div>
+
+  </div>
+
+  {% comment %} {% include 'sticky-form' %} {% endcomment %}
+
+  {% unless product == empty %}
+    <script type="application/json" data-product-json>
+      {{ product | json }}
+    </script>
+  {% endunless %}
+
+</div>
+
+<div class="Section Section--ig-feed Container">
+  <div class="Section__header">
+    <h3 style="text-align: center;">#ivyonyou</h4>
+  </div>
+  <div class="Section__content">
+    <script src="//foursixty.com/media/scripts/fs.slider.v2.5.js" data-feed-id="ivy-city-co" data-theme="slider_v2_5" data-cell-size="20%" data-connector-filter="41267,41268" data-for-url="true"></script><style>.fs-has-links {display:none;}.fs-wrapper { height: auto } .fs-entry-container { height: 0 !important; width: 20% !important; padding-top: 20% !important; }.fs-wrapper div.fs-text-container .fs-entry-title, div.fs-detail-title{font-family:Times New Roman, serif;font-style:italic;font-weight:normal;}div.fs-text-container .fs-entry-date, div.fs-detail-container .fs-post-info, div.fs-wrapper div.fs-has-links::after, .fs-text-product, .fs-overlink-text{font-family:Helvetica Neue, Helvetica, Arial, sans-serif;font-style:normal;font-weight:bold;}.fs-wrapper div.fs-text-container * {color:#fff}.fs-wrapper div.fs-text-container {background-color:rgba(0,0,0,0.8); margin: 0px}div.fs-entry-date{display:none}div.fs-entry-title{display:none}.fs-wrapper div.fs-timeline-entry{ margin: 1px }</style>
+  </div>
+</div>
+
+{% if product.metafields.loox.num_reviews %}
+<script id="looxSchemaJson" type="application/ld+json">
+{
+	"@context": "http://schema.org",
+	"@type": "Product",
+	"@id": {{ canonical_url | json }},
+	"aggregateRating": {
+		"@type": "AggregateRating",
+		"ratingValue": "{{ product.metafields.loox.avg_rating }}",
+		"reviewCount": "{{ product.metafields.loox.num_reviews }}"
+	},
+	"name": {{ product.title | json }}
+}
+</script>
+{% endif %}
+
+
+{% if product.handle == 'gift-card' %}
+  <div id="looxReviews" data-product-id="{{product.id}}" data-write-btn="hidden">{{ product.metafields.loox.reviews }}</div>
+{% else %}
+  <div id="looxReviews" data-product-id="{{product.id}}" class="loox-reviews-default">{{ product.metafields.loox.reviews }}</div>
+{% endif %}
+
+

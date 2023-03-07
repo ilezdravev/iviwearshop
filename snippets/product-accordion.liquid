@@ -1,0 +1,55 @@
+{% assign has_model_data = false %}
+
+{% for media in product.media %}
+  {% if media.alt contains 'model:' %}
+    {% assign has_model_data = true %}
+    {% break %}
+  {% endif%}
+{% endfor%}
+
+<div class="Section Section--productAccordions">
+  {% if product.metafields.gwm.accordion_title %}
+    <div class="Accordion" data-component="Accordion">
+      {% for title in product.metafields.gwm.accordion_title %}
+
+        <div class="Accordion__item">
+          <div class="Accordion__toggle" tabindex="0">
+            <h6>{{title}}</h6>
+            <svg viewBox='0 0 20 20' class='icon plus' width='1em' height='1em'>
+              <use href='#icon-plus'></use>
+            </svg>
+            <svg viewBox='0 0 20 20' class='icon minus' width='1em' height='1em'>
+              <use href='#icon-minus'></use>
+            </svg>
+          </div>
+          <div class="Accordion__content">
+            <div class="contentWrapper">
+              {{ product.metafields.gwm.accordion_content[forloop.index0].html }}
+            </div>
+          </div>
+        </div>
+
+      {% endfor %}
+      {% unless product.tags contains 'baby' or product.tags contains 'mini' %}
+        {% if has_model_data %}
+          <div class="Accordion__item">
+            <div class="Accordion__toggle" tabindex="0">
+              <h6>Model Stats</h6>
+              <svg viewBox='0 0 20 20' class='icon plus' width='1em' height='1em'>
+                <use href='#icon-plus'></use>
+              </svg>
+              <svg viewBox='0 0 20 20' class='icon minus' width='1em' height='1em'>
+                <use href='#icon-minus'></use>
+              </svg>
+            </div>
+            <div class="Accordion__content">
+              <div class="contentWrapper">
+                {% render 'models-stats' %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endunless %}
+    </div>
+  {% endif %}
+</div>

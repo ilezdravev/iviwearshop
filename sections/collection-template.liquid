@@ -1,0 +1,50 @@
+{% include 'collection-header' %}
+{% include 'collection-loop', per_page: section.settings.nr_products %}
+
+
+{% schema %}
+  {
+    "name": "Collection",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Header"
+      },
+      {
+        "type": "image_picker",
+        "id": "hero_bg_image",
+        "label": "Hero Background Image"
+      },
+      {
+        "type": "range",
+        "id": "hero_bg_size",
+        "min": 20,
+        "max": 100,
+        "step": 10,
+        "unit": "%%%",
+        "label": "Background Size",
+        "default": 20
+      },
+      {
+        "type": "color",
+        "id": "hero_bg_color",
+        "label": "Hero Background Color",
+        "default": "#F9F0EF"
+      },
+      {
+        "type": "header",
+        "content": "Content"
+      },
+      {
+        "type": "range",
+        "id": "nr_products",
+        "min": 12,
+        "max": 60,
+        "step": 1,
+        "unit": "prd",
+        "label": "Products per page",
+        "default": 12
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,13 @@
+{% if product.metafields.gwm.highlight_text != blank %}
+  <div class="Highligths u-show--fromDesktop">
+    {% for title in product.metafields.gwm.highlight_text %}
+      <div class="Highlight">
+        {% assign icon = product.metafields.gwm.highlight_icon[forloop.index0] %}
+        <svg viewBox='0 0 20 20' class='icon' width='1em' height='1em'>
+          <use xlink:href='#{{icon | handleize}}'></use>
+        </svg>
+        <div class="content">{{title}}</div>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}

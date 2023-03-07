@@ -1,0 +1,249 @@
+{
+  "sections": {
+    "richtext1": {
+      "type": "landing-richtext",
+      "settings": {
+        "title": "must-have maternity looks",
+        "subtitle": "Shop our favorite maternity looks, perfect for the entirety of your birth journey.",
+        "text_align": "center"
+      }
+    },
+    "c033f10d-c7a9-4a2e-b2d0-060905cb8a53": {
+      "type": "landing-image-slider",
+      "blocks": {
+        "17fd5e07-cb91-4405-8ba4-2f2c31e27654": {
+          "type": "photo",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/IMG-7930.jpg"
+          }
+        },
+        "ba2ac115-70ff-470a-a20b-c1e64fe86231": {
+          "type": "photo",
+          "disabled": true,
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/maternity.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "17fd5e07-cb91-4405-8ba4-2f2c31e27654",
+        "ba2ac115-70ff-470a-a20b-c1e64fe86231"
+      ],
+      "settings": {
+        "image_size": "variable"
+      }
+    },
+    "video": {
+      "type": "section-video",
+      "disabled": true,
+      "settings": {
+        "height": "use_screen_two_thirds",
+        "video_link_bg": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/699636e3ea454d48945e630f333ffea7.mp4",
+        "video_link_bg_mob": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/f28909c998ac4a20866e22e0e73c3361.mp4",
+        "object_position": "center-center",
+        "bg_position": "center-center",
+        "video_link": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "popup_text": "",
+        "kicker": "Introducing",
+        "title": "Featured video",
+        "richtext": "<p>This area is used to describe your video’s details.<\/p>",
+        "text_align": "align--middle-center",
+        "text_color": "text--white",
+        "overlay_opacity": 15,
+        "overlay_color": "#000000",
+        "floral": "floral_1.jpg",
+        "link_text": "",
+        "link": "",
+        "button_color": "btn--white",
+        "button_style": "btn"
+      }
+    },
+    "image-with-items": {
+      "type": "landing-image-with-items",
+      "blocks": {
+        "ce135248-6d65-4111-be94-266c26c06694": {
+          "type": "text_item",
+          "settings": {
+            "text": "comfortable fabrics that ensure both fashion and comfort"
+          }
+        },
+        "c49d51c3-32e2-4ec9-ba04-2aa36862894e": {
+          "type": "text_item",
+          "settings": {
+            "text": "made with stretch that allows for growth, while maintaining the structure of the dress"
+          }
+        },
+        "9b8b37d6-20e5-4319-b9ee-974bc2ee127e": {
+          "type": "text_item",
+          "settings": {
+            "text": "perfect looks for pre-pregnancy through post-natal care"
+          }
+        },
+        "a0f0a8de-6772-4772-b7fe-1cc4b7fa431c": {
+          "type": "text_item",
+          "disabled": true,
+          "settings": {
+            "text": "you will love it!"
+          }
+        }
+      },
+      "block_order": [
+        "ce135248-6d65-4111-be94-266c26c06694",
+        "c49d51c3-32e2-4ec9-ba04-2aa36862894e",
+        "9b8b37d6-20e5-4319-b9ee-974bc2ee127e",
+        "a0f0a8de-6772-4772-b7fe-1cc4b7fa431c"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Ashley_Nicole_Gondek.jpg",
+        "range": 30
+      }
+    },
+    "richtext2": {
+      "type": "landing-richtext",
+      "settings": {
+        "title": "Dresses curated with motherhood in mind!",
+        "subtitle": "You are sure to fall head over heels for these looks. Perfect for everything from gender reveals to newborn photos. You are sure to love this dress through all stages of life. Made with high quality fabric and materials to last for years to come!",
+        "text_align": "center"
+      }
+    },
+    "16631669742a635b88": {
+      "type": "landing-image-slider",
+      "blocks": {
+        "078562bb-09a2-4c6d-9c81-ed2bf75e25f3": {
+          "type": "photo",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/82D7FD26-8AC1-4A39-9D9E-7AFC584DABE8.jpg"
+          }
+        },
+        "e6464d57-18f5-4b46-a6d3-54475bbd676b": {
+          "type": "photo",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/image0_1_0379798d-c089-4caa-86a7-a4a6e9744eb3.jpg"
+          }
+        },
+        "aec934a2-3c06-4d27-afc2-08c17337f8ef": {
+          "type": "photo",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/IMG-7930.jpg"
+          }
+        },
+        "b70935de-0dc8-4e0b-a94e-0c9912ec7835": {
+          "type": "photo",
+          "disabled": true,
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/Screenshot_4.png"
+          }
+        },
+        "b757ead6-066d-4fe9-bf3a-51f5e4c00e7a": {
+          "type": "photo",
+          "disabled": true,
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/Screenshot_2.png"
+          }
+        }
+      },
+      "block_order": [
+        "078562bb-09a2-4c6d-9c81-ed2bf75e25f3",
+        "e6464d57-18f5-4b46-a6d3-54475bbd676b",
+        "aec934a2-3c06-4d27-afc2-08c17337f8ef",
+        "b70935de-0dc8-4e0b-a94e-0c9912ec7835",
+        "b757ead6-066d-4fe9-bf3a-51f5e4c00e7a"
+      ],
+      "settings": {
+        "image_size": "medium"
+      }
+    },
+    "richtext3": {
+      "type": "landing-richtext",
+      "settings": {
+        "title": "Check out what our customers are saying about their dresses made for maternity and after!",
+        "subtitle": "",
+        "text_align": "center"
+      }
+    },
+    "1663166984e5c0c486": {
+      "type": "landing-testimonial-slider",
+      "blocks": {
+        "915eb998-97a8-432f-a0ca-3338af8a4c98": {
+          "type": "testimonial",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/Sausan_A.jpg",
+            "testimonial": "Hi ordered this for my baby shower! I am currently 31 weeks pregnant and ordered a small. Absolutely loved the dress and felt really beautiful in it.",
+            "author": "- Sausan A."
+          }
+        },
+        "58adebda-2578-4b38-84ba-b225d355b7ef": {
+          "type": "testimonial",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/Nicole_M.jpg",
+            "testimonial": "I've been waiting for this to make a comeback and I'm so glad it came with baby rompers!! They're just so much easier for my very active baby and the back zipper\/diaper snaps combo is perfect for getting it on and off. Also perfect for a cold climate!",
+            "author": "- Nicole M"
+          }
+        },
+        "11859ef3-a50e-4142-b92a-02f291bf53b3": {
+          "type": "testimonial",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/Whitney_S..jpg",
+            "testimonial": "It fit me perfectly. Super cute for an updated family photo. Bought size large and Im 5,2” & 156lbs",
+            "author": "- Whitney S."
+          }
+        },
+        "4d955b2a-5895-41a8-9876-53822d20c398": {
+          "type": "testimonial",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/maternity.jpg",
+            "testimonial": "Very cute, love that these ties allow to do family matching!",
+            "author": "- Julie T."
+          }
+        },
+        "9a49aa35-9a55-4777-8bcf-e3dae181c99d": {
+          "type": "testimonial",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/Ujin.jpg",
+            "testimonial": "I got this dress for our newborn photoshoot and the was as dreamy as the product photos looked! The fit was great, I was so comfortable, and the details on this dress made all the difference on the close-up photos. I am now Ivy City Co obsessed (so much so that I got two more dresses after this one). Love, love, loooove!!!",
+            "author": "- Ujin"
+          }
+        }
+      },
+      "block_order": [
+        "915eb998-97a8-432f-a0ca-3338af8a4c98",
+        "58adebda-2578-4b38-84ba-b225d355b7ef",
+        "11859ef3-a50e-4142-b92a-02f291bf53b3",
+        "4d955b2a-5895-41a8-9876-53822d20c398",
+        "9a49aa35-9a55-4777-8bcf-e3dae181c99d"
+      ],
+      "settings": {
+        "image_size": "small"
+      }
+    },
+    "16636811832f841f67": {
+      "type": "featured-products",
+      "settings": {
+        "title": "Featured Products",
+        "data_source": "collection",
+        "feat_collection": "all-women-dresses",
+        "layout": "grid",
+        "nr_products": 12
+      }
+    },
+    "16631671364e6739c2": {
+      "type": "landing-two-image",
+      "settings": {
+        "image1": "shopify:\/\/shop_images\/CUSTOMER-19.jpg",
+        "image2": "shopify:\/\/shop_images\/CUSTOMER-19.jpg"
+      }
+    }
+  },
+  "order": [
+    "richtext1",
+    "c033f10d-c7a9-4a2e-b2d0-060905cb8a53",
+    "video",
+    "image-with-items",
+    "richtext2",
+    "16631669742a635b88",
+    "richtext3",
+    "1663166984e5c0c486",
+    "16636811832f841f67",
+    "16631671364e6739c2"
+  ]
+}

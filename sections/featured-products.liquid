@@ -1,0 +1,101 @@
+{% assign heading = section.settings.title %}
+{% assign data_source = section.settings.data_source %}
+{% assign feat_collection = section.settings.feat_collection %}
+{% assign section_layout = section.settings.layout %}
+{% assign product_count = section.settings.nr_products %}
+
+{% if data_source == "collection" %}
+  {% assign feat_products = collections[feat_collection].products %}  
+{% else %}
+  {% assign feat_products = section.blocks %}  
+{% endif %}
+
+
+
+<div class="Container">
+  <div class="Section__header">
+    <h2 class="heading">{{heading}}</h2>
+  </div>
+  <div
+    class="Section__content {% if section_layout == 'slider' and product_count > 4 %}Slider{% else %}Loop{% endif %}"
+    {% if section_layout == 'slider' and product_count > 4 %}data-component="Slider" data-options="{cellSelector: '.Card'}"{% endif %}">
+    {% for prod in feat_products limit: product_count %}
+      {% if data_source == "collection" %}
+        {% include 'product-card', product: prod, showPrice: false %}
+      {% else %}
+        {% include 'product-card', product: all_products[prod.settings.feat_product], showPrice: false %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Featured Products",
+    "class": "Section Section--featured-products",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "radio",
+        "id": "data_source",
+        "label": "Data Source",
+        "options": [
+          { "value": "collection", "label": "Collection" },
+          { "value": "products", "label": "Products" }
+        ],
+        "default": "collection",
+        "info": "Use collection or select individual products above."
+      },
+      {
+        "type": "collection",
+        "id": "feat_collection",
+        "label": "Collection"
+      },
+      {
+        "type": "radio",
+        "id": "layout",
+        "label": "Layout",
+        "options": [
+          { "value": "grid", "label": "Grid" },
+          { "value": "slider", "label": "Slider" }
+        ],
+        "default": "grid",
+        "info": "Minimum of 5 products to be able to use Slider"
+      },
+      {
+        "type": "range",
+        "id": "nr_products",
+        "min": 4,
+        "max": 12,
+        "step": 1,
+        "unit": "prd",
+        "label": "Nr of products",
+        "default": 4
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Product",
+        "type": "feat_product",
+        "limit": 12,
+        "settings":[
+          {
+            "type": "product",
+            "id": "feat_product",
+            "label": "Product"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Featured Products",
+        "category": "Product"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,35 @@
+<div class="Card Card--team-member {{classModifiers}}" data-layout="vertical media-content">
+  <div class="Card__media Media">
+    <figure class="Media__content">
+      {% if team_member.photo != blank %}
+        <img
+          data-sizes="auto"
+          data-src="{{ team_member.photo | img_url: '200x' }}"
+          data-srcset="
+              {{ team_member.photo | img_url: '200x' }} 200w,
+              {{ team_member.photo| img_url: '400x' }} 400w,
+              {{ team_member.photo | img_url: '800x' }} 800w"
+          class="lazyload fadeup"
+          alt="{{ product.title }}" />
+      {% endif %}
+    </figure>
+  </div>
+  <div class="Card__details">
+
+    {% if team_member.name != blank %}
+      {% assign name = team_member.name %}  
+    {% elsif team_member.title != blank%}
+      {% assign name = team_member.title %}  
+    {% endif %}
+  
+    <h6>{{name}}</h6>
+    {% if team_member.job_title != blank %}
+      <span class="job_title">{{team_member.job_title}}</span>
+    {% endif %}
+    {% if team_member.bio != blank %}
+      <div class="bio">
+        {{team_member.bio}}
+      </div>  
+    {% endif %}
+  </div>
+</div>

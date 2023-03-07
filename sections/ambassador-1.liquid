@@ -1,0 +1,26 @@
+<div class="">
+  <div class="section-title">{{ section.settings.title }}</div>
+  <div class="image-wrap">
+    <div class="Container">
+      <img src="{{ section.settings.image | img_url: '1024x' }}" alt="ambassador top">
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Ambassador 1",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ]
+}
+{% endschema %}

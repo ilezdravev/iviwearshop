@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[11],{61:function(e,t,n){"use strict";n.r(t);var o=n(0),a=n.n(o);t.default=function(e){var t=e.mediaUrl,n=e.loop,l=e.muted,r=e.playing,c=e.controls,u=Object(o.useRef)(null);return Object(o.useEffect)((function(){r?u.current.play():u.current.pause()}),[r]),a.a.createElement("video",{ref:u,className:"video_player",style:{width:"100%",height:"100%"},src:t,muted:l,loop:n,autoPlay:r,controls:c,playsInline:!0})}}}]);
+//# sourceMappingURL=11.chunk.f1665cb07b8a305d6cfb.js.map

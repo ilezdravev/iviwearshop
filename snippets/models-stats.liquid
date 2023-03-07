@@ -1,0 +1,46 @@
+{% for media in product.media %}
+
+  {% if media.alt contains 'model:' %}
+    {% assign modelName = media.alt | split: ":" | last | split: "|" | first %}    
+    {% assign models = models | append: modelName | append: ','%}
+  {% endif %}
+  
+{% endfor %}
+
+<div class="ModelsStats">
+  {%- for model_name in shop.metafields.globals.model_name -%}
+    {%- if models contains model_name -%}  
+        {% assign name = shop.metafields.globals.model_name[forloop.index0] %}
+        {% assign height = shop.metafields.globals.model_height[forloop.index0] %}
+        {% assign bust = shop.metafields.globals.model_bust[forloop.index0] %}
+        {% assign waist = shop.metafields.globals.model_waist[forloop.index0] %}
+        {% assign hips = shop.metafields.globals.model_hips[forloop.index0] %}
+        
+        {%- capture dress_size_ref -%}model:{{model_name}}{%- endcapture -%}
+        {%- for image in product.images -%}
+          {%- if image.alt contains dress_size_ref -%}
+            {% assign dress_size = image.alt | split: "|" | last %}
+            {%- break -%}
+          {%- endif -%}
+        {%- endfor -%}
+
+        {%- capture model_name_ref -%}model:{{model_name}}{%- endcapture -%}
+        {%- for image in product.images -%}  
+          {%- if image.alt contains model_name_ref -%}
+            {% capture model_image %}{{ image | img_url: '200x'}}{% endcapture %} 
+            {%- break -%}
+          {%- endif -%}
+        {%- endfor -%}
+
+        <div class="Entry Media">
+        <div class="Entry__details">
+          <div class="info">{{ model_name }} is wearing size {{ dress_size }}</div>
+          <div class="measures">{{ height }} | B{{ bust }} W{{ waist }} H{{ hips }}</div>
+        </div>
+        <figure class="Entry__figure Media__content">
+          <img src="{{ model_image }}" loading="lazy" alt="{{ model_name }}"/>
+        </figure>
+        </div>
+    {%- endif -%}
+  {%- endfor -%}
+</div>

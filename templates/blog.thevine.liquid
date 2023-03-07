@@ -1,0 +1,27 @@
+<div class="Main">
+  <div class="Main__header">
+    <h1>{{blog.title}}</h1>
+    <h6 class="subtitle"> Welcome to our blog</h6>
+  </div>
+  <div class="Container">
+    {% paginate blog.articles by 16 %}
+
+    <div class="Loop Loop--blog">
+      {% for article in blog.articles %}
+        {% if forloop.first %}
+          {% include 'article-card', card_layout: "horizontal media-content 60-40" %}  
+        {% else %}
+          {% include 'article-card', card_layout: "vertical media-content" %}  
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {% if paginate.pages > 1 %}
+      <div class="Nav Nav--pagination">
+        {{ paginate | default_pagination }}
+      </div>
+    {% endif %}
+
+    {% endpaginate %}
+  </div>
+</div>

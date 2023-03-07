@@ -1,0 +1,231 @@
+{
+  "sections": {
+    "richtext1": {
+      "type": "landing-richtext",
+      "settings": {
+        "title": "Mom & Me",
+        "subtitle": "",
+        "text_align": "center"
+      }
+    },
+    "video": {
+      "type": "section-video",
+      "disabled": true,
+      "settings": {
+        "height": "use_screen_two_thirds",
+        "video_link_bg": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/699636e3ea454d48945e630f333ffea7.mp4",
+        "video_link_bg_mob": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/f28909c998ac4a20866e22e0e73c3361.mp4",
+        "object_position": "center-center",
+        "bg_position": "center-center",
+        "video_link": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "popup_text": "",
+        "kicker": "Introducing",
+        "title": "Featured video",
+        "richtext": "<p>This area is used to describe your video’s details.<\/p>",
+        "text_align": "align--middle-center",
+        "text_color": "text--white",
+        "overlay_opacity": 15,
+        "overlay_color": "#000000",
+        "floral": "floral_1.jpg",
+        "link_text": "",
+        "link": "",
+        "button_color": "btn--white",
+        "button_style": "btn"
+      }
+    },
+    "image-with-items": {
+      "type": "landing-image-with-items",
+      "blocks": {
+        "ce135248-6d65-4111-be94-266c26c06694": {
+          "type": "text_item",
+          "settings": {
+            "text": "flattering fits for every stage"
+          }
+        },
+        "c49d51c3-32e2-4ec9-ba04-2aa36862894e": {
+          "type": "text_item",
+          "settings": {
+            "text": "match your mini with our identical mini looks"
+          }
+        },
+        "9b8b37d6-20e5-4319-b9ee-974bc2ee127e": {
+          "type": "text_item",
+          "settings": {
+            "text": "coordinate with complimentary dresses, perfect for family photos"
+          }
+        },
+        "a0f0a8de-6772-4772-b7fe-1cc4b7fa431c": {
+          "type": "text_item",
+          "settings": {
+            "text": "comfortable and high quality fabric means these dresses will last for years to come"
+          }
+        }
+      },
+      "block_order": [
+        "ce135248-6d65-4111-be94-266c26c06694",
+        "c49d51c3-32e2-4ec9-ba04-2aa36862894e",
+        "9b8b37d6-20e5-4319-b9ee-974bc2ee127e",
+        "a0f0a8de-6772-4772-b7fe-1cc4b7fa431c"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Kimberly_Grafton.jpg",
+        "range": 30
+      }
+    },
+    "richtext2": {
+      "type": "landing-richtext",
+      "settings": {
+        "title": "match with your mini",
+        "subtitle": "Your mini is sure to fall head over heels for these matching looks. From full flirty skirts to dresses made for fun, these looks are perfect for every event you and your mini will be at.",
+        "text_align": "center"
+      }
+    },
+    "16631669742a635b88": {
+      "type": "landing-image-slider",
+      "blocks": {
+        "078562bb-09a2-4c6d-9c81-ed2bf75e25f3": {
+          "type": "photo",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/cleo-short-black-3.jpg"
+          }
+        },
+        "e6464d57-18f5-4b46-a6d3-54475bbd676b": {
+          "type": "photo",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/eliza-bow-plum-mini-6.jpg"
+          }
+        },
+        "aec934a2-3c06-4d27-afc2-08c17337f8ef": {
+          "type": "photo",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/Screen_Shot_2022-11-16_at_9.34.32_AM.png"
+          }
+        },
+        "b70935de-0dc8-4e0b-a94e-0c9912ec7835": {
+          "type": "photo",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/Untitlennd-3.png"
+          }
+        },
+        "b757ead6-066d-4fe9-bf3a-51f5e4c00e7a": {
+          "type": "photo",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/clara-gunmetal-mini-1.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "078562bb-09a2-4c6d-9c81-ed2bf75e25f3",
+        "e6464d57-18f5-4b46-a6d3-54475bbd676b",
+        "aec934a2-3c06-4d27-afc2-08c17337f8ef",
+        "b70935de-0dc8-4e0b-a94e-0c9912ec7835",
+        "b757ead6-066d-4fe9-bf3a-51f5e4c00e7a"
+      ],
+      "settings": {
+        "image_size": "medium"
+      }
+    },
+    "richtext3": {
+      "type": "landing-richtext",
+      "settings": {
+        "title": "check out what others have said:",
+        "subtitle": "",
+        "text_align": "center"
+      }
+    },
+    "1663166984e5c0c486": {
+      "type": "landing-testimonial-slider",
+      "blocks": {
+        "915eb998-97a8-432f-a0ca-3338af8a4c98": {
+          "type": "testimonial",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/madeline.jpg",
+            "testimonial": "Very cute, love that these ties allow to do family matching!",
+            "author": "- Julie T."
+          }
+        },
+        "58adebda-2578-4b38-84ba-b225d355b7ef": {
+          "type": "testimonial",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/Amy.jpg",
+            "testimonial": "I absolutely love this dress. It is so flattering on me and on my daughter. I ordered a medium, I am normally a large, and it fit wonderfully! My daughter is 4 and usually wears 5T. The 4-5T size fit perfectly.",
+            "author": "- Amy"
+          }
+        },
+        "11859ef3-a50e-4142-b92a-02f291bf53b3": {
+          "type": "testimonial",
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/Suhey.jpg",
+            "testimonial": "Loved it!❤️ perfect for our xmas photoshoot",
+            "author": "-Suhey"
+          }
+        },
+        "4d955b2a-5895-41a8-9876-53822d20c398": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/Kylie_Nelson.jpg",
+            "testimonial": "Review Goes here",
+            "author": ""
+          }
+        },
+        "9a49aa35-9a55-4777-8bcf-e3dae181c99d": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "photo": "shopify:\/\/shop_images\/Kylie_Nelson.jpg",
+            "testimonial": "Review Goes here",
+            "author": ""
+          }
+        }
+      },
+      "block_order": [
+        "915eb998-97a8-432f-a0ca-3338af8a4c98",
+        "58adebda-2578-4b38-84ba-b225d355b7ef",
+        "11859ef3-a50e-4142-b92a-02f291bf53b3",
+        "4d955b2a-5895-41a8-9876-53822d20c398",
+        "9a49aa35-9a55-4777-8bcf-e3dae181c99d"
+      ],
+      "settings": {
+        "image_size": "small"
+      }
+    },
+    "16636811832f841f67": {
+      "type": "featured-products",
+      "settings": {
+        "title": "Featured Products",
+        "data_source": "collection",
+        "feat_collection": "mom-and-me",
+        "layout": "grid",
+        "nr_products": 12
+      }
+    },
+    "16631671364e6739c2": {
+      "type": "landing-two-image",
+      "disabled": true,
+      "settings": {
+        "image1": "shopify:\/\/shop_images\/CUSTOMER-19.jpg",
+        "image2": "shopify:\/\/shop_images\/CUSTOMER-19.jpg"
+      }
+    },
+    "e9bda26c-209f-4483-9380-7b8ef1af534f": {
+      "type": "landing-testimonial-slider",
+      "disabled": true,
+      "settings": {
+        "image_size": "variable"
+      }
+    }
+  },
+  "order": [
+    "richtext1",
+    "video",
+    "image-with-items",
+    "richtext2",
+    "16631669742a635b88",
+    "richtext3",
+    "1663166984e5c0c486",
+    "16636811832f841f67",
+    "16631671364e6739c2",
+    "e9bda26c-209f-4483-9380-7b8ef1af534f"
+  ]
+}

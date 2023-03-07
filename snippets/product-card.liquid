@@ -1,0 +1,158 @@
+{% comment %}
+  Check if the product is on sale
+{% endcomment %}
+{% assign showPrice = showPrice | default: true %}
+{% assign showPreview = showPreview | default: true %}
+{% assign on_sale = false %}
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+{% capture badge %}{% endcapture %}
+{% assign master_tag = null %}
+
+{% for tag in product.tags %}
+  {% if tag contains 'mt:' %}
+    {% assign master_tag = tag | split: ':' | last %}
+  {% endif %}
+{% endfor %}
+
+{% if product.template_suffix == 'coming-soon' %}
+  {% assign master_tag = 'Coming Soon' %}
+{% endif %}
+
+{% if product.compare_at_price > product.price %}
+  {% capture badge %}
+    <div class="Badge Badge--sale">
+      <span>{{ 'products.product.on_sale' | t }}</span>
+    </div>
+  {% endcapture %}
+  {% assign on_sale = true %}
+{% endif %}
+
+{% unless product.available %}
+  {% capture badge %}
+    <div class="Badge Badge--soldOut">
+      <span>{{ 'products.product.sold_out' | t }}</span>
+    </div>
+  {% endcapture %}
+{% endunless %}
+
+{% if master_tag %}
+  {% capture badge %}
+    <div class="Badge Badge--master">
+      <span>{{ master_tag }}</span>
+    </div>
+  {% endcapture %}
+{% endif %}
+
+{%- capture classModifiers -%}
+  {%- unless product.available -%}
+    is-unavailable
+  {%- endunless -%}
+{%- endcapture -%}
+
+{%- unless product.handle contains 'navidium' -%}
+  <div
+    class="Card Card--product {{ product.type | handleize }} {{ classModifiers }}"
+    data-layout="vertical media-content"
+  >
+    <figure class="Card__media {% if product.images.size > 1 %}animate-images{% endif %}">
+      <a href="{{ product.url | within: collection }}">
+        {% if product.images.size > 1 %}
+          <img
+            data-sizes="auto"
+            data-src="{{ product.images[1].src | img_url: '400x' }}"
+            data-srcset="
+              {{ product.images[1].src | img_url: '400x' }} 400w,
+              {{ product.images[1].src | img_url: '800x' }} 800w,
+              {{ product.images[1].src | img_url: '1600x' }} 1600w
+            "
+            class="lazyload fadeup secImg"
+            alt="{{ product.title }}"
+          >
+        {% endif %}
+
+        <img
+          data-sizes="auto"
+          data-src="{{ product.featured_image.src | img_url: '400x' }}"
+          data-srcset="
+            {{ product.featured_image.src | img_url: '400x' }} 400w,
+            {{ product.featured_image.src | img_url: '800x' }} 800w,
+            {{ product.featured_image.src | img_url: '1600x' }} 1600w
+          "
+          class="lazyload fadeup mainImg"
+          alt="{{ product.title }}"
+        >
+      </a>
+    </figure>
+    <div class="Card__details {% if on_sale %}has-promo{% endif %}">
+      <h6 class="Card__title">
+        <a href="{{ product.url | within: collection }}">
+          {{ product.title }}
+        </a>
+      </h6>
+      {% comment %} {% include 'swym-product-view', product: product %}<button class="swym-button swym-add-to-wishlist-view-product product_{{product.id}}" data-swaction="addToWishlist" data-product-id="{{product.id | json}}"></button> {% endcomment %}
+      {% if showPrice %}
+        <div data-price-wrapper>
+          {% if product.compare_at_price > product.price %}
+            {% if product.price_varies %}
+              {%- assign sale_price = product.price | money -%}
+              <span>{{ 'products.product.on_sale_from_html' | t: price: sale_price }}</span>
+            {% else %}
+              <span>{{ product.price | money }}</span>
+            {% endif %}
+          {% else %}
+            {% if product.price_varies %}
+              {%- assign price = product.price | money -%}
+              <span>From {{ price }}</span>
+            {% else %}
+              <span>{{ product.price | money }}</span>
+            {% endif %}
+          {% endif %}
+
+          {% if product.compare_at_price > product.price %}
+            <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
+            <s>{{ product.compare_at_price | money }}</s>
+          {% endif %}
+
+          {% if badge %}
+            {{ badge }}
+          {% endif %}
+        </div>
+      {% endif %}
+
+      <div class="loox-star-rating ">
+        <a href="{{ product.url }}">
+          <div
+            class="loox-rating"
+            data-id="{{ product.id }}"
+            data-rating="{{ product.metafields.loox.avg_rating }}"
+            data-raters="{{ product.metafields.loox.num_reviews }}"
+          ></div>
+        </a>
+      </div>
+
+      {% if product.metafields.color_swatch.color_value %}
+        <div class="color-swatch">
+          <a
+            href="#"
+            class="color-swatch-item {% unless product.available %}soldout{% endunless %}"
+            style="background-color: {{ product.metafields.color_swatch.color_value }};{% if product.metafields.color_swatch.color_image != blank %}background-image: url({{ product.metafields.color_swatch.color_image }});{% endif %}"
+            data-title="{{ product.metafields.color_swatch.color_name }}"
+          ></a>
+          {% assign index = 0 %}
+          {% for rel_product in product.metafields.related_products.product limit: 3 %}
+            <a
+              href="/products/{{ rel_product }}"
+              class="color-swatch-item {% if product.metafields.related_products.available[index] == 'true' %}soldout{% endif %}"
+              style="background-color: {{ product.metafields.related_products.color_value[index] }};{% if product.metafields.related_products.color_image[index] != blank %}background-image: url({{ product.metafields.related_products.color_image[index] }});{% endif %}"
+              data-title="{{ product.metafields.related_products.color_name[index] }}"
+            ></a>
+            {% assign index = index | plus: 1 %}
+          {% endfor %}
+          {% if product.metafields.related_products.product.size > 3 %}
+            <a href="#" class="color-swatch-item">+{{ product.metafields.related_products.product.size | minus: 3 }}</a>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{%- endunless -%}

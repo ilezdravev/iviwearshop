@@ -1,0 +1,122 @@
+{% assign heading = section.settings.title %}
+
+{% assign feat_collection = section.settings.feat_collection %}
+{% assign section_layout = section.settings.layout %}
+{% assign collection_count = section.blocks.size %}
+
+
+<div class="Container">
+  <div class="bg lazyload" 
+    style="background-color: {{section.settings.bg_color}};background-size: {{section.settings.bg_size}}%;"
+    data-bgset="{% include 'responsive-bg-image', image: section.settings.bg_image %}"></div>
+  {% if heading != blank %}
+    <div class="Section__header">
+      <h2 class="heading">{{heading}}</h2>
+    </div>
+  {% endif %}
+  <div
+    class="Section__content {% if section_layout == 'slider' and collection_count > 3 %}Slider{% else %}Loop{% endif %}"
+    {% if section_layout == 'slider' and collection_count > 3 %}data-component="Slider" data-options="{cellSelector: '.Tile'}"{%else%}data-layout="spacious"{% endif %}">
+    {% for block in section.blocks%}
+      {% assign col = collections[block.settings.feat_collection] %}
+      {% if block.settings.alt_image != blank %}
+        {% assign image = block.settings.alt_image %}
+      {% elsif col.image != blank %}
+        {% assign image = col.image %}
+      {% elsif col.products.first.featured_image != blank %}
+        {% assign image = col.products.first.featured_image %}
+      {% else %}
+        {% assign image = null %}
+      {% endif %}
+        <div class="Tile Media js-clickBlock">
+          <figure class="Media__content">
+            {% if image != blank %}
+              <img 
+                data-src="{{image | img_url: '400x'}}" 
+                data-srcset="
+                  {{image | img_url: '400x'}} 400w,
+                  {{image | img_url: '800x'}} 800w"
+                class="lazyload" 
+                alt="{{image.alt}}">
+            {% endif %}
+            <figcaption>
+              <h3 class="heading">{{col.title}}</h3>
+              <a href="{{col.url}}" class="Button" data-style="underline white" data-layout="noLayout">Shop Now</a>
+            </figcaption>
+          </figure>
+        </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Featured Collections",
+    "class": "Section Section--featured-collections",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "bg_image",
+        "label": "Background Image",
+        "info": "Use a patternable image for best results"
+      },
+      {
+        "type": "range",
+        "id": "bg_size",
+        "min": 20,
+        "max": 100,
+        "step": 10,
+        "unit": "%%%",
+        "label": "Background Size",
+        "default": 20
+      },
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background Color",
+        "default": "#F9F0EF"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "radio",
+        "id": "layout",
+        "label": "Layout",
+        "options": [
+          { "value": "grid", "label": "Grid" },
+          { "value": "slider", "label": "Slider" }
+        ],
+        "default": "grid",
+        "info": "Minimum of 4 collections to be able to use Slider"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Collection",
+        "type": "feat_collection",
+        "limit": 6,
+        "settings":[
+          {
+            "type": "collection",
+            "id": "feat_collection",
+            "label": "Collection"
+          },
+          {
+            "type": "image_picker",
+            "id": "alt_image",
+            "label": "Alternative Image"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Featured Collections",
+        "category": "Collection"
+      }
+    ]
+  }
+{% endschema %}

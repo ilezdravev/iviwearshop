@@ -1,0 +1,76 @@
+<div class="Container">
+  <div class="image-gallery">
+    {% for block in section.blocks %}
+      <div class="testimonial-slide">
+        <div class="image image-{{ section.settings.image_size }} {% unless section.settings.image_size == 'variable' %}image-size-fit{% endunless %}">
+          <img src="{{ block.settings.photo | img_url: '1024x' }}" alt="{{ block.settings.photo.alt }}">
+        </div>
+        <div class="testimonial">{{ block.settings.testimonial }}</div>
+        <div class="author">{{ block.settings.author }}</div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Landing Quote Slider",
+  "class": "landing-testimonial-slider",
+  "settings": [
+    {
+      "type": "select",
+      "options": [
+        {
+          "value": "large",
+          "label": "Large"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "variable",
+          "label": "Variable"
+        }
+      ],
+      "id": "image_size",
+      "label": "Image Size",
+      "default": "variable"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings":[
+        {
+          "type": "image_picker",
+          "id": "photo",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "testimonial",
+          "label": "Testimonial"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Landing Quote Image",
+      "category": "landing"
+    }
+  ]
+}
+{% endschema %}

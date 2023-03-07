@@ -1,0 +1,23 @@
+<div class="Nav Nav--top-nav Container">
+  {% if customer %}
+    <div class="Nav__item">
+      <a class="Nav__link" href="/account">Account</a>
+    </div>
+  {% else %}
+    <div class="Nav__item">
+      <a class="Nav__link" href="/account/login">Log In</a>
+    </div>
+  {% endif%}
+  <div class="Nav__item">
+    <a class="Nav__link" href="/pages/rewards">Rewards</a>
+  </div>
+  {% if customer %}
+    <div class="Nav__item">
+      <a class="Nav__link" href="/account/logout">Log Out</a>
+    </div>
+  {% else %}
+    <div class="Nav__item">
+      <a class="Nav__link" href="/account/register">Create Account</a>
+    </div>
+  {% endif %}
+</div>

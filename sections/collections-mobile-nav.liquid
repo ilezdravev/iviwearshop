@@ -1,0 +1,56 @@
+<div class="CollectionsNavSlider u-show--untilTablet">
+  <div class="inner">
+    {% for block in section.blocks %}
+      {%- assign collection = collections[block.settings.collection] -%}
+      <div class="Nav__item">
+        <a href="{{ collection.url }}">
+          <figure class="Nav__item__figure">
+            {% if block.settings.image %}
+              {%- assign image = block.settings.image -%}
+            {% else %}
+              {%- assign image = collection.products.first.featured_image -%}
+            {% endif %}
+              <img
+                class="lazyload"
+                data-src="{{ image | img_url: '200x' }}"
+                alt="{{ collection.title }}"
+              />
+          </figure>
+          <div class="Nav__item__label">
+            {{ block.settings.label }}
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Mobile Collections Slider",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "label": "Collection",
+          "id": "collection",
+          "type": "collection"
+        }, 
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Alternative image"
+        },
+        {
+          "label": "Label",
+          "id": "label",
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,21 @@
+<div class="Collection__navigation">
+  <div class="Nav">
+    <div class="Nav__item level-1">
+      <button
+        class="Button"
+        data-layout="noLayout"
+        data-style="textonly dark"
+        data-action="{ type: 'Collapse', target: 'collection_filters', action: 'toggle' }">
+        <span>Filter Results</span>
+        <svg viewBox='0 0 20 20' class='icon' width='1em' height='1em'>
+          <use xlink:href='#down2'></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="Collapse" data-component="Collapse" data-identifier="collection_filters">
+    <div class="Collapse__content">
+      {% include 'filter-menu' %}
+    </div>
+  </div>
+</div>

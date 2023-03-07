@@ -1,0 +1,92 @@
+{% comment %} Set variable with options in available variants {% endcomment %}
+{% assign availableOptions = '' %}
+{% for v in product.variants %}
+  {% if v.available %}
+    {% for option in v.options %}
+      {% assign availableOptions = availableOptions | append: option | append: '|' %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+{% assign availableOptions = availableOptions | split: '|' %}
+
+{% for option in product.options_with_values %}
+  <div
+    class="selector-wrapper-radio js Product__form__unit Product__form__option option-{{ forloop.index }}"
+    data-product-variant-selector-ui
+    data-component="VariantSelectorRadio"
+    data-option="{{ forloop.index }}"
+  >
+    <label class="swatch-title" for="SingleOptionSelector-{{ forloop.index0 }}">
+      {{ option.name }}
+      {% if option.name == 'Size' %}
+        <div class="kiwisizing-clones" data-component="SizeGuideTrigger">
+          <button type="button" class="Button size-chart" data-layout="noLayout" data-size-guide-trigger>
+            VIEW SIZE CHART
+          </button>
+        </div>
+      {% endif %}
+    </label>
+
+    <div class="variant_options">
+      {% for value in option.values %}
+        {% for variant in product.variants %}
+          {% if variant.option1 == value %}
+            {% assign _variant = variant %}
+          {% endif %}
+        {% endfor %}
+
+        {% assign media_pos = blank %}
+
+        {% for media in product.media %}
+          {% if media.src == _variant.image.src %}
+            {% assign media_pos = media.position %}
+          {% endif %}
+        {% endfor %}
+
+        <label class="option option--{{ value | escape | handleize }}" data-value="{{ value | escape }}">
+          <input
+            type="radio"
+            value="{{ value | escape }}"
+            data-single-option-selector
+            data-index="option{{ option.position }}"
+            id="option-{{ optionIndex }}_{{ forloop.index }}"
+            name="option{{ optionIndex }}"
+            data-image-index="{{ media_pos  }}"
+            {% if current_variant and option.selected_value == value %}
+              checked
+            {% endif %}
+          >
+          <span class="option__text">
+            {{- value | replace: ' ', '' | replace: 'Small', 'S' | replace: 'Medium', 'M' | replace: 'Large', 'L' -}}
+          </span>
+        </label>
+      {% endfor %}
+    </div>
+    {% comment %} Original Select Hidden {% endcomment %}
+    <select
+      id="option{{ option.position }}"
+      class="u-hidden"
+      name="options[{{ option.name | escape }}]"
+    >
+      <option
+        value=""
+        disabled
+        {% unless current_variant %}
+          selected
+        {% endunless %}
+      >
+        Select {{ option.name }}
+      </option>
+      {% for value in option.values %}
+        <option
+          {% if current_variant and option.selected_value == value %}
+            selected="selected"
+          {% endif %}
+          value="{{ value | escape }}"
+        >
+          {{ value }}
+        </option>
+      {% endfor %}
+    </select>
+  </div>
+{% endfor %}

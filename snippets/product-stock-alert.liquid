@@ -1,0 +1,7 @@
+{% if current_variant.inventory_quantity <= 10 and current_variant.inventory_quantity > 0 %}
+  {% assign showStockAlert = true %}
+{% endif %}
+
+<div class='product-variant-stock {{classModifiers}} {% if current_variant.inventory_quantity > 10 %}u-hidden{% endif %}'>
+  <p data-stock-alert {% unless showStockAlert %}class="u-hidden"{% endunless %}><em>Hurry, only {{ current_variant.inventory_quantity }} left in stock!</em></p>
+</div>

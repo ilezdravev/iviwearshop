@@ -1,0 +1,60 @@
+<div class="visit-us">
+  {{ section.settings.visit_us }}
+</div>
+<div class="Container">
+  <div class="title">{{ section.settings.title }}</div>
+  <div class="open-hours">{{ section.settings.open_hours }}</div>
+  <div class="image-gallery">
+    {% for block in section.blocks %}
+      <div class="image-slide">
+        <img src="{{ block.settings.image | img_url: '1024x' }}" alt="{{ block.settings.image.alt }}">
+      </div>
+    {% endfor %}
+  </div>
+  <div class="content">{{ section.settings.content }}</div>
+</div>
+
+{% schema %}
+{
+  "name": "Showrooms Top",
+  "settings": [
+    {
+      "type": "text",
+      "id": "visit_us",
+      "label": "Visit Us Text",
+      "default": "Come visit us IRL. We want to meet you!"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "The Ivy City Co Showroom"
+    },
+    {
+      "type": "text",
+      "id": "open_hours",
+      "label": "Open Hours",
+      "default": "is open:<br>M-F: 10am-7pm MT<br>S: 10am-2pm MT"
+    },
+    {
+      "type": "text",
+      "id": "content",
+      "label": "Content",
+      "default": "We are so excited to announce the opening of our beautiful showroom<br>for an in-person shopping experience!<br>We are open Monday-Friday 10am-7pm<br>Saturdays 10am-2pm and would love to have you stop by!"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

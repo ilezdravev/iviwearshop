@@ -1,0 +1,26 @@
+{% assign title = section.settings.title %}
+{% assign subtitle = section.settings.subtitle %}
+
+<h1>{{ title | default: page.title }}</h1>
+{% if subtitle != blank %}
+  <h6 class="subtitle">{{subtitle}}</h6>  
+{% endif %}
+
+
+{% schema %}
+{
+  "name": "Page Header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Sub Title"
+    }
+  ]
+}
+{% endschema %}

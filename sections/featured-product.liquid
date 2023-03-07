@@ -1,0 +1,68 @@
+<div class="section-featured-product">
+  <div class="section-contents">
+    <div class="image-wrap">
+      <img src="{{ section.settings.image | img_url: '1024x' }}" alt="product image">
+    </div>
+
+    <div class="content-wrap">
+      {% assign product = all_products[section.settings.product_handle] %}
+
+      <div class="product-title">{{ section.settings.title }}</div>
+      <div class="product-subtitle">{{ section.settings.subtitle }}</div>
+      <div class="Product__form">
+        <a
+          href="{{ section.settings.btn_link }}"
+          class="Button default-cart-button__button"
+        >
+          {{ section.settings.btn_text }}
+        </a>
+      </div>
+    </div>
+    <div class="image-wrap">
+      <img class="second-image" src="{{ section.settings.second_image | img_url: '1024x' }}" alt="product image">
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Featured Product",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+            {
+      "type": "image_picker",
+      "id": "second_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Product"
+    }
+  ]
+}
+{% endschema %}

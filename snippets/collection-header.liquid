@@ -1,0 +1,133 @@
+{% comment %}
+  Collection_header very large - requested to take down for now.
+{% endcomment %}
+{% comment %}
+  <div class="Collection__header">
+    <div class="Hero Hero--collection Media" style="background-color: {{section.settings.hero_bg_color}};">
+      <div
+        class="bg lazyload"
+        style="background-color: {{section.settings.hero_bg_color}};background-size: {{section.settings.hero_bg_size}}%"
+        data-bgset="{% include 'responsive-bg-image', image: section.settings.hero_bg_image %}"
+      ></div>
+      {% assign test = true %}
+
+      {% if collection.metafields.gwm.collection_video != blank %}
+        {% assign video_link = collection.metafields.gwm.collection_video %}
+        <div
+          class="MediaPlayer Media__content"
+          data-component="MediaPlayer"
+          data-video-link="{{video_link}}"
+          data-options='{"muted":true, "playing":true, "loop":true, "controls": false}'
+        ></div>
+        <div class="caption">{{ collection.title }}</div>
+      {% else %}
+        <figure class="Media__content" style="background-color: {{section.settings.hero_bg_color}};">
+          {% if collection.image != blank %}
+            <img
+              src="{{collection.image | img_url: '400px'}}"
+              data-srcset="
+                {{ collection.image | img_url: '400x' }} 400w,
+                {{ collection.image | img_url: '800x' }} 800w,
+                {{ collection.image | img_url: '1200x' }} 1200w,
+                {{ collection.image | img_url: '1600x' }} 1600w
+              "
+              class="lazyload"
+            >
+          {% endif %}
+          <figcaption class="caption">{{ collection.title }}</figcaption>
+        </figure>
+      {% endif %}
+    </div>
+
+    <div class="Collection__info" style="background-color: {{section.settings.hero_bg_color}};">
+      <div class="description">
+        {{ collection.description }}
+      </div>
+      {% if collection.products_count > 0 %}
+        <div class="Collection__nav">
+          <p style="font-weight: 500;">Narrow your results</p>
+          <div class="inner">
+            {% render 'filter-menu' %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  {% if template.suffix == 'maternity' %}
+    <div style="margin-top: 40px;">
+      <script
+        src="//foursixty.com/media/scripts/fs.embed.v2.5.js"
+        data-feed-id="ivy-city-co"
+        data-theme="showcase_v2_5"
+        data-open-links-in-same-page="true"
+        data-connector-filter="41267,41268"
+        data-category-filter="MATERNITY"
+        data-page-size="12"
+      ></script>
+      <style>
+        .fs-has-links::after { padding:5px 7.0px;background-color:#ffffff;color:rgba(252,207,207,0.8);content:"SHOP IT"; } .fs-showcase_v2_5.fs-desktop .fs-entry-container { width:16.666666666666668% !important;padding-top:16.666666666666668% !important; } .fs-showcase_v2_5.fs-mobile .fs-entry-container { width:50% !important;padding-top:50% !important; } .fs-wrapper div.fs-text-container .fs-entry-title, div.fs-detail-title { font-family:serif;font-style:normal;font-weight:normal;font-size:14px; } div.fs-text-container .fs-entry-date, div.fs-detail-container .fs-post-info, div.fs-wrapper div.fs-has-links::after, .fs-text-product, .fs-overlink-text { font-family:serif;font-style:normal;font-weight:normal;font-size:14px; } .fs-wrapper div.fs-text-container * { color:#ffffff; } .fs-wrapper div.fs-text-container { background-color:rgba(252,207,207,0.8);margin:0px; } div.fs-entry-date { display:none; } div.fs-entry-title { display:none; } .fs-showcase_v2_5.fs-wrapper div.fs-timeline-entry { margin:1px; }
+      </style>
+    </div>
+  {% endif %}
+
+  <div class="Collection__count">
+    <span>{{ collection.products_count }} Products</span>
+    <div class="Collection__layout" data-component="CollectionLayout">
+      <button class="Button" data-layout="noLayout" data-columns="spacious" aria-label="One Column">
+        <svg viewBox="0 0 20 20" class="icon" width="1em" height="1em">
+          <use href='#icon-layout-1'></use>
+        </svg>
+      </button>
+      <button class="Button active" data-layout="noLayout" data-columns="dense" aria-label="Two Columns">
+        <svg viewBox="0 0 20 20" class="icon" width="1em" height="1em">
+          <use href='#icon-layout-2'></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+{% endcomment %}
+
+<div class="collection__top">
+  <div class="blob-image blob-image1">
+    <img
+      src="https://cdn.shopify.com/s/files/1/0910/2910/files/minimalist_botanical_line_sketches-04.png?v=1651848040"
+      alt="Flower 1"
+    >
+  </div>
+  <div class="collection__top-title">{{ collection.title }}</div>
+  <div class="collection__top-filter-open">
+    <span>filter by</span>
+    {% render 'icon-down' %}
+  </div>
+  <div class="blob-image blob-image2">
+    <img
+      src="https://cdn.shopify.com/s/files/1/0910/2910/files/minimalist_botanical_line_sketches-09.png?v=1651848039"
+      alt="Flower 1"
+    >
+  </div>
+</div>
+
+<div class="description hide--desktop">
+  {{ collection.description }}
+</div>
+
+<div class="collection-mobile-filter-content">
+  <div class="Drawer filterNav">
+    <div class="Drawer__inner">
+      <button class="Button Button--close" type="button" data-layout="noLayout">
+        <svg class="icon icon--primary" height="1em" viewBox="0 0 20 20" width="1em">
+          <use xlink:href="#icon-close"></use>
+        </svg>
+      </button>
+      {% if collection.products_count > 0 %}
+        <div class="Collection__nav">
+          <p style="font-weight: 500;">Narrow your results</p>
+          <div class="inner">
+            {% render 'filter-menu' %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

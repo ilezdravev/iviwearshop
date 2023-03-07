@@ -1,0 +1,252 @@
+<!doctype html>
+<!-- [if IE 8]><html class="no-js lt-ie9" lang="{{ shop.locale }}"> <![endif] -->
+<!-- [if IE 9 ]><html class="ie9 no-js"> <![endif] -->
+<!-- [if (gt IE 9)|!(IE)]><! -->
+<html class="no-js" lang="{{ shop.locale }}">
+  <!-- <![endif] -->
+  <head>
+    {% include 'limespot' %}
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="canonical" href="{{ canonical_url }}">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="{{ settings.primary_accent_color }}">
+
+    <script async src="https://2saol8fdeb.execute-api.us-east-1.amazonaws.com/script?id=10046"></script>
+
+    <meta name="google-site-verification" content="dJMYfKy0yrcGcFXDJMqmQLNglrZI_zzNbHat8X_L_v8">
+
+    {%- if settings.favicon != blank -%}
+      <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+    {%- endif -%}
+
+    <title>
+      {{ page_title }}
+      {% if current_tags -%}
+        {%- assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}
+      {%- endif %}
+      {% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}
+      {% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
+    </title>
+
+    {% if page_description %}
+      <meta name="description" content="{{ page_description | escape }}">
+    {% endif %}
+
+    <link rel="preload" href="{{'fonts.css' | asset_url}}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{'fonts.css' | asset_url }}"></noscript>
+
+    {% render 'theme-preloads' %}
+    {% include 'head-scripts' %}
+
+    {% unless settings.developer_mode %}
+      {% include 'perf-load-css' %}
+      <link rel="preload" href="{{'theme.css' | asset_url}}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+      <noscript><link rel="stylesheet" href="{{'theme.css' | asset_url }}"></noscript>
+    {% endunless %}
+
+    <link rel="preload" href="{{'custom.css' | asset_url}}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="{{'custom.css' | asset_url }}">
+
+    {% render 'pinterest-head-snippets' %}
+
+    {% include 'social-meta-tags' %}
+
+    {% if template.name == 'product' %}
+      {% include 'kiwiSizing' %}
+    {% endif %}
+
+    {% if product %}
+      {% comment %}blocks bugsnag from loading on product pages so we can load media objects and keep our scripts at the end of the page {% endcomment %}
+      <script>
+        window.YETT_BLACKLIST = [/bugsnag\.min\.js/];
+      </script>
+      <script src="https://unpkg.com/yett"></script>
+      <script src="https://cdn.attn.tv/attn.js"></script>
+    {% endif %}
+    {{ content_for_header }}
+
+    {% comment %}
+       {% if template contains 'customers' %}
+        <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer></script>
+      {% endif %}
+    {% endcomment %}
+
+    {% if template == 'cart' %}
+      <script src="{{ 'api.jquery.js' | shopify_asset_url }}" defer="defer"></script>
+      <script src="{{ 'local-pickup.js' | asset_url }}" defer="defer"></script>
+    {% endif %}
+
+    {{ shop.metafields.loox.global_html_head }}
+
+    {% if template contains 'collection' or template contains 'product' %}
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"
+      ></script>
+    {% endif %}
+
+    {% if template contains 'collection' %}
+      {% section 'filter-menu-settings' %}
+    {% endif %}
+
+    {% render 'algolia-head' %}
+
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
+      integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    >
+
+    {% include 'sca.freegifts' %}
+
+    {{ shop.metafields.loox.global_html_head }}
+
+    {% include 'meta-pixel' %}
+  </head>
+
+  <body
+    id="{{ page_title | handle }}"
+    class="template-{{ template.name | handle }}{{ template.suffix | capitalize }}"
+    data-template="{{ template.name | handle }}"
+    data-view="{{ template.suffix | handle }}"
+  >
+    {% include 'top-nav' %}
+    {% section 'announcements' %}
+    {% section 'site-header' %}
+
+    {% if template == 'index' %}
+      {% section 'collections-mobile-nav' %}
+    {% endif %}
+
+    {% assign flower_deco_header_A = 'insiders,behind-the-brand,wide,thevine,press' | split: ',' %}
+    {% assign flower_deco_header_B = 'size-guide' | split: ',' %}
+    {% assign suffix_handle = template.suffix | handle %}
+
+    <main
+      role="main"
+      class="
+        Main
+        {% if flower_deco_header_A contains suffix_handle %}header_flower_deco_A{%elsif flower_deco_header_B contains suffix_handle%}header_flower_deco_B{% endif %}
+      "
+    >
+      {{ content_for_layout }}
+      <limespot></limespot>
+    </main>
+
+    {% section 'site-footer' %}
+
+    {% if settings.developer_mode %}
+      {{ 'https://localhost:8080/theme.js' | script_tag }}
+      {{ 'https://localhost:8080/app.js' | script_tag }}
+    {% else %}
+      <script src="{{ 'app.js' | asset_url }}"></script>
+    {% endif %}
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+      integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="{{ 'custom.js' | asset_url }}"></script>
+
+    <!-- District v3.0.2 -->
+
+    <script async type="text/javascript" src="//static.klaviyo.com/onsite/js/klaviyo.js?company_id=arQmr9"></script>
+
+    <script defer src="https://a.klaviyo.com/media/js/onsite/onsite.js"></script>
+
+    <script src="https://www.dwin1.com/19038.js" type="text/javascript" defer="defer"></script>
+
+    {% include 'swymSnippet' %}
+
+    {% if template == 'product' or template == 'cart' or template == 'collection' %}
+      <!-- Begin Shopify-Afterpay JavaScript Snippet -->
+
+      <script async src="https://js.afterpay.com/afterpay-1.x.js"></script>
+
+      <script>
+        window.addEventListener('Afterpay.ready', function () {
+          Afterpay.createPlacements({
+            targetSelector: '[data-afterpay-wrapper]',
+            attributes: {
+              amountSelector: '[data-afterpay-price]',
+              size: Afterpay.size.XS,
+            },
+          });
+        });
+      </script>
+
+      <!-- End Shopify-Afterpay JavaScript Snippet -->
+    {% endif %}
+
+    <style>
+      .Announcement {
+        background-color: {{ settings.announcement_color }} !important;
+        color: {{ settings.announcement_text_color }} !important;
+      }
+
+      #fsb_bar {
+        background-color: {{ settings.announcement_color }} !important;
+        color: {{ settings.announcement_text_color }} !important;
+      }
+
+      .Announcement p, #fsb_bar p {
+        color: {{ settings.announcement_text_color }} !important;
+      }
+    </style>
+
+    <!-- **BEGIN** Hextom FSB Integration // Main Include - DO NOT MODIFY -->
+    {% render 'hextom_fsb_main', product: product, customer: customer %}
+    <!-- **END** Hextom FSB Integration // Main Include - DO NOT MODIFY -->
+
+    {{ shop.metafields.loox.global_html_body }}
+    {% include 'smile-initializer' %}
+
+    {% if customer %}
+      <div id="shopmsg-customer-helper" data-id="{{ customer.id }}" style="display:none;"></div>
+    {%- endif %}
+    <!-- Gorgias Chat Widget Start -->
+    <script
+      id="gorgias-chat-widget-install-v2"
+      src="https://config.gorgias.chat/gorgias-chat-bundle-loader.js?applicationId=6203"
+    ></script>
+    <script id="gorgias-chat-shopify-install">
+      !(function (_) {
+        (_.SHOPIFY_PERMANENT_DOMAIN = '{{shop.permanent_domain}}'),
+          (_.SHOPIFY_CUSTOMER_ID = '{{customer.id}}'),
+          (_.SHOPIFY_CUSTOMER_EMAIL = '{{customer.email}}');
+      })(window || {});
+    </script>
+    <!-- Gorgias Chat Widget End -->
+    {% render 'globo.preorder.script' %}
+    <!-- Back in Stock helper snippet -->
+    {% render 'back-in-stock-helper' %}
+    <!-- End Back in Stock helper snippet -->
+    <!-- **BEGIN** Mercantile App Suite - backbridge Main Include - DO NOT MODIFY -->
+    {% if content_for_header contains 'mas_backbridge.js' %}
+      {% render 'mas-backbridge-custom', shop: shop, theme: theme, product: product, cart: cart, customer: customer %}
+    {% endif %}
+    <!-- **END backbridge -->
+    <!-- PickyStory snippet "main_widget_script", do not modify. Safe to remove after the app is uninstalled -->
+    {% if content_for_header contains 'pickystory' %}
+      <script defer src="https://cdn.pickystory.com/widget/dist/latest/pickystory-widget.min.js"></script>
+    {% endif %}
+    <!-- PickyStory end snippet "main_widget_script" -->
+
+    {{ shop.metafields.loox.global_html_body }}
+
+    {% include 'accessibe' %}
+  </body>
+</html>

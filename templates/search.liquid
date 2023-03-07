@@ -1,0 +1,52 @@
+<div class="Main__layout Container">
+  <div class="Main__header">
+    <h1>
+      {% if search.performed %}
+        {{ 'general.search.results_with_count' | t: terms: search.terms, count: search.results_count }}
+      {% else %}
+        {{ 'general.search.title' | t }}
+      {% endif %}
+    </h1>
+    {% include 'search-bar' %}
+  </div>
+  <div class="Main__content">
+    {% paginate search.results by 12 %}
+
+    {% if search.performed %}
+      {% if search.results_count == 0 %}
+        <p class="no-results">{{ 'general.search.no_results_html' | t: terms:search.terms }}</p>
+      {% else %}
+        <h2 class="visually-hidden">{{ 'general.search.heading' | t: count:search.results_count }}</h2>
+        <div class="Loop Loop--searchResults js-lazyload">
+          {% for item in search.results %}
+            {% if item.object_type == 'product' %}
+              {% assign product = item %}
+              {% include 'product-card', showPrice: true %}
+            {% else %}
+              <div class="Card">
+                <div class="Card__details">
+                  <h6 class="Card__title"><a href="{{ item.url | within: collection }}">{{ item.title }}</a></h6>
+                  <p>{{ item.content | strip_html | truncatewords: 50 }}</p>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        {% if paginate.pages > 1 %}
+          <div class="Nav Nav--pagination">
+            {{ paginate | default_pagination }}
+          </div>
+        {% endif %}
+
+        {% comment %} <div class="page-load-status">
+          <p class="infinite-scroll-request">Loading...</p>
+          <p class="infinite-scroll-last">No more results.</p>
+          <p class="infinite-scroll-error"></p>
+        </div> {% endcomment %}
+      {% endif %}
+    {% endif %}
+
+    {% endpaginate %}
+  </div>
+</div>

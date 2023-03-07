@@ -1,0 +1,29 @@
+<div class="Card Card--article" data-layout="{{card_layout}}">
+  <div class="Card__media">
+    {% if article.image %}
+      <a class="article__featured-image" href="{{ article.url }}">
+        <img
+            data-sizes="auto"
+            data-src="{{ article.image.src | img_url: '200x' }}"
+            data-srcset="
+                {{ article.image.src | img_url: '200x' }} 200w,
+                {{ article.image.src | img_url: '400x' }} 400w,
+                {{ article.image.src | img_url: '800x' }} 800w,
+                {{ article.image.src | img_url: '1600x' }} 1600w"
+            class="lazyload fadeup"
+            alt="{{ article.title }}" />
+        </a>
+    {% endif %}
+  </div>
+  <div class="Card__details">
+    <h6 class="Article__title"><a href="{{ article.url }}">{{ article.title }}</a></h6>
+    <div class="Article__excerpt">
+      {% if article.excerpt.size > 0 %}
+        {{ article.excerpt | strip_html | strip | truncatewords: 50 }}
+      {% else %}
+        <p>{{ article.content | strip_html | strip | truncatewords: 50 }}</p>
+      {% endif %}
+    </div>
+    <a class="Button" data-style="dark underline" href="{{article.url}}">Read More</a>
+  </div>
+</div>

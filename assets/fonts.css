@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Arquitecta-Book';
+    src: url('Arquitecta-Book.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fiona';
+    src: url('Fiona-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Wild Love Script';
+    src: url('WildLoveScript-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

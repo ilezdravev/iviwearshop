@@ -1,0 +1,54 @@
+<!-- Base Code -->
+<!-- Pinterest Tag -->
+<script>
+!function(e){if(!window.pintrk){window.pintrk = function () {
+window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
+  n=window.pintrk;n.queue=[],n.version="3.0";var
+  t=document.createElement("script");t.async=!0,t.src=e;var
+  r=document.getElementsByTagName("script")[0];
+  r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+pintrk('load', '2617868119163', {em: '<user_email_address>'});
+pintrk('page');
+</script>
+<noscript>
+<img height="1" width="1" style="display:none;" alt=""
+  src="https://ct.pinterest.com/v3/?event=init&tid=2617868119163&pd[em]=<hashed_email_address>&noscript=1" />
+</noscript>
+<!-- end Pinterest Tag -->
+
+{% if template contains 'page' or template contains 'product'%}
+  <!-- Page Visit Event -->
+  <script>
+    pintrk('track', 'pagevisit'{% if template contains 'product' %},{product_id: {{product.id}}}{% endif %});
+  </script>
+{% endif %}
+
+{% if template contains 'search' %}
+  <!-- Search Event -->
+  <script>
+    pintrk('track', 'search', {
+      search_query: '{{search.terms}}'
+    });
+  </script>
+{% endif %}
+
+{% if template contains 'collection' %}
+  <!-- View Category -->
+  <script>
+    pintrk('track', 'viewcategory');
+  </script>
+{% endif%}
+{% if template contains "product" %}
+  
+<script>
+  pintrk('track', 'addtocart', {
+    value: {{product.price}},
+    order_quantity: 1,
+    currency: 'USD',
+    product_id: {{product.id}}
+  });
+  </script>
+ <noscript>
+   <img height="1" width="1" style="display:none;" alt="" src="https://ct.pinterest.com/v3/?tid=YOUR_TAG_ID&event=addtocart&ed[value]=10.00&ed[order_quantity]=2&noscript=1" />
+  </noscript>
+  {% endif %}

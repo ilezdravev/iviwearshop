@@ -1,0 +1,27 @@
+{% paginate collection.products by per_page | default: 12 %}
+
+  <div>
+
+    <div class="Loop Loop--products js-lazyload" data-layout="dense">
+      {% for product in collection.products %}
+        {% include 'product-card' %}
+      {% endfor %}
+    </div>
+
+    {% comment %} <div class="js-pageNav"> {% endcomment %}
+      {% if paginate.pages > 1 %}
+        <div class="Nav Nav--pagination">
+          {{ paginate | default_pagination }}
+        </div>
+      {% endif %}
+    {% comment %} </div> {% endcomment %}
+
+   {% comment %}  <div class="page-load-status">
+      <p class="infinite-scroll-request">Loading...</p>
+      <div class="infinite-scroll-last"></div>
+      <p class="infinite-scroll-error"></p>
+    </div> {% endcomment %}
+
+  </div>
+  
+{% endpaginate %}

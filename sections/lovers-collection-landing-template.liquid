@@ -1,0 +1,161 @@
+{% assign object = section.settings %}
+{% assign main_image = object.main_image %}
+{% assign sec_image = object.sec_image %}
+{% assign title = object.title %}
+{% assign intro = object.intro %}
+{% assign disclaimer = object.disclaimer %}
+
+<header>
+  <figure class="responsive_img">
+    <a href="/">
+      <img src="{{'lc_logo.jpg' | asset_img_url: 'master'}}"/>
+    </a>
+  </figure>
+</header>
+
+<div class="deco">
+  <main class="Main__layoutA Container Container--wide">
+    <div class="Column">
+      <figure class="responsive_img">
+        <img
+          data-sizes="auto"
+          data-src="{{ main_image | img_url: '400x' }}"
+          data-srcset="
+              {{ main_image | img_url: '400x' }} 400w,
+              {{ main_image | img_url: '800x' }} 800w,
+              {{ main_image | img_url: '1200x' }} 1200w,
+              {{ main_image | img_url: '1600x' }} 1600w"
+          class="lazyload cover"
+        />
+        <figcaption style="background-image: url({{ 'lc_landing_deco.png' | asset_img_url: 'master' }})"></figcaption>
+      </figure>
+      <figure class="responsive_img">
+        <img
+          data-sizes="auto"
+          data-src="{{ sec_image | img_url: '400x' }}"
+          data-srcset="
+              {{ sec_image | img_url: '400x' }} 400w,
+              {{ sec_image | img_url: '800x' }} 800w,
+              {{ sec_image | img_url: '1200x' }} 1200w,
+              {{ sec_image | img_url: '1600x' }} 1600w"
+          class="lazyload cover"
+        />
+      </figure>
+    </div>
+    <div class="Column">
+      <div class="wrapper">
+        <div class="title">{{title}}</div>
+        <div class="intro">{{intro}}</div>
+        <ul class="steps">
+          {% for block in section.blocks %}
+            <li>
+              <span class="counter"><span>{{forloop.index}}</span></span>
+              <span>{{block.settings.step}}</span>
+            </li>  
+          {% endfor %}
+        </ul>
+        <div class="klaviyo-form-WTWMke"></div>
+      </div>
+    </div>
+  </main>
+</div>
+
+  <main class="Main__layoutB Container Container--wide">
+    <div class="Column">
+      <figure class="responsive_img">
+        <img
+          data-sizes="auto"
+          data-src="{{ sec_image | img_url: '400x' }}"
+          data-srcset="
+              {{ sec_image | img_url: '400x' }} 400w,
+              {{ sec_image | img_url: '800x' }} 800w,
+              {{ sec_image | img_url: '1200x' }} 1200w,
+              {{ sec_image | img_url: '1600x' }} 1600w"
+          class="lazyload cover"
+        />
+      </figure>
+    </div>
+    <div class="Column">
+      <div class="wrapper">
+        <div class="disclaimer text-{{section.settings.text_align}}">{{disclaimer}}</div>
+      </div>
+    </div>
+  </main>
+
+
+
+
+{% schema %}
+{
+  "name": "Lovers Collection",
+  "class": "Section Section--loversCollectionMain",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_image",
+      "label": "Main Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "sec_image",
+      "label": "Secondary Image"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Intro"
+    },
+    {
+      "type": "richtext",
+      "id": "disclaimer",
+      "label": "Disclaimer"
+    },
+    {
+      "type": "select",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "id": "text_align",
+      "label": "Text align",
+      "default": "center"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "step",
+          "label": "Step Text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

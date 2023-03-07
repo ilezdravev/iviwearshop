@@ -1,0 +1,22 @@
+<div class="Main">
+  <div class="Main__header">
+    <h1>{{blog.title}}</h1>
+  </div>
+  <div class="Container">
+    {% paginate blog.articles by 15 %}
+
+    <div class="Loop Loop--blog" data-layout="spacious">
+      {% for article in blog.articles %}
+        {% include 'article-card', card_layouy: 'vertical media-content' %}
+      {% endfor %}
+    </div>
+
+    {% if paginate.pages > 1 %}
+      <div class="Nav Nav--pagination">
+        {{ paginate | default_pagination }}
+      </div>
+    {% endif %}
+
+    {% endpaginate %}
+  </div>
+</div>

@@ -1,0 +1,286 @@
+{%- style -%}
+  .Section--ShowrommlandingMain {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background: {{ section.settings.bg_color }};
+  }
+
+  @media screen and (min-width: 750px) {
+    .Section--ShowrommlandingMain {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+  }
+{%- endstyle -%}
+
+{% assign object = section.settings %}
+{% assign main_image = object.main_image %}
+{% assign mob_main_image = object.mob_main_image %}
+{% assign title = object.title %}
+{% assign intro = object.intro %}
+<div class="Container Container--narrow">
+<h2 class="showrooom-landing-title">{{ section.settings.page_title }}</h2>
+</div>
+
+<div class="Container Container--narrow">
+  <div class="wrapper">
+    <div class="title">{{title}}</div>
+    <div class="intro">{{intro}}</div>
+    {% if main_image != blank %}
+      <figure class="responsive_img">
+        <img
+          data-sizes="auto"
+          data-src="{{ main_image | img_url: '400x' }}"
+          data-srcset="
+              {{ main_image | img_url: '400x' }} 400w,
+              {{ main_image | img_url: '800x' }} 800w,
+              {{ main_image | img_url: '1200x' }} 1200w,
+              {{ main_image | img_url: '1600x' }} 1600w"
+          class="lazyload cover"
+        />
+        <figcaption style="background-image: url({{ 'lc_landing_deco.png' | asset_img_url: 'master' }})"></figcaption>
+      </figure>
+    {% endif %}
+  </div>
+
+  {% for block in section.blocks %}
+    {% if block.type == 'block' %}
+      <div class="landing-block {{ block.settings.block_align }}">
+        {% if block.settings.block_image != blank %}
+          <div class="block-image" {% if block.settings.block_image2 != blank %}data-landing-image-slide{% endif %}>
+            <img
+                data-sizes="auto"
+                data-src="{{ block.settings.block_image | img_url: '400x' }}"
+                data-srcset="
+                    {{ block.settings.block_image | img_url: '400x' }} 400w,
+                    {{ block.settings.block_image | img_url: '800x' }} 800w,
+                    {{ block.settings.block_image | img_url: '1200x' }} 1200w,
+                    {{ block.settings.block_image | img_url: '1600x' }} 1600w"
+                class="lazyload cover"
+              />
+            {% for i in (2..8) %}
+              {% assign img = 'block_image' | append: i %}
+              {% if  block.settings[img] != blank %}
+                <img
+                  data-sizes="auto"
+                  data-src="{{ block.settings[img] | img_url: '400x' }}"
+                  data-srcset="
+                      {{ block.settings[img] | img_url: '400x' }} 400w,
+                      {{ block.settings[img] | img_url: '800x' }} 800w,
+                      {{ block.settings[img] | img_url: '1200x' }} 1200w,
+                      {{ block.settings[img] | img_url: '1600x' }} 1600w"
+                  class="lazyload cover"
+                />
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% elsif block.settings.block_image2 != blank %}
+          <div class="block-image">
+            <img
+                data-sizes="auto"
+                data-src="{{ block.settings.block_image2 | img_url: '400x' }}"
+                data-srcset="
+                    {{ block.settings.block_image2 | img_url: '400x' }} 400w,
+                    {{ block.settings.block_image2 | img_url: '800x' }} 800w,
+                    {{ block.settings.block_image2 | img_url: '1200x' }} 1200w,
+                    {{ block.settings.block_image2 | img_url: '1600x' }} 1600w"
+                class="lazyload cover"
+              />
+          </div>
+        {% endif %}
+        <div class="block-content">
+          {% if block.settings.block_content != blank %}
+            {{ block.settings.block_content }}
+          {% endif %}
+          {% if block.settings.btn_url != blank and block.settings.btn_text != blank %}
+            <a class="block-button {{ block.settings.btn_type }}" href="{{ block.settings.btn_url}}" target="_blank">
+              {{ block.settings.btn_text }}
+              {% if block.settings.btn_type == 'type3' %}
+                {% render 'icon-arrow-right' %}
+              {% endif %}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    {% elsif block.type == 'map' %}
+      <div class="landing-block">{{ block.settings.block_map }}</div>
+    {% endif %}
+  {% endfor %}
+
+</div>
+
+
+
+{% schema %}
+{
+  "name": "Showroom Landing",
+  "class": "Section Section--ShowrommlandingMain",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "page_title",
+      "label": "Page Title",
+      "default": "Ivy City Co Showroom"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Link"
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Intro"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_image",
+      "label": "Desktop Main Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mob_main_image",
+      "label": "Mobile Main Image"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "block",
+      "name": "block",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "block_content",
+          "label": "Content"
+        },
+        {
+          "type": "select",
+          "id": "block_align",
+          "label": "Align",
+          "default": "left_align",
+          "options": [
+            {
+              "value": "left_align",
+              "label": "Left"
+            },
+            {
+              "value": "right_align",
+              "label": "Right"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "btn_text",
+          "label": "Button Text"
+        },
+        {
+          "type": "url",
+          "id": "btn_url",
+          "label": "Button Url"
+        },
+        {
+          "type": "select",
+          "id": "btn_type",
+          "label": "Align",
+          "default": "type1",
+          "options": [
+            {
+              "value": "type1",
+              "label": "Button 1"
+            },
+            {
+              "value": "type2",
+              "label": "Button2"
+            },
+            {
+              "value": "type3",
+              "label": "Link"
+            }
+          ]
+        },
+        {
+          "type": "image_picker",
+          "id": "block_image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_image2",
+          "label": "Image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_image3",
+          "label": "Image 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_image4",
+          "label": "Image 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_image5",
+          "label": "Image 5"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_image6",
+          "label": "Image 6"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_image7",
+          "label": "Image 7"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_image8",
+          "label": "Image 8"
+        }
+      ]
+    },
+    {
+      "type": "map",
+      "name": "map",
+      "settings": [
+        {
+          "type": "html",
+          "id": "block_map",
+          "label": "Map"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

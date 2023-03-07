@@ -1,0 +1,268 @@
+{% assign is_coming_soon = false %}
+{% if template.suffix == 'coming-soon' %}
+  {% assign is_coming_soon = true %}
+{% endif %}
+
+{% assign is_soldout = false %}
+{% if template.suffix == 'sold-out' %}
+  {% assign is_soldout = true %}
+{% endif %}
+
+<div class="Product__form--wrapper">
+  <h1 class="Product__title u-show--fromDesktop">{{ product.title }}</h1>
+
+  <div class="loox-star-rating u-show--fromDesktop">
+    <a href="#looxReviews">
+      <div
+        class="loox-rating"
+        data-id="{{ product.id }}"
+        data-rating="{{ product.metafields.loox.avg_rating }}"
+        data-raters="{{ product.metafields.loox.num_reviews }}"
+      ></div>
+    </a>
+  </div>
+
+  <form
+    action="/cart/add"
+    method="post"
+    enctype="multipart/form-data"
+    id="AddToCartForm"
+    class="Product__form"
+    {% unless is_coming_soon or is_soldout %}
+      data-component="ProductForm"
+    {% endunless %}
+    data-product-type="{{ product.type }}"
+    data-productid="{{product.id}}"
+    data-product-handle="{{product.handle}}"
+  >
+    <div id="KiwiSizingChart" class="u-hidden"></div>
+
+    {%- comment -%}
+      <div class="kiwisizing-clones" data-component="SizeGuideTrigger">
+        <button type="button" class="Button" data-layout="noLayout" data-size-guide-trigger>Size Guide</button>
+      </div>
+    {%- endcomment -%}
+
+    <div class="Form__row">
+      {% if product.metafields.color_swatch.color_value %}
+        <label class="swatch-title">Color</label>
+        <div class="color-swatch">
+          <a
+            href="#"
+            class="color-swatch-item {% unless product.available %}soldout{% endunless %}"
+            style="background-color: {{ product.metafields.color_swatch.color_value }};{% if product.metafields.color_swatch.color_image != blank %}background-image: url({{ product.metafields.color_swatch.color_image }});{% endif %}"
+            data-title="{{ product.metafields.color_swatch.color_name }}"
+          ></a>
+          {% assign index = 0 %}
+          {% for rel_product in product.metafields.related_products.product %}
+            <a
+              href="/products/{{ rel_product }}"
+              class="color-swatch-item {% if product.metafields.related_products.available[index] == 'true' %}soldout{% endif %}"
+              style="background-color: {{ product.metafields.related_products.color_value[index] }};{% if product.metafields.related_products.color_image[index] != blank %}background-image: url({{ product.metafields.related_products.color_image[index] }});{% endif %}"
+              data-title="{{ product.metafields.related_products.color_name[index] }}"
+            ></a>
+            {% assign index = index | plus: 1 %}
+          {% endfor %}
+          {% assign rel_product_size = product.metafields.related_products.product | size %}
+        </div>
+      {% endif %}
+
+      {% if product.metafields.ivy.adult != blank
+        or product.metafields.ivy.girl != blank
+        or product.metafields.ivy.baby != blank
+        or product.metafields.ivy.maxi != blank
+      %}
+        <label class="swatch-title">Type</label>
+        <div class="type-swatch">
+          {% if product.metafields.ivy.adult != blank %}
+            <a href="{{all_products[product.metafields.ivy.adult].url}}" class="type-swatch-item">WOMEN</a>
+            {%- comment -%}
+              {% elsif product.type == 'DRESS' %}
+                <a class="type-swatch-item disabled">WOMEN</a>
+              {% else %}
+                <a class="type-swatch-item disabled">WOMEN</a>
+            {%- endcomment -%}
+          {% endif %}
+
+          {% if product.metafields.ivy.girl != blank %}
+            <a href="{{all_products[product.metafields.ivy.girl].url}}" class="type-swatch-item">GIRLS</a>
+            {%- comment -%}
+              {% elsif product.type == 'Mini' %}
+                <a class="type-swatch-item disabled">GIRLS</a>
+              {% else %}
+                <a class="type-swatch-item disabled">GIRLS</a>
+            {%- endcomment -%}
+          {% endif %}
+
+          {% if product.metafields.ivy.baby != blank %}
+            <a href="{{all_products[product.metafields.ivy.baby].url}}" class="type-swatch-item">BABY</a>
+          {% endif %}
+
+          {% if product.metafields.ivy.men != blank %}
+            <a href="{{all_products[product.metafields.ivy.men].url}}" class="type-swatch-item">Men</a>
+          {% endif %}
+
+          {% if product.metafields.ivy.boy != blank %}
+            <a href="{{all_products[product.metafields.ivy.boy].url}}" class="type-swatch-item">Boy</a>
+          {% endif %}
+
+          {% if product.metafields.ivy.babyboy != blank %}
+            <a href="{{all_products[product.metafields.ivy.babyboy].url}}" class="type-swatch-item">Baby Boy</a>
+          {% endif %}
+
+          {% if product.metafields.ivy.short != blank %}
+            <a href="{{all_products[product.metafields.ivy.short].url}}" class="type-swatch-item">Short</a>
+          {% endif %}
+          {% if product.metafields.ivy.maxi != blank %}
+            <a href="{{all_products[product.metafields.ivy.maxi].url}}" class="type-swatch-item">Maxi</a>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% unless product.has_only_default_variant or product.available == false or is_coming_soon or is_soldout %}
+        {% comment %} {% include 'product-variant-selector-dropdown'%} {% endcomment %}
+        {% include 'product-variant-selector-radio' %}
+      {% endunless %}
+
+      {% if is_coming_soon %}
+        <div class="kiwisizing-clones" data-component="SizeGuideTrigger">
+          <button type="button" class="Button size-chart" data-layout="noLayout" data-size-guide-trigger>
+            VIEW SIZE CHART
+          </button>
+        </div>
+      {% endif %}
+
+      {% comment %}
+        In order for this form to submit, it needs to contain an input with name="id".
+        ProductForm() will automatically create this input (or make sure it has the
+        right value set if it already exists) on form submit based on the
+        currently selected variant. However, if JS is disabled we need a fallback.
+
+        Include a single <select> element which allows users to select all variants
+        as a fallback and present it only when JS is disabled. In addition,
+        make sure you hide the option inputs declared above, like we do with the
+        `.js-enabled` class which only shows its contents when JS is enabled.
+      {% endcomment %}
+      <select name="id" class="u-hidden">
+        <option
+          value=""
+          disabled
+          {% if current_variant == blank %}
+            selected
+          {% endif %}
+        >
+          Select your option
+        </option>
+        {% for variant in product.variants %}
+          <option
+            {% if variant == current_variant %}
+              selected="selected"
+            {% endif %}
+            {% unless variant.available %}
+              disabled="disabled"
+            {% endunless %}
+            value="{{ variant.id }}"
+          >
+            {{ variant.title }}
+          </option>
+        {% endfor %}
+      </select>
+
+      {% comment %}
+        Any input with `name="quantity"` will be picked up by ProductForm and
+        registered as a quantity input. If a quantity input is not included, a
+        default quantity of 1 is assumed.
+      {% endcomment %}
+
+      <div class="Form__input u-hidden" data-size="col1-2">
+        <label for="quantity">{{ 'products.product.quantity' | t }}</label>
+        <input type="number" id="quantity" name="quantity" value="1" min="1">
+      </div>
+    </div>
+
+    <div class="price_wrapper" style="margin-bottom: 30px;text-align:center;">
+      {% include 'product-price' %}
+    </div>
+
+    {% if is_coming_soon %}
+      {% assign btn_text_unavailable = 'products.product.coming_soon' | t %}
+    {% else %}
+      {% if is_soldout %}
+        {% assign btn_text_unavailable = 'Sold Out' %}
+      {% else %}
+        {% assign btn_text_unavailable = 'products.product.sold_out' | t %}
+      {% endif %}
+    {% endif %}
+
+    <div class="Buttons">
+      <button
+        type="submit"
+        class="Button default-cart-button__button"
+        data-style="solid secondary"
+        data-layout="block"
+        data-add-to-cart
+        {% if product.has_only_default_variant or current_variant.available %}
+          {% if is_coming_soon or is_soldout %}disabled{% endif %}
+        {% else %}
+          disabled
+        {% endif %}
+      >
+        <span data-add-to-cart-text>
+          {% if is_coming_soon %}
+            {{ btn_text_unavailable }}
+          {% else %}
+            {% if current_variant %}
+              {% if current_variant.available %}
+                {{ 'products.product.add_to_cart' | t }}
+              {% else %}
+                {{ btn_text_unavailable }}
+              {% endif %}
+            {% else %}
+              {% if product.available %}
+                Choose Options
+              {% else %}
+                {{ btn_text_unavailable }}
+              {% endif %}
+            {% endif %}
+          {% endif %}
+        </span>
+      </button>
+      {% comment %}
+        Don't forget about the Dynamic Checkout buttons!
+        https://help.shopify.com/en/themes/customization/store/dynamic-checkout-buttons
+        NOTE: Hidden due to incompatibility with Customizely
+      {% endcomment %}
+      {% comment %} {{ form | payment_button }} {% endcomment %}
+
+      {% if product.available %}
+        {% assign hide_bis_trigger = true %}
+        {% if current_variant == null or current_variant.available %}
+          {% assign hide_bis_trigger = true %}
+        {% else %}
+          {% assign hide_bis_trigger = false %}
+        {% endif %}
+        {% if is_coming_soon %}
+          {% assign hide_bis_trigger = false %}
+        {% endif %}
+      {% else %}
+        {% assign hide_bis_trigger = false %}
+      {% endif %}
+
+      <div id="anchor-for-bis-desktop">
+        <button
+          type="button"
+          class="Button {% if hide_bis_trigger %}u-hidden{% endif %}"
+          data-style="solid secondary"
+          data-layout="small"
+          id="BIS_trigger"
+        >
+          Email when in stock
+        </button>
+      </div>
+    </div>
+
+    {% unless is_coming_soon or is_soldout %}
+      {% include 'product-stock-alert' %}
+    {% endunless %}
+  </form>
+</div>

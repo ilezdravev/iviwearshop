@@ -1,0 +1,45 @@
+{% paginate collections by per_page | default: 12 %}
+  <div class="Container">
+    <div class="Main__header"><h1>Collections</h1></div>
+    <div class="Main__content">
+      <div class="Loop">
+        {% for collection in collections %}
+          {% if collection.products_count > 0 %}
+            <div class="Card Card--collection" data-layout="vertical media-content">
+              <div class="Card__media">
+              {% if collection.image %}
+                {% assign collection_image = collection.image %}
+              {% else %}
+                {% assign collection_image = collection.products.first.featured_image %}
+              {% endif %}
+              {% assign variable = value %}
+                {% if collection_image %}
+                  <a class="collection__featured-image" href="{{ collection.url }}">
+                    <img
+                        data-sizes="auto"
+                        data-src="{{ collection_image.src | img_url: '200x' }}"
+                        data-srcset="
+                            {{ collection_image.src | img_url: '200x' }} 200w,
+                            {{ collection_image.src | img_url: '400x' }} 400w,
+                            {{ collection_imagesrc | img_url: '800x' }} 800w,
+                            {{ collection_image.src | img_url: '1600x' }} 1600w"
+                        class="lazyload fadeup"
+                        alt="{{ collection.title }}" />
+                    </a>
+                {% endif %}
+              </div>
+              <div class="Card__details">
+                <h6 class="Card__title"><a href="{{ collection.url }}">{{ collection.title }}</a></h6>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      {% if paginate.pages > 1 %}
+        <div class="Nav Nav--pagination">
+          {{ paginate | default_pagination }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endpaginate%}

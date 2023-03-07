@@ -1,0 +1,56 @@
+<div class="Container">
+  <div class="title">{{ section.settings.title }}</div>
+</div>
+
+<div class="insta-handle">{{ section.settings.insta_handle }}</div>
+
+<div class="Container Section--press Section--social-photos">
+  <div class="Section__content">
+    <div class="Loop" data-layout="dense">
+      {% for block in section.blocks %}
+      {% assign image = block.settings.photo %}
+      {% assign link = block.settings.link %}
+      {% assign open_new_tab = block.settings.open_new_tab %}
+        <a href="/pages/showroom-landing">
+          <figure class="item">
+            <img data-src="{{image.src | img_url: '300x'}}" class="lazyload" alt="{{image.alt}}">
+          </figure>
+        </a>
+      {% endfor %}
+    </div>
+   </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Showroms Social",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Follow us on Instagram for excusive, local content!"
+    },
+    {
+      "type": "text",
+      "id": "insta_handle",
+      "label": "Instagram ID",
+      "default": "@ivycitycoshowroom"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "photo",
+      "name": "Photo",
+      "settings":[
+        {
+          "type": "image_picker",
+          "id": "photo",
+          "label": "Photo"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
