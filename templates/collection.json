@@ -1,0 +1,16 @@
+{
+    "sections": {
+        "collection-template": {
+            "type": "collection-template",
+            "settings": {
+              "hero_bg_image": "shopify:\/\/shop_images\/Bitmap.png",
+              "hero_bg_size": 40,
+              "hero_bg_color": "#f9f0ef",
+              "nr_products": 60
+            }
+        }
+    },
+    "order": [
+      "collection-template"
+    ]
+  }

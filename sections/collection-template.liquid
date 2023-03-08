@@ -1,5 +1,12 @@
-{% include 'collection-header' %}
-{% include 'collection-loop', per_page: section.settings.nr_products %}
+<div class="Container" >
+  <div class="Main__content" id="Collection">
+    {% include 'collection-header' %}
+    {% include 'collection-loop', per_page: section.settings.nr_products %}
+  </div>
+</div>
+
+
+
 
 
 {% schema %}
